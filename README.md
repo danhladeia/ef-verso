@@ -18,6 +18,14 @@ No celular, use o endereço de rede exibido pelo Vite, com computador e celular 
 
 Verificação: `node tools/verify-city-upgrade.mjs` cobre o céu, o trânsito com sinal, skate/bike (cidade e trilha) e a 3ª pessoa; `node tools/verify-city.mjs` e os demais `verify-*.mjs`/`*.test.mjs` continuam cobrindo o resto.
 
+## Trânsito nos dois sentidos com rotas variadas, e pista de skate de verdade — 28/10/2026 (madrugada)
+
+**Carros e ônibus não andam mais todos no mesmo sentido.** Seis rotas diferentes espalhadas pelo mapa (quadrado interno e externo da malha viária, cada um nos dois sentidos, mais dois retângulos "mistos" cobrindo outras partes do mapa) — metade das rotas horária, metade anti-horária. Os sinais de trânsito continuam funcionando certo mesmo com rotas cruzando o mesmo cruzamento: cada um dos 16 cruzamentos reais tem uma identidade própria (não depende de qual rota passa por ali), então nunca fica contraditório — um poste por cruzamento muda de verde para vermelho (e os veículos freiam antes dele).
+
+**A pista de skate agora é de verdade, não só decoração.** Antes, as rampas/tigela da pista tinham uma barreira de colisão que impedia qualquer um de entrar nelas durante a exploração normal (só dava para usar no minijogo dedicado). Agora, só quem está andando a pé continua barrado — andando de skate ou bicicleta, o jogador entra de verdade na tigela, na mini-rampa e nas quarter-pipes, e o relevo embaixo dele passa a seguir a física real da pista (a mesma de `skate-sim.js`) em vez do chão plano da cidade. O pulo (Espaço) já funcionava em cima de skate/bike durante a exploração — confirmado, sem precisar de ajuste. O piso da pista é de cimento (já era, no Blender). Confirmado por teste automatizado: andando a pé numa posição dentro da tigela, o jogador fica no chão plano (bloqueado); de skate, ele afunda na tigela de verdade.
+
+Verificação: `node tools/verify-city-upgrade.mjs` (rotas/sinais do trânsito e a tigela de skate) e `node tools/verify-skate.mjs`/`node tools/skate.test.mjs` (minijogo dedicado intacto).
+
 ## Carros andando de lado: corrigido — 28/10/2026 (fim de tarde)
 
 A correção da mão da via (acima) deixou os carros bem mais visíveis — e aí apareceu um segundo bug: eles andavam de **lado**, mostrando a lateral em vez da frente. Causa: o carro recebia uma rotação fixa de 90° (`original.rotation.y=Math.PI/2`) somada à rotação da rota (que já aponta a direção certa sozinha) — a soma das duas ficava 90° errada. Reescrevi `src/traffic.js`: em vez de um ângulo fixo, a frente de cada carro é descoberta pelas próprias rodas do pacote (`wheel_front_*`/`wheel_rear_*`), então funciona para qualquer um dos 4 modelos sem precisar adivinhar. Conferido matematicamente: a direção real de cada um dos 8 carros (frente→trás, pelas rodas) bate exatamente com a direção da pista.

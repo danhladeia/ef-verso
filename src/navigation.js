@@ -12,11 +12,14 @@ export function createNavigation(solids,limit,allowed=()=>true){
  const near=(x,z)=>grid.get(key(Math.floor(x/CELL),Math.floor(z/CELL)))||[];
  const inside=(s,x,z)=>s.circle?Math.hypot(x-s.x,z-s.z)<s.r+CLEARANCE:Math.abs(x-s.x)<s.w&&Math.abs(z-s.z)<s.d;
  const blocked=(x,z)=>Math.abs(x)>limit||Math.abs(z)>limit||!allowed(x,z)||near(x,z).some(s=>inside(s,x,z));
- /** Empurra o círculo (pos, raio r) para fora dos obstáculos fixos e dos `others` ({x,z,r}). Devolve true se encostou. */
- function resolve(pos,r=.35,others=[]){
+ /** Empurra o círculo (pos, raio r) para fora dos obstáculos fixos e dos `others` ({x,z,r}). Devolve
+  * true se encostou. `skipKind` ignora um tipo de obstáculo (de skate/bicicleta nas rampas de verdade
+  * da pista: quem anda a pé continua barrado, sem passar o parâmetro). */
+ function resolve(pos,r=.35,others=[],skipKind=null){
   let touched=false;
   for(let pass=0;pass<2;pass++){
    for(const s of near(pos.x,pos.z)){
+    if(s.kind===skipKind)continue;
     if(s.circle){const dx=pos.x-s.x,dz=pos.z-s.z,min=s.r+r,d=Math.hypot(dx,dz);if(d>=min||d<1e-6)continue;pos.x=s.x+dx/d*min;pos.z=s.z+dz/d*min;touched=true;continue;}
     const hw=s.w-CLEARANCE,hd=s.d-CLEARANCE,px=Math.max(s.x-hw,Math.min(pos.x,s.x+hw)),pz=Math.max(s.z-hd,Math.min(pos.z,s.z+hd)),dx=pos.x-px,dz=pos.z-pz,d2=dx*dx+dz*dz;
     if(d2>=r*r)continue;touched=true;

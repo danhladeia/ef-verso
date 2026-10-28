@@ -40,6 +40,16 @@ try{
  await page.keyboard.down('i');await page.waitForTimeout(1500);await page.keyboard.up('i');
  const t1=await page.evaluate(()=>window.cityReview.player());
  report.trailRide=Math.hypot(t1.x-t0.x,t1.z-t0.z);assert(report.trailRide>8,'Bike deve avançar bastante pela trilha em 1,5 s: '+report.trailRide);
+ // A pista de skate precisa ser de verdade: andando a pé, a tigela continua bloqueada (chão plano);
+ // de skate/bicicleta, o jogador afunda nela de acordo com o relevo real da pista (skate-sim.js).
+ await page.evaluate(()=>{const c=window.cityDesign.skatepark;window.travelReview.select('walk');window.travelReview.avatar().parent.position.set(c.x-11,0,c.z-13);});
+ await page.waitForTimeout(400);
+ const walkY=(await page.evaluate(()=>window.cityReview.player())).y;
+ await page.evaluate(()=>window.travelReview.select('skate'));
+ await page.waitForTimeout(400);
+ const skateY=(await page.evaluate(()=>window.cityReview.player())).y;
+ report.skateBowl={walkY,skateY};
+ assert(skateY<walkY-.3,'De skate, o jogador deve afundar na tigela de verdade: '+JSON.stringify(report.skateBowl));
  await page.locator('#camera').click();await page.screenshot({path:out+'/adventure.png'});
  await page.evaluate(()=>window.travelReview.avatar().parent.position.set(-48,0,0));await page.waitForTimeout(200);await page.screenshot({path:out+'/city.png'});
  await page.locator('#settings-open').click();await page.locator('#settings-dialog').screenshot({path:out+'/settings.png'});await page.locator('#settings-cancel').click();

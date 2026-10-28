@@ -25,6 +25,7 @@ import {createCloudSave} from './cloud-save.js';
 import {createTravel} from './travel.js';
 import {createTraffic} from './traffic.js';
 import {createAdventure,adventureHeight,canExplore,TRAIL} from './adventure.js';
+import {terrainHeight as skateTerrain} from './skate-sim.js';
 import {createSky} from './sky.js';
 const $=s=>document.querySelector(s),scene=new T.Scene(),solids=[],keys=new Set(),touch={x:0,y:0};
 // Céu, cor e neblina: base do visual do Jogo_RPG_EF7, agora variando com o horário real de Brasília
@@ -38,7 +39,13 @@ const sky=createSky({scene,sun,hemisphere:hemi});
 // Campo de visão mais longe: dá para ver prédios e a montanha de longe em vez de sumirem na neblina perto.
 const iso=new T.PerspectiveCamera(42,innerWidth/innerHeight,.3,650),third=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,550);
 let zoom=1,thirdDistance=6;
-let mode='iso',yaw=0,active=iso,thirdPitch=.07,ready=false,navigation,nearest=null,nearbyResident=null,route=[],running=false,verticalSpeed=0,elapsed=0,avatar,mission,customizer,crowd,skaters,ambient,hoopsMatch,soccerMatch,volleyMatch,skateMatch,onboarding,theory,travel,traffic,adventure,cloud;
+let mode='iso',yaw=0,active=iso,thirdPitch=.07,ready=false,navigation,nearest=null,nearbyResident=null,route=[],running=false,verticalSpeed=0,elapsed=0,avatar,mission,customizer,crowd,skaters,ambient,hoopsMatch,soccerMatch,volleyMatch,skateMatch,onboarding,theory,travel,traffic,adventure,cloud,skateCenter=null;
+// Enquanto anda de skate/bicicleta e está dentro da área da pista, o relevo segue a pista de verdade
+// (rampas, bowl) em vez do chão genérico — permite rolar pelas rampas de skate/bike na exploração.
+function groundHeight(x,z,riding){
+ if(riding&&skateCenter){const lx=x-skateCenter.x,lz=z-skateCenter.z;if(Math.abs(lx)<=25&&Math.abs(lz)<=27)return skateTerrain(lx,lz);}
+ return adventureHeight(x,z);
+}
 // Skate/bicicleta ganham e perdem velocidade aos poucos (em vez de andar/parar instantâneo como a
 // pé) e continuam deslizando/pedalando um pouco na última direção ao soltar as teclas (embalo).
 let rideSpeed=0;const rideDir={x:0,z:1};
@@ -50,7 +57,7 @@ function showTeacherChip(student){
  const chip=document.createElement('span');chip.className='chip teacher-chip';chip.textContent='👩‍🏫 Modo Professor · '+(student.name||'');
  document.querySelector('header').insertBefore(chip,document.querySelector('#camera'));
 }
-function stopMovement(){keys.clear();touch.x=touch.y=0;route=[];verticalSpeed=0;player.position.y=adventureHeight(player.position.x,player.position.z);$('#stick').style.transform='';}
+function stopMovement(){keys.clear();touch.x=touch.y=0;route=[];verticalSpeed=0;player.position.y=groundHeight(player.position.x,player.position.z,travel?.mode!=='walk');$('#stick').style.transform='';}
 function cityBusy(){return dialog.open||mission?.locked||mission?.practicing||customizer?.isOpen||hoopsMatch?.active||soccerMatch?.active||volleyMatch?.active||skateMatch?.active||onboarding?.active||theory?.active||settings?.isOpen||cloud?.isOpen||flight.enabled||frontView;}
 const settings=createSettings({stopMovement,canOpen:()=>ready&&!cityBusy()});
 cloud=createCloudSave({stopMovement,canOpen:()=>ready&&!cityBusy()});
@@ -61,14 +68,14 @@ const guideLine=new T.Line(new T.BufferGeometry(),guideMat);guideLine.renderOrde
 let guideLen=-1;
 function updateGuide(dt=0){
  if(!route.length){if(guideLine.visible)guideLine.visible=false;guideLen=-1;return;}
- if(route.length!==guideLen){guideLen=route.length;guideLine.geometry.setFromPoints([new T.Vector3(player.position.x,adventureHeight(player.position.x,player.position.z)+.14,player.position.z),...route.map(p=>new T.Vector3(p.x,adventureHeight(p.x,p.z)+.14,p.z))]);guideLine.computeLineDistances();guideLine.visible=true;}
+ if(route.length!==guideLen){guideLen=route.length;const riding=travel?.mode!=='walk';guideLine.geometry.setFromPoints([new T.Vector3(player.position.x,groundHeight(player.position.x,player.position.z,riding)+.14,player.position.z),...route.map(p=>new T.Vector3(p.x,groundHeight(p.x,p.z,riding)+.14,p.z))]);guideLine.computeLineDistances();guideLine.visible=true;}
  guideMat.dashOffset=(guideMat.dashOffset-dt*2.2)%(guideMat.dashSize+guideMat.gapSize);
 }
 function label(p){const c=document.createElement('canvas');c.width=512;c.height=96;const ctx=c.getContext('2d');ctx.fillStyle='#34585b';ctx.beginPath();ctx.roundRect(0,0,512,96,20);ctx.fill();ctx.fillStyle='#fff6df';ctx.textAlign='center';ctx.font='bold 29px Trebuchet MS';ctx.fillText(p.name,256,59,480);const o=new T.Sprite(new T.SpriteMaterial({map:new T.CanvasTexture(c),depthTest:true,transparent:true}));o.scale.set(7.5,1.4,1);o.position.set(p.x,3.8,p.z);scene.add(o);labels.push(o);}
 const menu=$('nav');menu.replaceChildren();places.forEach((p,i)=>{const b=document.createElement('button');b.dataset.place=i;b.textContent=String(i+1).padStart(2,'0')+' · '+p.name;b.onclick=()=>goTo(p);menu.append(b);});
 $('#progress').textContent=visited.size+' / '+places.length+' locais descobertos';$('#status').textContent='Montando os bairros…';$('aside > p').textContent='Ruas conectadas, praças e ambientes para explorar.';
 const actions=document.createElement('div');actions.className='player-actions';actions.innerHTML='<button id="run" aria-pressed="false">Correr</button><button id="jump">Pular</button>';document.body.append(actions);
-function jump(){if(ready&&!cityBusy()&&player.position.y-adventureHeight(player.position.x,player.position.z)<=.01)verticalSpeed=8;}
+function jump(){if(ready&&!cityBusy()&&player.position.y-groundHeight(player.position.x,player.position.z,travel?.mode!=='walk')<=.01)verticalSpeed=8;}
 $('#run').onclick=()=>{running=!running;$('#run').setAttribute('aria-pressed',String(running));$('#run').textContent=running?'Andar':'Correr';};$('#jump').onclick=jump;
 const flight=createFlight({renderer,scene,keys,touch,places,canEnter:()=>!mission?.locked&&!mission?.practicing&&!dialog.open&&!customizer?.isOpen&&!hoopsMatch?.active&&!soccerMatch?.active&&!volleyMatch?.active&&!skateMatch?.active&&!onboarding?.active&&!theory?.active&&!frontView,onExit:()=>{route=[];updateCamera(1,true);}});
 function toggle(){mode=mode==='iso'?'third':'iso';active=mode==='iso'?iso:third;if(mode==='third')yaw=player.rotation.y;document.body.classList.toggle('third-person',mode==='third');$('#camera').textContent='Câmera: '+(mode==='iso'?'de cima':'3ª pessoa');resize();updateCamera(1,true);}
@@ -138,7 +145,7 @@ function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta()
  if(skateMatch?.active){labels.forEach(o=>o.visible=false);skateMatch.update(dt);renderer.render(scene,skateMatch.camera);return;}
  if(flight.enabled){labels.forEach(o=>o.visible=false);flight.update(dt);return;}
  const beforeX=player.position.x,beforeZ=player.position.z;
- if(ready&&!dialog.open&&!mission?.locked&&!customizer?.isOpen&&!onboarding?.active&&!theory?.active&&!frontView&&!settings.isOpen&&!cloud.isOpen){const ground=adventureHeight(player.position.x,player.position.z),grounded=player.position.y<=ground+.02&&verticalSpeed<=0;verticalSpeed-=22*dt;player.position.y=Math.max(ground,player.position.y+verticalSpeed*dt);if(player.position.y<=ground)verticalSpeed=0;shadow.position.y=ground+.19-player.position.y;
+ if(ready&&!dialog.open&&!mission?.locked&&!customizer?.isOpen&&!onboarding?.active&&!theory?.active&&!frontView&&!settings.isOpen&&!cloud.isOpen){const ground=groundHeight(player.position.x,player.position.z,travel?.mode!=='walk'),grounded=player.position.y<=ground+.02&&verticalSpeed<=0;verticalSpeed-=22*dt;player.position.y=Math.max(ground,player.position.y+verticalSpeed*dt);if(player.position.y<=ground)verticalSpeed=0;shadow.position.y=ground+.19-player.position.y;
   let sx=Number(settings.pressed(keys,'right')||keys.has('arrowright'))-Number(settings.pressed(keys,'left')||keys.has('arrowleft'))+touch.x,sy=Number(settings.pressed(keys,'back')||keys.has('arrowdown'))-Number(settings.pressed(keys,'forward')||keys.has('arrowup'))+touch.y;
   // Third person: A/D (or the joystick sideways) turn the student and the camera; W/S walk forward and back.
   if(mode==='third'&&sx&&!settings.value.strafe){yaw-=sx*2.6*dt;if(sx)route=[];sx=0;}
@@ -155,10 +162,10 @@ function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta()
    rideSpeed=0;
    if(len>.03){const top=running||settings.pressed(keys,'sprint')?11:6,step=route.length?Math.min(top*dt,len):top*dt;moveX=dx*step;moveZ=dz*step;}
   }
-  if(Math.hypot(moveX,moveZ)>.0005){const next={x:player.position.x+moveX,z:player.position.z+moveZ};navigation.resolve(next,.35,crowd?.positions()||[]);player.position.x=next.x;player.position.z=next.z;player.position.y=grounded?adventureHeight(next.x,next.z):Math.max(adventureHeight(next.x,next.z),player.position.y);if(mode!=='third'||sy<=0)player.rotation.y=Math.atan2(-moveX,-moveZ);}
+  if(Math.hypot(moveX,moveZ)>.0005){const next={x:player.position.x+moveX,z:player.position.z+moveZ};navigation.resolve(next,.35,crowd?.positions()||[],riding?'skate-ramp':null);player.position.x=next.x;player.position.z=next.z;const nextGround=groundHeight(next.x,next.z,riding);player.position.y=grounded?nextGround:Math.max(nextGround,player.position.y);if(mode!=='third'||sy<=0)player.rotation.y=Math.atan2(-moveX,-moveZ);}
  }
  updateGuide(dt);
- const moveSpeed=Math.hypot(player.position.x-beforeX,player.position.z-beforeZ)/Math.max(dt,.001);shadow.position.y=adventureHeight(player.position.x,player.position.z)+.19-player.position.y;mission?.update(dt,dialog.open);avatar?.update(dt,{speed:moveSpeed,airborne:player.position.y-adventureHeight(player.position.x,player.position.z)>.1,holding:mission?.holding,throwing:mission?.throwing,charge:mission?.charge,riding:travel?.mode});travel?.update(avatar,moveSpeed);
+ const moveSpeed=Math.hypot(player.position.x-beforeX,player.position.z-beforeZ)/Math.max(dt,.001),groundNow=groundHeight(player.position.x,player.position.z,travel?.mode!=='walk');shadow.position.y=groundNow+.19-player.position.y;mission?.update(dt,dialog.open);avatar?.update(dt,{speed:moveSpeed,airborne:player.position.y-groundNow>.1,holding:mission?.holding,throwing:mission?.throwing,charge:mission?.charge,riding:travel?.mode});travel?.update(avatar,moveSpeed);
  nearest=places.find(p=>Math.hypot(player.position.x-p.x,player.position.z-p.z)<3);nearbyResident=crowd?.nearby(player.position);$('#interact').disabled=(!nearest&&!nearbyResident)||!ready||!!mission?.locked;$('#interact').textContent=mission?.prompt(nearest)||(nearest?'Explorar · '+nearest.name:nearbyResident?'Conversar · '+nearbyResident.name:'Aproxime-se de um local ou morador');
  $('#hoops-enter').hidden=!(ready&&hoopsMatch&&!hoopsMatch.active&&!mission?.locked&&!mission?.practicing&&nearest?.name==='Quadra de Basquete');
  $('#soccer-enter').hidden=!(ready&&soccerMatch&&!soccerMatch.active&&!mission?.locked&&!mission?.practicing&&nearest?.name==='Campo de Futebol');
@@ -170,6 +177,7 @@ function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta()
 }
 iso.position.set(0,16,26);third.position.set(6,6,16);frame();
 buildCity({scene,loader:new GLTFLoader(),solids}).then(async audit=>{
+ skateCenter=audit.skatepark;
  const loader=new GLTFLoader();avatar=await createCharacter(loader,'student');player.add(avatar.visual);
  adventure=createAdventure({scene});traffic=await createTraffic({scene,loader});travel=await createTravel({loader,player,stopMovement,canChange:()=>ready&&!cityBusy()});
  mission=await createMission({scene,loader,player,solids,hoop:audit.basketballHoop,progress,wallet,goTo,stopMovement,handPosition:()=>avatar.handPosition,rightHand:()=>avatar.rightHand,onPractice:practiceView});

@@ -221,7 +221,11 @@ export async function buildCity({scene,loader,solids}){
  place(await asset('skate/skatepark'),SK.x,SK.z,null,0,false,-1.78);audit.skatepark=SK;
  // O bowl virou um buraco no chão (tools/build_skatepark.py): a caixa de colisão normal (passeio a pé)
  // cobre só a borda com grade; andar de skate dentro dele usa a própria física da pista, não esta grade.
- for(const [x,z,w,d] of [[-11,-13,7.0,4.8],[-15,-5.7,2.6,2.1],[11.5,-18,11,7],[18,-18,1.6,1.8],[-18.7,5,2.5,4],[-18.7,12,2.5,4],[-4,9.4,9,5.8],[8,4,7.2,2.6],[8,13,4.5,2],[16,10,.7,6],[-14,0,5,.3],[18.6,-6,1.7,1.8],[9,-6,6.2,6.2],[.4,-1,4.1,3],[-24.3,8,.6,20.2],[2,-25.4,12,2.7],[22.5,11.2,2.2,.6],[-24,-20,1.6,12],[24,-4,1.6,20],[-12,25.6,22,1.2]])solid(SK.x+x,SK.z+z,w,d,'skate');
+ // As rampas de verdade (bowl, mini-rampa, quarter pipes) ficam marcadas 'skate-ramp', não 'skate':
+ // só pedestres a pé ficam de fora delas (navigation.js ignora esse tipo para quem anda de skate/bike),
+ // os obstáculos de rua e os limites da pista continuam bloqueando todo mundo.
+ for(const [x,z,w,d] of [[-11,-13,7.0,4.8],[11.5,-18,11,7],[18,-18,1.6,1.8],[-18.7,5,2.5,4],[-18.7,12,2.5,4]])solid(SK.x+x,SK.z+z,w,d,'skate-ramp');
+ for(const [x,z,w,d] of [[-15,-5.7,2.6,2.1],[-4,9.4,9,5.8],[8,4,7.2,2.6],[8,13,4.5,2],[16,10,.7,6],[-14,0,5,.3],[18.6,-6,1.7,1.8],[9,-6,6.2,6.2],[.4,-1,4.1,3],[-24.3,8,.6,20.2],[2,-25.4,12,2.7],[22.5,11.2,2.2,.6],[-24,-20,1.6,12],[24,-4,1.6,20],[-12,25.6,22,1.2]])solid(SK.x+x,SK.z+z,w,d,'skate');
  fence(-164,-29,-110,-29,1.1,'#647d80');fence(-164,29,-110,29,1.1,'#647d80');fence(-164,-29,-164,29,1.1,'#647d80');fence(-110,-29,-110,29,1.1,'#647d80',[43,51]);
  for(const z of [-25,-20,-15])tree(SK.x-24,SK.z+z,Math.round(z),3.4);
  for(const z of [-12,-4,4])tree(SK.x+24,SK.z+z,Math.round(z),3.4);
