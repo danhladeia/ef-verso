@@ -1,0 +1,34 @@
+#theory{position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:#2a1259cc;padding:16px}
+#theory[hidden]{display:none}
+#theory [hidden]{display:none!important}
+.theory-card{background:#fffdfa;border-radius:20px;padding:26px 24px;max-width:460px;width:100%;max-height:88dvh;overflow:auto;box-shadow:0 20px 60px #0006}
+.theory-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.theory-head small{color:#6a2fb0;font-weight:bold;letter-spacing:.4px;font-size:11px}
+.theory-head button{background:#eee4fb;color:#4a1f8a;border:0;border-radius:10px;padding:8px 12px;font-size:12px;font-weight:bold;cursor:pointer}
+.theory-coins{font-size:12px;color:#5c4d78;margin:4px 0 14px}
+.theory-unit-title{font-size:13px;color:#6a2fb0;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.3px}
+.theory-unit-title:first-child{margin-top:4px}
+.theory-week{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#f7f2ff;border:2px solid #e0d4f5;border-radius:14px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.theory-week:disabled{opacity:.55;cursor:not-allowed}
+.theory-week.done{border-color:#2fa36b;background:#eafaf1}
+.theory-week-n{width:28px;height:28px;border-radius:50%;background:#6a2fb0;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;flex:none;font-size:13px}
+.theory-week.done .theory-week-n{background:#2fa36b}
+.theory-week.locked .theory-week-n{background:#b8adce}
+.theory-week-text{display:flex;flex-direction:column;gap:2px}
+.theory-week-text strong{font-size:14px;color:#2a1259}
+.theory-week-text small{font-size:11px;color:#5c4d78}
+.theory-card h2{color:#2a1259;margin:4px 0 8px;font-size:19px}
+.theory-card p{font-size:14px;line-height:1.5;color:#3a2d55;margin:8px 0}
+.theory-objective{font-style:italic;color:#6a5a8a}
+.theory-card h4{margin:14px 0 4px;color:#6a2fb0;font-size:13px}
+.theory-card ol{margin:0;padding-left:20px;font-size:14px;color:#3a2d55}
+.theory-tip,.theory-discuss,.theory-challenge{background:#f7f2ff;border-radius:10px;padding:8px 10px}
+.theory-primary{display:block;width:100%;background:#6a2fb0;color:#fff;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:bold;cursor:pointer;margin-top:14px}
+.theory-options{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.theory-option{text-align:left;background:#f7f2ff;border:2px solid #e0d4f5;border-radius:12px;padding:11px 14px;font-size:14px;cursor:pointer;color:#2a1259}
+.theory-option.correct{border-color:#2fa36b;background:#eafaf1}
+.theory-option.wrong{border-color:#d94b45;background:#fdecea}
+.theory-feedback{min-height:18px;font-weight:bold;color:#6a2fb0}
+.theory-result{text-align:center}
+body.theory-active aside,body.theory-active #minimap,body.theory-active .player-actions,body.theory-active #joystick,body.theory-active #interact,body.theory-active footer,body.theory-active #camera,body.theory-active #reset,body.theory-active #admin-flight,body.theory-active #hoops-enter,body.theory-active #soccer-enter,body.theory-active #volley-enter,body.theory-active #theory-enter,body.theory-active #skate-enter{display:none}
+@media(max-width:480px){.theory-card{padding:18px 16px}}

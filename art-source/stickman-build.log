@@ -1,0 +1,284 @@
+00:07.625  blend            | Read blend: "C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\assets\Stickman Customizable Blender\Blender File\Customizable Stickman.blend"
+Reloading external rigs...
+Reloading external metarigs...
+BAKED wave 17
+BAKED walk 32
+BAKED run 20
+BAKED push 81
+BAKED jump 58
+BAKED idle 60
+C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\cidade\tools\build_stickman.py:42: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*color,1);m.use_nodes=True;s=next(n for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED');s.inputs['Base Color'].default_value=(*color,1);s.inputs['Roughness'].default_value=.85;return m
+Janela de informações: Saved as "stickman-game.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+16:22:14 | INFO: Starting glTF 2.0 export
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+16:22:14 | INFO: Extracting primitive: Cylinder.003
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | WARNING: There are more than 4 joint vertex influences.The 4 with highest weight will be used (and normalized).
+16:22:14 | INFO: Extracting primitive: Cube.058
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.059
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.048
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.050
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.052
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.063
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.013
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.026
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.028
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.005
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cube.008
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Circle.089
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Circle.018
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Plane.015
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Circle.101
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Circle.103
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Plane.008
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Plane
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.230
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.231
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.233
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.232
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.234
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.235
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.236
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.237
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.238
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.239
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cylinder.240
+16:22:14 | INFO: Primitives created: 2
+16:22:14 | INFO: Extracting primitive: Cylinder.241
+16:22:14 | INFO: Primitives created: 1
+16:22:14 | INFO: Extracting primitive: Cylinder.243
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.244
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.229
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cube.051
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.245
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Circle.107
+16:22:15 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.053
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | WARNING: Mesh Cube.054 is not valid, and may be exported wrongly
+16:22:15 | INFO: Extracting primitive: Cube.054
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.056
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cube.062
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.055
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.061
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Circle.099
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.224
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.225
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.226
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.227
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.228
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.247
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cube.060
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Circle.031
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.012
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.002
+16:22:15 | INFO: Primitives created: 3
+16:22:15 | INFO: Extracting primitive: Cube.035
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | WARNING: Mesh Cylinder.010 is not valid, and may be exported wrongly
+16:22:15 | INFO: Extracting primitive: Cylinder.010
+16:22:15 | INFO: Primitives created: 3
+16:22:15 | INFO: Extracting primitive: Sphere.001
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Sphere
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cube.007
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.008
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.009
+16:22:15 | INFO: Primitives created: 4
+16:22:15 | INFO: Extracting primitive: Cube.021
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.024
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cube.010
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.012
+16:22:15 | INFO: Primitives created: 3
+16:22:15 | INFO: Extracting primitive: Cylinder.242
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.246
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.248
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.249
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.250
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.251
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.252
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.253
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.254
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Circle.094
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.260
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.195
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.202
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.204
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Circle.084
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Circle.086
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Circle.096
+16:22:15 | INFO: Primitives created: 1
+16:22:15 | INFO: Extracting primitive: Cylinder.255
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.256
+16:22:15 | INFO: Primitives created: 2
+16:22:15 | INFO: Extracting primitive: Cylinder.257
+16:22:16 | INFO: Primitives created: 2
+16:22:16 | INFO: Extracting primitive: Cylinder.258
+16:22:16 | INFO: Primitives created: 2
+16:22:16 | INFO: Extracting primitive: Cylinder.017
+16:22:16 | INFO: Primitives created: 2
+16:22:16 | INFO: Extracting primitive: Cylinder.014
+16:22:16 | INFO: Primitives created: 2
+16:22:16 | INFO: Extracting primitive: Cylinder.015
+16:22:16 | INFO: Primitives created: 1
+16:22:16 | INFO: Extracting primitive: Cylinder.023
+16:22:16 | INFO: Primitives created: 2
+16:22:16 | INFO: Extracting primitive: Cylinder.016
+16:22:16 | INFO: Primitives created: 1
+16:22:22 | INFO: Finished glTF 2.0 export in 7.7848427295684814 s
+
+STICKMAN_COMPLETE 92 68 3830824
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit

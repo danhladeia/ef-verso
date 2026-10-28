@@ -1,0 +1,4341 @@
+{
+  "men": {
+    "objects": [
+      {
+        "name": "Adventurer_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5812342166900635,
+          0.364594042301178,
+          0.7793978452682495
+        ],
+        "mats": [
+          "Skin",
+          "Green",
+          "LightGreen"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Adventurer_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4512426555156708,
+          0.6379297971725464,
+          0.22479884326457977
+        ],
+        "mats": [
+          "Grey",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Adventurer_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.2201894074678421,
+          0.26679527759552,
+          0.417407751083374
+        ],
+        "mats": [
+          "Skin",
+          "Eyebrows",
+          "Hair",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Adventurer_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.40198010206222534,
+          0.4641421437263489,
+          0.8925338387489319
+        ],
+        "mats": [
+          "Brown",
+          "Brown2"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Backpack",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.11664395034313202,
+          1.3726651668548584
+        ],
+        "scale": [
+          0.260768860578537,
+          0.260768860578537,
+          0.260768860578537
+        ],
+        "dims": [
+          0.43827739357948303,
+          0.24037812650203705,
+          0.4113471806049347
+        ],
+        "mats": [
+          "Brown",
+          "LightGreen",
+          "Gold",
+          "Green"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Beach_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5830872058868408,
+          0.36265191435813904,
+          0.7636553049087524
+        ],
+        "mats": [
+          "Skin",
+          "LightBrown"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Beach_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.445669561624527,
+          0.6409168243408203,
+          0.16873644292354584
+        ],
+        "mats": [
+          "Skin",
+          "Red_Dark",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Beach_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.22615785896778107,
+          0.27695900201797485,
+          0.4255850315093994
+        ],
+        "mats": [
+          "Skin",
+          "Eyebrows",
+          "Eye",
+          "Hair",
+          "Earrings"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Beach_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.39978066086769104,
+          0.4131847023963928,
+          0.8723377585411072
+        ],
+        "mats": [
+          "Skin",
+          "Red_Dark",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Casual2_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5830872058868408,
+          0.3486325144767761,
+          0.7790485620498657
+        ],
+        "mats": [
+          "Skin",
+          "LightBrown"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual2_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4512462317943573,
+          0.6425978541374207,
+          0.24731586873531342
+        ],
+        "mats": [
+          "Red_Dark",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual2_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.22475333511829376,
+          0.34575214982032776,
+          0.3520317077636719
+        ],
+        "mats": [
+          "Skin",
+          "Skin_Darker",
+          "Eyebrows",
+          "Hair",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual2_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.37351420521736145,
+          0.45149511098861694,
+          0.8954698443412781
+        ],
+        "mats": [
+          "LightBlue"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -5.093170676873093e-12,
+          1.3038516932795119e-09,
+          0.006583178415894508
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5923892259597778,
+          0.3703495264053345,
+          0.7958841919898987
+        ],
+        "mats": [
+          "Skin",
+          "Purple"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4512055814266205,
+          0.6430452466011047,
+          0.14482899010181427
+        ],
+        "mats": [
+          "Purple",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -5.093170676873093e-12,
+          1.3038516932795119e-09,
+          8.344650836988876e-08
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.2274520844221115,
+          0.25979530811309814,
+          0.3677194118499756
+        ],
+        "mats": [
+          "Skin",
+          "Eyebrows",
+          "Eye",
+          "Hair"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -5.093170676873093e-12,
+          1.3038516932795119e-09,
+          8.344650836988876e-08
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.39978066086769104,
+          0.4246019721031189,
+          0.9116182923316956
+        ],
+        "mats": [
+          "Skin",
+          "LightBlue"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "CharacterArmature",
+        "type": "ARMATURE",
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8152740001678467,
+          0.8459686040878296,
+          1.808518409729004
+        ],
+        "mats": [],
+        "modifiers": []
+      },
+      {
+        "name": "Farmer_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.579565167427063,
+          0.3539083003997803,
+          0.775393009185791
+        ],
+        "mats": [
+          "Skin",
+          "LightBlue",
+          "Brown",
+          "Beige"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Farmer_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4512549936771393,
+          0.6375971436500549,
+          0.21552233397960663
+        ],
+        "mats": [
+          "Brown",
+          "Brown2"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Farmer_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.3536478877067566,
+          0.36131665110588074,
+          0.4033087491989136
+        ],
+        "mats": [
+          "Skin",
+          "Eyebrows",
+          "Beige",
+          "Red",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Farmer_Pants",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4094904959201813,
+          0.49469155073165894,
+          0.9004473686218262
+        ],
+        "mats": [
+          "LightBlue"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Horse_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          0.3500000238418579,
+          0.3500000238418579,
+          0.3500000238418579
+        ],
+        "dims": [
+          0.2173772007226944,
+          0.4226093292236328,
+          0.4689420163631439
+        ],
+        "mats": [
+          "Brown",
+          "Brown2",
+          "Eyebrows",
+          "Black",
+          "Muzzle",
+          "White",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "King_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.6120774745941162,
+          0.3600018620491028,
+          0.7893142700195312
+        ],
+        "mats": [
+          "Skin",
+          "Blue",
+          "Metal",
+          "Beige",
+          "Metal_Dark"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "King_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4312070608139038,
+          0.6320204138755798,
+          0.23187954723834991
+        ],
+        "mats": [
+          "Metal"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "King_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.22615784406661987,
+          0.28923168778419495,
+          0.44018638134002686
+        ],
+        "mats": [
+          "Skin",
+          "Hair_White",
+          "Gold",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "King_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4510810375213623,
+          0.47572728991508484,
+          0.8841958045959473
+        ],
+        "mats": [
+          "DarkBrown",
+          "Metal",
+          "Metal_Dark"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Pistol",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -0.7169699668884277,
+          -0.08865048736333847,
+          1.4161148071289062
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.06409752368927002,
+          0.23713362216949463,
+          0.24906408786773682
+        ],
+        "mats": [
+          "DarkBrown",
+          "Grey",
+          "Metal",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5830872058868408,
+          0.3652021586894989,
+          0.82403564453125
+        ],
+        "mats": [
+          "Skin",
+          "White",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4512055516242981,
+          0.6430454254150391,
+          0.20888057351112366
+        ],
+        "mats": [
+          "Skin",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.21426686644554138,
+          0.3949454426765442,
+          0.5271683931350708
+        ],
+        "mats": [
+          "Skin",
+          "Eye",
+          "Eyebrows",
+          "Red_Dark",
+          "Red",
+          "Earrings"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.3707885146141052,
+          0.4554820656776428,
+          0.9082132577896118
+        ],
+        "mats": [
+          "Skin",
+          "LightBlue"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "SpaceSuit_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.59058678150177,
+          0.3516239523887634,
+          0.8012676239013672
+        ],
+        "mats": [
+          "SciFi_Light",
+          "SciFi_Light_Accent",
+          "SciFi_Main",
+          "SciFi_MainDark"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "SpaceSuit_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4401571750640869,
+          0.6304011940956116,
+          0.2785644233226776
+        ],
+        "mats": [
+          "SciFi_Light_Accent",
+          "SciFi_Light"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "SpaceSuit_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.3145028054714203,
+          0.3434685170650482,
+          0.4641455411911011
+        ],
+        "mats": [
+          "SciFi_Light",
+          "SciFi_Light_Accent",
+          "SciFi_Main",
+          "Grey"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "SpaceSuit_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.41663604974746704,
+          0.45882338285446167,
+          0.7994136810302734
+        ],
+        "mats": [
+          "SciFi_Main",
+          "SciFi_Light",
+          "SciFi_Light_Accent",
+          "SciFi_MainDark"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.00658309506252408
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5821315050125122,
+          0.34871113300323486,
+          0.7791475057601929
+        ],
+        "mats": [
+          "Skin",
+          "Tie",
+          "Suit",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.4512055814266205,
+          0.6430470943450928,
+          0.1753741055727005
+        ],
+        "mats": [
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.22630327939987183,
+          0.2577190399169922,
+          0.3574862480163574
+        ],
+        "mats": [
+          "Skin",
+          "Eyebrows",
+          "Hair",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.37351417541503906,
+          0.45215165615081787,
+          0.8889338374137878
+        ],
+        "mats": [
+          "Suit"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Swat_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.6091344952583313,
+          0.3559282124042511,
+          0.8070335388183594
+        ],
+        "mats": [
+          "Skin",
+          "Swat",
+          "Swat_Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Swat_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.44590893387794495,
+          0.6338764429092407,
+          0.29392093420028687
+        ],
+        "mats": [
+          "Swat_Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Swat_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.23739290237426758,
+          0.27628087997436523,
+          0.3709113597869873
+        ],
+        "mats": [
+          "Swat_Black",
+          "Swat",
+          "Visor"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Swat_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.43771135807037354,
+          0.47692567110061646,
+          0.8281604051589966
+        ],
+        "mats": [
+          "Swat",
+          "Swat_Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Sword",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -0.6846631169319153,
+          -0.09188714623451233,
+          1.4116342067718506
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.2841547727584839,
+          0.7921998500823975,
+          0.2801862955093384
+        ],
+        "mats": [
+          "Metal_Dark",
+          "Gold",
+          "Brown",
+          "Metal"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5830872058868408,
+          0.3534336984157562,
+          0.778496265411377
+        ],
+        "mats": [
+          "Skin",
+          "Worker_Yellow",
+          "Worker_Vest",
+          "LightBrown"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.45123761892318726,
+          0.6379885673522949,
+          0.27875858545303345
+        ],
+        "mats": [
+          "Grey",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.23824937641620636,
+          0.3378182053565979,
+          0.4103074073791504
+        ],
+        "mats": [
+          "Skin",
+          "Eyebrows",
+          "Worker_Yellow",
+          "Moustache",
+          "Eye"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.40657222270965576,
+          0.466372013092041,
+          0.8914467692375183
+        ],
+        "mats": [
+          "Brown",
+          "Brown2"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ],
+          [
+            "Suavizar automaticamente",
+            "NODES"
+          ]
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Death",
+        "range": [
+          0.0,
+          32.0
+        ]
+      },
+      {
+        "name": "Gun_Shoot",
+        "range": [
+          0.0,
+          18.0
+        ]
+      },
+      {
+        "name": "HitRecieve",
+        "range": [
+          0.0,
+          17.0
+        ]
+      },
+      {
+        "name": "HitRecieve_2",
+        "range": [
+          0.0,
+          17.0
+        ]
+      },
+      {
+        "name": "Idle",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Gun",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Gun_Pointing",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Gun_Shoot",
+        "range": [
+          0.0,
+          20.0
+        ]
+      },
+      {
+        "name": "Idle_Neutral",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Sword",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Interact",
+        "range": [
+          0.0,
+          38.0
+        ]
+      },
+      {
+        "name": "Kick_Left",
+        "range": [
+          0.0,
+          28.0
+        ]
+      },
+      {
+        "name": "Kick_Right",
+        "range": [
+          0.0,
+          28.0
+        ]
+      },
+      {
+        "name": "Punch_Left",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Punch_Right",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Roll",
+        "range": [
+          0.0,
+          40.0
+        ]
+      },
+      {
+        "name": "Run",
+        "range": [
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "name": "Run_Back",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Run_Left",
+        "range": [
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "name": "Run_Right",
+        "range": [
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "name": "Run_Shoot",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Sword_Slash",
+        "range": [
+          0.0,
+          31.0
+        ]
+      },
+      {
+        "name": "Walk",
+        "range": [
+          0.0,
+          40.0
+        ]
+      },
+      {
+        "name": "Wave",
+        "range": [
+          0.0,
+          50.0
+        ]
+      }
+    ],
+    "rigs": [
+      {
+        "name": "CharacterArmature",
+        "bones": [
+          "Root",
+          "Body",
+          "Hips",
+          "Abdomen",
+          "Torso",
+          "Chest",
+          "Neck",
+          "Head",
+          "Shoulder.L",
+          "UpperArm.L",
+          "LowerArm.L",
+          "Wrist.L",
+          "Index1.L",
+          "Index2.L",
+          "Index3.L",
+          "Index4.L",
+          "Middle1.L",
+          "Middle2.L",
+          "Middle3.L",
+          "Middle4.L",
+          "Ring1.L",
+          "Ring2.L",
+          "Ring3.L",
+          "Ring4.L",
+          "Pinky1.L",
+          "Pinky2.L",
+          "Pinky3.L",
+          "Pinky4.L",
+          "Thumb1.L",
+          "Thumb2.L",
+          "Thumb3.L",
+          "Shoulder.R",
+          "UpperArm.R",
+          "LowerArm.R",
+          "Wrist.R",
+          "Index1.R",
+          "Index2.R",
+          "Index3.R",
+          "Index4.R",
+          "Middle1.R",
+          "Middle2.R",
+          "Middle3.R",
+          "Middle4.R",
+          "Ring1.R",
+          "Ring2.R",
+          "Ring3.R",
+          "Ring4.R",
+          "Pinky1.R",
+          "Pinky2.R",
+          "Pinky3.R",
+          "Pinky4.R",
+          "Thumb1.R",
+          "Thumb2.R",
+          "Thumb3.R",
+          "UpperLeg.L",
+          "LowerLeg.L",
+          "UpperLeg.R",
+          "LowerLeg.R",
+          "Foot.L",
+          "PT.L",
+          "Foot.R",
+          "PT.R"
+        ],
+        "nla": []
+      }
+    ],
+    "materials": [
+      {
+        "name": "Beige",
+        "color": [
+          0.33245155215263367,
+          0.30946895480155945,
+          0.2015562802553177,
+          1.0
+        ]
+      },
+      {
+        "name": "Black",
+        "color": [
+          0.017641952261328697,
+          0.017641952261328697,
+          0.017641952261328697,
+          1.0
+        ]
+      },
+      {
+        "name": "Brown",
+        "color": [
+          0.17885959148406982,
+          0.12677308917045593,
+          0.051317352801561356,
+          1.0
+        ]
+      },
+      {
+        "name": "Brown2",
+        "color": [
+          0.10653223842382431,
+          0.07631582021713257,
+          0.032025814056396484,
+          1.0
+        ]
+      },
+      {
+        "name": "DarkBrown",
+        "color": [
+          0.07036010175943375,
+          0.048171836882829666,
+          0.0368894599378109,
+          1.0
+        ]
+      },
+      {
+        "name": "Earrings",
+        "color": [
+          0.42869052290916443,
+          0.24228115379810333,
+          0.0666259378194809,
+          1.0
+        ]
+      },
+      {
+        "name": "Eye",
+        "color": [
+          0.03106195665895939,
+          0.018161438405513763,
+          0.01130784023553133,
+          1.0
+        ]
+      },
+      {
+        "name": "Eyebrows",
+        "color": [
+          0.048171836882829666,
+          0.03433981165289879,
+          0.022173885256052017,
+          1.0
+        ]
+      },
+      {
+        "name": "Gold",
+        "color": [
+          0.2788942754268646,
+          0.17464742064476013,
+          0.039546236395835876,
+          1.0
+        ]
+      },
+      {
+        "name": "Green",
+        "color": [
+          0.06071806326508522,
+          0.05050992593169212,
+          0.018883628770709038,
+          1.0
+        ]
+      },
+      {
+        "name": "Grey",
+        "color": [
+          0.04970657452940941,
+          0.04970657452940941,
+          0.04970657452940941,
+          1.0
+        ]
+      },
+      {
+        "name": "Hair",
+        "color": [
+          0.06680474430322647,
+          0.027386492118239403,
+          0.00902561191469431,
+          1.0
+        ]
+      },
+      {
+        "name": "Hair_White",
+        "color": [
+          0.5382204055786133,
+          0.5382204055786133,
+          0.5382204055786133,
+          1.0
+        ]
+      },
+      {
+        "name": "LightBlue",
+        "color": [
+          0.033104777336120605,
+          0.04970657452940941,
+          0.06301002949476242,
+          1.0
+        ]
+      },
+      {
+        "name": "LightBrown",
+        "color": [
+          0.3049873113632202,
+          0.2788942754268646,
+          0.22696588933467865,
+          1.0
+        ]
+      },
+      {
+        "name": "LightGreen",
+        "color": [
+          0.09850181639194489,
+          0.08484306186437607,
+          0.03705023229122162,
+          1.0
+        ]
+      },
+      {
+        "name": "Metal",
+        "color": [
+          0.12461766600608826,
+          0.12823604047298431,
+          0.12534822523593903,
+          1.0
+        ]
+      },
+      {
+        "name": "Metal_Dark",
+        "color": [
+          0.07838419079780579,
+          0.08000797778367996,
+          0.07838419079780579,
+          1.0
+        ]
+      },
+      {
+        "name": "Moustache",
+        "color": [
+          0.16263839602470398,
+          0.0526905357837677,
+          0.0013117819325998425,
+          1.0
+        ]
+      },
+      {
+        "name": "Muzzle",
+        "color": [
+          0.046960070729255676,
+          0.03439539670944214,
+          0.01925700344145298,
+          1.0
+        ]
+      },
+      {
+        "name": "Purple",
+        "color": [
+          0.06301002949476242,
+          0.038204375654459,
+          0.10461650043725967,
+          1.0
+        ]
+      },
+      {
+        "name": "Red",
+        "color": [
+          0.20189833641052246,
+          0.0048876297660171986,
+          0.01379700843244791,
+          1.0
+        ]
+      },
+      {
+        "name": "Red_Dark",
+        "color": [
+          0.20507875084877014,
+          0.020288560539484024,
+          0.03433981165289879,
+          1.0
+        ]
+      },
+      {
+        "name": "SciFi_Light",
+        "color": [
+          0.44797348976135254,
+          0.3897307217121124,
+          0.36535191535949707,
+          1.0
+        ]
+      },
+      {
+        "name": "SciFi_Light_Accent",
+        "color": [
+          0.3662526309490204,
+          0.11193244159221649,
+          0.03071345016360283,
+          1.0
+        ]
+      },
+      {
+        "name": "SciFi_Main",
+        "color": [
+          0.054480284452438354,
+          0.08865559101104736,
+          0.08437623083591461,
+          1.0
+        ]
+      },
+      {
+        "name": "SciFi_MainDark",
+        "color": [
+          0.029556844383478165,
+          0.04518621414899826,
+          0.04970657452940941,
+          1.0
+        ]
+      },
+      {
+        "name": "Blue",
+        "color": [
+          0.04970657452940941,
+          0.06301002949476242,
+          0.09758735448122025,
+          1.0
+        ]
+      },
+      {
+        "name": "Skin",
+        "color": [
+          0.6172067523002625,
+          0.4178851246833801,
+          0.23839758336544037,
+          1.0
+        ]
+      },
+      {
+        "name": "Skin_Darker",
+        "color": [
+          0.486887663602829,
+          0.3306396007537842,
+          0.18961724638938904,
+          1.0
+        ]
+      },
+      {
+        "name": "Suit",
+        "color": [
+          0.015208512544631958,
+          0.021219007670879364,
+          0.02732088789343834,
+          1.0
+        ]
+      },
+      {
+        "name": "Swat",
+        "color": [
+          0.07818741351366043,
+          0.08650047332048416,
+          0.10224173218011856,
+          1.0
+        ]
+      },
+      {
+        "name": "Swat_Black",
+        "color": [
+          0.03071345016360283,
+          0.02732088789343834,
+          0.024157628417015076,
+          1.0
+        ]
+      },
+      {
+        "name": "Tie",
+        "color": [
+          0.0666259378194809,
+          0.07818741351366043,
+          0.10224173218011856,
+          1.0
+        ]
+      },
+      {
+        "name": "Visor",
+        "color": [
+          0.008023192174732685,
+          0.008023192174732685,
+          0.008023192174732685,
+          1.0
+        ]
+      },
+      {
+        "name": "White",
+        "color": [
+          0.45752230286598206,
+          0.45752230286598206,
+          0.45752230286598206,
+          1.0
+        ]
+      },
+      {
+        "name": "Worker_Vest",
+        "color": [
+          0.48514997959136963,
+          0.12743771076202393,
+          0.023153362795710564,
+          1.0
+        ]
+      },
+      {
+        "name": "Worker_Yellow",
+        "color": [
+          0.4564110040664673,
+          0.29613831639289856,
+          0.006512089632451534,
+          1.0
+        ]
+      }
+    ]
+  },
+  "women": {
+    "objects": [
+      {
+        "name": "Adventurer_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          1.6492453813552856,
+          0.3942544460296631,
+          0.4501965045928955
+        ],
+        "mats": [
+          "Skin",
+          "White",
+          "Brown2",
+          "LightGreen",
+          "Gold",
+          "Green"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Adventurer_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.14559359848499298,
+          0.28825464844703674,
+          0.4373490512371063
+        ],
+        "mats": [
+          "Brown_02",
+          "Brown2"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Adventurer_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.2195340096950531,
+          0.2317143976688385,
+          0.28919148445129395
+        ],
+        "mats": [
+          "Skin",
+          "Hair_Brown",
+          "Brown"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Adventurer_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.20071758329868317,
+          0.23149940371513367,
+          0.8222795724868774
+        ],
+        "mats": [
+          "Skin",
+          "Brown_02",
+          "White",
+          "Brown2",
+          "LightGreen",
+          "Gold"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8250574469566345,
+          0.2015501707792282,
+          0.4466519355773926
+        ],
+        "mats": [
+          "Skin",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.10376716405153275,
+          0.2860563397407532,
+          0.1921122968196869
+        ],
+        "mats": [
+          "Skin",
+          "Grey"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.2337448000907898,
+          0.29199153184890747,
+          0.3202551603317261
+        ],
+        "mats": [
+          "Skin",
+          "Hair_Brown",
+          "Brown",
+          "Hair_Blond"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Casual_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.1799163818359375,
+          0.23151981830596924,
+          0.9877588152885437
+        ],
+        "mats": [
+          "Orange"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "CharacterArmature",
+        "type": "ARMATURE",
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.7831307649612427,
+          0.8459612727165222,
+          1.8087570667266846
+        ],
+        "mats": [],
+        "modifiers": []
+      },
+      {
+        "name": "Formad_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.24104154109954834,
+          0.31766003370285034,
+          0.3188304901123047
+        ],
+        "mats": [
+          "Skin",
+          "Brown",
+          "Red"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Formal_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.824622631072998,
+          0.20938456058502197,
+          0.4204261302947998
+        ],
+        "mats": [
+          "Skin",
+          "LimeGreen",
+          "Gold"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Formal_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.10284079611301422,
+          0.25456559658050537,
+          0.1810753345489502
+        ],
+        "mats": [
+          "Skin",
+          "Red"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Formal_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.21365399658679962,
+          0.3070122003555298,
+          0.9530486464500427
+        ],
+        "mats": [
+          "Skin",
+          "LimeGreen"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Medieval_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246226906776428,
+          0.2531645894050598,
+          0.49553120136260986
+        ],
+        "mats": [
+          "Skin",
+          "DarkBrown",
+          "Gold",
+          "LightBrown",
+          "Black",
+          "Metal"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Medieval_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.11687752604484558,
+          0.27078166604042053,
+          0.4578806757926941
+        ],
+        "mats": [
+          "DarkBrown",
+          "LightBrown"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Medieval_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.3448619842529297,
+          0.31203603744506836,
+          0.3568410873413086
+        ],
+        "mats": [
+          "Skin",
+          "White",
+          "Brown",
+          "DarkBrown",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Medieval_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.222610205411911,
+          0.2462892234325409,
+          0.7918063998222351
+        ],
+        "mats": [
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Pistol",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -0.7355643510818481,
+          -0.0942755714058876,
+          1.405942678451538
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.25830087065696716,
+          0.18264859914779663,
+          0.06763014197349548
+        ],
+        "mats": [
+          "DarkBrown",
+          "Grey",
+          "Metal",
+          "Black"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Punk_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246226906776428,
+          0.21449610590934753,
+          0.4207218885421753
+        ],
+        "mats": [
+          "Skin",
+          "Pink",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.12338563799858093,
+          0.2861808240413666,
+          0.4272204041481018
+        ],
+        "mats": [
+          "Black",
+          "Grey"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.2195340096950531,
+          0.3420726954936981,
+          0.4208333492279053
+        ],
+        "mats": [
+          "Skin",
+          "Pink",
+          "Black",
+          "Hair_Brown",
+          "Brown"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Punk_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.1879744976758957,
+          0.23149940371513367,
+          0.7523733377456665
+        ],
+        "mats": [
+          "Skin",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "SciFi_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246226906776428,
+          0.2200596034526825,
+          0.4178156852722168
+        ],
+        "mats": [
+          "Skin",
+          "Black",
+          "Metal",
+          "LightBlue",
+          "Blue"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "SciFi_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.13745954632759094,
+          0.2784718871116638,
+          0.5303760766983032
+        ],
+        "mats": [
+          "Black",
+          "Metal"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "SciFi_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.23093374073505402,
+          0.29121536016464233,
+          0.31568872928619385
+        ],
+        "mats": [
+          "Skin",
+          "Black",
+          "LightBlue",
+          "Brown",
+          "Hair_Black",
+          "Blue"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "SciFi_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.18919867277145386,
+          0.23149940371513367,
+          0.7009615898132324
+        ],
+        "mats": [
+          "Skin",
+          "Black",
+          "Metal",
+          "LightBlue",
+          "Blue"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Soldier_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246226906776428,
+          0.20938456058502197,
+          0.4152514934539795
+        ],
+        "mats": [
+          "Black",
+          "Swat",
+          "Skin"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Soldier_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.15795159339904785,
+          0.2951333820819855,
+          0.42946308851242065
+        ],
+        "mats": [
+          "Grey",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Soldier_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.22104832530021667,
+          0.24507848918437958,
+          0.29091310501098633
+        ],
+        "mats": [
+          "Skin",
+          "Hair_Brown",
+          "Brown"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Soldier_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.19804887473583221,
+          0.23177577555179596,
+          0.820824146270752
+        ],
+        "mats": [
+          "Grey",
+          "Black",
+          "Swat"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246226906776428,
+          0.219302698969841,
+          0.4096238613128662
+        ],
+        "mats": [
+          "Skin",
+          "Black",
+          "White"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.11980732530355453,
+          0.2768241763114929,
+          0.19370673596858978
+        ],
+        "mats": [
+          "Skin",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.23362110555171967,
+          0.29227855801582336,
+          0.32022690773010254
+        ],
+        "mats": [
+          "Skin",
+          "Hair_Brown",
+          "Brown",
+          "Hair_Blond"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Suit_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.17982158064842224,
+          0.2293630987405777,
+          1.0112224817276
+        ],
+        "mats": [
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Sword",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          -0.685599148273468,
+          -0.09452216327190399,
+          1.4195679426193237
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.18154868483543396,
+          0.8665512800216675,
+          0.04150085151195526
+        ],
+        "mats": [
+          "Metal_Dark",
+          "Gold",
+          "Brown2",
+          "Metal"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Witch_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246949911117554,
+          0.2076674997806549,
+          0.40924572944641113
+        ],
+        "mats": [
+          "Skin",
+          "Brown2",
+          "Purple",
+          "Gold"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Witch_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.14822866022586823,
+          0.2947472035884857,
+          0.45792046189308167
+        ],
+        "mats": [
+          "Brown2"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Witch_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.5255146622657776,
+          0.548151969909668,
+          0.5659447908401489
+        ],
+        "mats": [
+          "Skin",
+          "Purple",
+          "Brown",
+          "Gold",
+          "Hair_Black"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Witch_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.22005502879619598,
+          0.3415270447731018,
+          0.7490424513816833
+        ],
+        "mats": [
+          "Purple",
+          "Brown",
+          "Gold"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Body",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.8246226906776428,
+          0.21196182072162628,
+          0.3948822021484375
+        ],
+        "mats": [
+          "Skin",
+          "Worker_Vest",
+          "White",
+          "Worker_Yellow"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Feet",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.11980732530355453,
+          0.2768241763114929,
+          0.19901826977729797
+        ],
+        "mats": [
+          "Skin",
+          "Black"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Head",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.23818661272525787,
+          0.3291584253311157,
+          0.3203927278518677
+        ],
+        "mats": [
+          "Skin",
+          "DarkBrown",
+          "Brown",
+          "Worker_Yellow"
+        ],
+        "modifiers": [
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      },
+      {
+        "name": "Worker_Legs",
+        "type": "MESH",
+        "parent": "CharacterArmature",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dims": [
+          0.1950058490037918,
+          0.23149940371513367,
+          1.0079069137573242
+        ],
+        "mats": [
+          "Brown_02",
+          "Brown2"
+        ],
+        "modifiers": [
+          [
+            "Mirror",
+            "MIRROR"
+          ],
+          [
+            "Armature",
+            "ARMATURE"
+          ]
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Death",
+        "range": [
+          0.0,
+          32.0
+        ]
+      },
+      {
+        "name": "Gun_Shoot",
+        "range": [
+          0.0,
+          18.0
+        ]
+      },
+      {
+        "name": "HitRecieve",
+        "range": [
+          0.0,
+          17.0
+        ]
+      },
+      {
+        "name": "HitRecieve_2",
+        "range": [
+          0.0,
+          17.0
+        ]
+      },
+      {
+        "name": "Idle",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Gun",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Gun_Pointing",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Gun_Shoot",
+        "range": [
+          0.0,
+          20.0
+        ]
+      },
+      {
+        "name": "Idle_Neutral",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Idle_Sword",
+        "range": [
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "name": "Interact",
+        "range": [
+          0.0,
+          38.0
+        ]
+      },
+      {
+        "name": "Kick_Left",
+        "range": [
+          0.0,
+          28.0
+        ]
+      },
+      {
+        "name": "Kick_Right",
+        "range": [
+          0.0,
+          28.0
+        ]
+      },
+      {
+        "name": "Punch_Left",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Punch_Right",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Roll",
+        "range": [
+          0.0,
+          40.0
+        ]
+      },
+      {
+        "name": "Run",
+        "range": [
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "name": "Run_Back",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Run_Left",
+        "range": [
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "name": "Run_Right",
+        "range": [
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "name": "Run_Shoot",
+        "range": [
+          0.0,
+          25.0
+        ]
+      },
+      {
+        "name": "Sword_Slash",
+        "range": [
+          0.0,
+          31.0
+        ]
+      },
+      {
+        "name": "Walk",
+        "range": [
+          0.0,
+          40.0
+        ]
+      },
+      {
+        "name": "Wave",
+        "range": [
+          0.0,
+          50.0
+        ]
+      }
+    ],
+    "rigs": [
+      {
+        "name": "CharacterArmature",
+        "bones": [
+          "Root",
+          "Body",
+          "Hips",
+          "Abdomen",
+          "Torso",
+          "Chest",
+          "Neck",
+          "Head",
+          "Shoulder.L",
+          "UpperArm.L",
+          "LowerArm.L",
+          "Wrist.L",
+          "Index1.L",
+          "Index2.L",
+          "Index3.L",
+          "Index4.L",
+          "Middle1.L",
+          "Middle2.L",
+          "Middle3.L",
+          "Middle4.L",
+          "Ring1.L",
+          "Ring2.L",
+          "Ring3.L",
+          "Ring4.L",
+          "Pinky1.L",
+          "Pinky2.L",
+          "Pinky3.L",
+          "Pinky4.L",
+          "Thumb1.L",
+          "Thumb2.L",
+          "Thumb3.L",
+          "Shoulder.R",
+          "UpperArm.R",
+          "LowerArm.R",
+          "Wrist.R",
+          "Index1.R",
+          "Index2.R",
+          "Index3.R",
+          "Index4.R",
+          "Middle1.R",
+          "Middle2.R",
+          "Middle3.R",
+          "Middle4.R",
+          "Ring1.R",
+          "Ring2.R",
+          "Ring3.R",
+          "Ring4.R",
+          "Pinky1.R",
+          "Pinky2.R",
+          "Pinky3.R",
+          "Pinky4.R",
+          "Thumb1.R",
+          "Thumb2.R",
+          "Thumb3.R",
+          "UpperLeg.L",
+          "LowerLeg.L",
+          "UpperLeg.R",
+          "LowerLeg.R",
+          "Foot.L",
+          "PT.L",
+          "Foot.R",
+          "PT.R"
+        ],
+        "nla": [
+          [
+            "[Action Stash]",
+            [
+              [
+                "Idle",
+                "Idle"
+              ]
+            ]
+          ],
+          [
+            "[Action Stash].001",
+            [
+              [
+                "Run_Left",
+                "Run_Left"
+              ]
+            ]
+          ]
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "Blue",
+        "color": [
+          0.005220126360654831,
+          0.07556140422821045,
+          0.15232181549072266,
+          1.0
+        ]
+      },
+      {
+        "name": "Brown",
+        "color": [
+          0.03106195665895939,
+          0.018161438405513763,
+          0.01130784023553133,
+          1.0
+        ]
+      },
+      {
+        "name": "Brown2",
+        "color": [
+          0.10653223842382431,
+          0.07631582021713257,
+          0.032025814056396484,
+          1.0
+        ]
+      },
+      {
+        "name": "Brown_02",
+        "color": [
+          0.17885959148406982,
+          0.12677308917045593,
+          0.051317352801561356,
+          1.0
+        ]
+      },
+      {
+        "name": "DarkBrown",
+        "color": [
+          0.06680474430322647,
+          0.027386492118239403,
+          0.00902561191469431,
+          1.0
+        ]
+      },
+      {
+        "name": "Gold",
+        "color": [
+          0.42869052290916443,
+          0.24228115379810333,
+          0.0666259378194809,
+          1.0
+        ]
+      },
+      {
+        "name": "Green",
+        "color": [
+          0.06071806326508522,
+          0.05050992593169212,
+          0.018883628770709038,
+          1.0
+        ]
+      },
+      {
+        "name": "Grey",
+        "color": [
+          0.04970657452940941,
+          0.04970657452940941,
+          0.04970657452940941,
+          1.0
+        ]
+      },
+      {
+        "name": "Hair_Black",
+        "color": [
+          0.021911652758717537,
+          0.020826540887355804,
+          0.021978337317705154,
+          1.0
+        ]
+      },
+      {
+        "name": "Hair_Blond",
+        "color": [
+          0.25979405641555786,
+          0.17865963280200958,
+          0.0627506673336029,
+          1.0
+        ]
+      },
+      {
+        "name": "Hair_Brown",
+        "color": [
+          0.048171836882829666,
+          0.03433981165289879,
+          0.022173885256052017,
+          1.0
+        ]
+      },
+      {
+        "name": "LightBlue",
+        "color": [
+          0.014906845986843109,
+          0.19880175590515137,
+          0.29568830132484436,
+          1.0
+        ]
+      },
+      {
+        "name": "LightBrown",
+        "color": [
+          0.1574312299489975,
+          0.060594554990530014,
+          0.01763145811855793,
+          1.0
+        ]
+      },
+      {
+        "name": "LightGreen",
+        "color": [
+          0.09850181639194489,
+          0.08484306186437607,
+          0.03705023229122162,
+          1.0
+        ]
+      },
+      {
+        "name": "LimeGreen",
+        "color": [
+          0.06206335127353668,
+          0.1375798135995865,
+          0.0564524307847023,
+          1.0
+        ]
+      },
+      {
+        "name": "Metal",
+        "color": [
+          0.1733521670103073,
+          0.1733521670103073,
+          0.1733521670103073,
+          1.0
+        ]
+      },
+      {
+        "name": "Metal_Dark",
+        "color": [
+          0.07838419079780579,
+          0.08000797778367996,
+          0.07838419079780579,
+          1.0
+        ]
+      },
+      {
+        "name": "Orange",
+        "color": [
+          0.3423798084259033,
+          0.1214110255241394,
+          0.039835505187511444,
+          1.0
+        ]
+      },
+      {
+        "name": "Pink",
+        "color": [
+          0.137580007314682,
+          0.011954739689826965,
+          0.12987622618675232,
+          1.0
+        ]
+      },
+      {
+        "name": "Purple",
+        "color": [
+          0.05383463203907013,
+          0.009618318639695644,
+          0.13758108019828796,
+          1.0
+        ]
+      },
+      {
+        "name": "Red",
+        "color": [
+          0.13757821917533875,
+          0.01585523784160614,
+          0.0038432562723755836,
+          1.0
+        ]
+      },
+      {
+        "name": "Skin",
+        "color": [
+          0.6172067523002625,
+          0.4178851246833801,
+          0.23839758336544037,
+          1.0
+        ]
+      },
+      {
+        "name": "Swat",
+        "color": [
+          0.07818741351366043,
+          0.08650047332048416,
+          0.10224173218011856,
+          1.0
+        ]
+      },
+      {
+        "name": "Black",
+        "color": [
+          0.03071345016360283,
+          0.02732088789343834,
+          0.024157628417015076,
+          1.0
+        ]
+      },
+      {
+        "name": "White",
+        "color": [
+          0.45752230286598206,
+          0.45752230286598206,
+          0.45752230286598206,
+          1.0
+        ]
+      },
+      {
+        "name": "Worker_Vest",
+        "color": [
+          0.48514997959136963,
+          0.12743771076202393,
+          0.023153362795710564,
+          1.0
+        ]
+      },
+      {
+        "name": "Worker_Yellow",
+        "color": [
+          0.4564110040664673,
+          0.29613831639289856,
+          0.006512089632451534,
+          1.0
+        ]
+      }
+    ]
+  }
+}

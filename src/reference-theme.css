@@ -1,0 +1,28 @@
+/* Visual reference: Jogo_RPG_EF7/src/ui/estilo.css */
+:root{--purple:#6a2fb0;--deep:#2a1259;--light:#efe7fb;--yellow:#ffc933;--ink:#1d1433;--muted:#5d5470}
+#minimap{position:absolute;right:20px;top:85px;width:150px;height:150px;border:4px solid #fff8e8;border-radius:18px;box-shadow:0 5px 18px #2a125930;pointer-events:none}.flying #minimap{display:none}.flight-panel select{display:block;max-width:100%;padding:10px;margin:8px 0;border:2px solid #d9c8f5;border-radius:10px;background:white;color:#2a1259;font:inherit;font-size:12px}@media(max-width:700px){#minimap{width:88px;height:88px;top:72px;right:12px}aside{max-width:185px}body.third-person aside{max-width:190px}}
+.player-actions{position:absolute;bottom:90px;right:24px;display:none;gap:10px}.player-actions button[aria-pressed=true]{background:#2a125980;outline:2px solid #ffc933}
+@media(pointer:coarse){.player-actions{display:flex}}
+.flight-panel{position:absolute;left:16px;top:85px;max-width:330px;background:#fffffff0;padding:16px;border-radius:16px;border-top:5px solid #ffc933}.flight-panel span{display:block;font-size:12px;line-height:1.6;margin:10px 0}.flight-panel button{margin:4px;font-size:12px}.flying aside,.flying .player-actions,.flying #interact,.flying #camera,.flying #reset,.flying footer{display:none}@media(max-width:700px){header{flex-wrap:wrap}.player-actions{right:12px;bottom:105px;gap:6px}.player-actions button{padding:12px}.flight-panel{top:100px;max-width:240px;padding:10px}.flight-panel span{font-size:10px}}
+aside{max-height:calc(100dvh - 190px);overflow-y:auto}nav{max-height:230px;overflow-y:auto;padding:2px 4px 8px 0}
+body{font-family:'Trebuchet MS','Segoe UI',Verdana,system-ui,sans-serif;color:var(--ink)}
+.chip{color:var(--deep);background:var(--yellow);font-weight:900;letter-spacing:1px}
+.teacher-chip{background:var(--deep);color:var(--yellow);letter-spacing:.5px}
+button{border-radius:999px;background:var(--purple);color:white;font-weight:800;box-shadow:0 4px 0 var(--deep);transition:transform .12s,background .12s}
+button:hover{background:#8146c6;transform:translateY(-1px)}button:active{transform:translateY(2px);box-shadow:none}button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+aside{background:#fffffff5;border:0;border-top:7px solid var(--yellow);box-shadow:0 6px 0 #2a125924,0 14px 30px #2a12592e}
+small,h1{color:var(--purple)}h1{letter-spacing:0}aside p,#status{color:var(--muted)}
+#progress{color:var(--deep);border-color:#d9c8f5}
+nav button{background:var(--light);color:var(--deep);border:2px solid #d9c8f5;box-shadow:none;border-radius:12px}nav button:hover{background:#d9c8f5}
+footer{background:#ffffffe8;color:var(--deep);font-weight:700;border:2px solid #d9c8f5}
+#interact{background:var(--purple);color:white;border:2px solid var(--yellow)}
+#hoops-enter,#soccer-enter,#volley-enter,#theory-enter,#skate-enter{background:var(--purple);color:white;border:2px solid var(--yellow)}
+#joystick{background:#efe7fbbd;border-color:#d9c8f5}#stick{background:var(--purple);box-shadow:0 3px 0 var(--deep)}
+dialog{font-family:inherit;color:var(--ink);border-top:8px solid var(--yellow);box-shadow:0 14px 30px #2a12594d}dialog h2{color:var(--purple)}dialog p{font-size:17px}dialog button{background:var(--purple);color:white}dialog::backdrop{background:#2a125980}
+body.third-person aside{background:#fffffff0;border-top:4px solid var(--yellow)}
+/* Correr/Pular/Explorar só existem como controles de toque, estilo HUD translúcido: no desktop o teclado (Shift, Espaço, E) já cobre essas ações. */
+@media(pointer:coarse){
+ .player-actions button,#interact{background:#2a125966;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid #ffffff59;box-shadow:0 4px 16px #10302a33}
+ .player-actions button{border-radius:50%;width:62px;height:62px;padding:0;font-size:11px;font-weight:800;line-height:1.15}
+ .player-actions button[aria-pressed=true]{background:#2a1259b3}
+}

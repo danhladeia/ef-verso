@@ -1,0 +1,9 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Revisão do guarda-roupa e moradores</title><style>body{margin:0;background:#e6e0eb;font:14px system-ui;color:#38244c}main{display:flex;gap:16px;padding:10px}iframe{border:0;width:390px;height:844px;background:#fff}pre{white-space:pre-wrap;max-width:560px;max-height:800px;overflow:auto}button{padding:10px;margin:4px}</style>
+<main><iframe id="phone" src="/" title="Cidade em tela de celular"></iframe><section><h2>Verificação local</h2><p>Janela do jogo: 390 × 844.</p><button id="audit">Conferir moradores</button><button id="resident">Visitar morador</button><pre id="result">Carregando…</pre></section></main>
+<script>
+const frame=document.querySelector('iframe'),out=document.querySelector('pre');
+function audit(){const w=frame.contentWindow;if(!w.crowdReview)return;const residents=w.crowdReview();out.textContent=JSON.stringify({character:w.missionReview?.(),stats:w.cityStats(),residents,overflow:frame.contentDocument.documentElement.scrollWidth>390},null,2);}
+document.querySelector('#audit').onclick=audit;
+document.querySelector('#resident').onclick=()=>{const w=frame.contentWindow;w.document.querySelector('nav button:nth-child(4)').click();};
+frame.onload=()=>setTimeout(audit,4000);
+</script>

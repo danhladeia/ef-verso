@@ -1,0 +1,13 @@
+{
+  "roads": {
+    "removed": 25,
+    "blockers": []
+  },
+  "traffic": 10,
+  "mouseLook": true,
+  "walk": 4.37820000001786,
+  "skate": 9.531600000038745,
+  "bike": 13.201199999839094,
+  "mountainHeight": 35.20409219542641,
+  "errors": []
+}

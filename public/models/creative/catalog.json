@@ -1,0 +1,55 @@
+{
+  "face": [
+    "Male_emotion_usual_001",
+    "Male_emotion_happy_002",
+    "Male_emotion_angry_003"
+  ],
+  "hair": [
+    "Hairstyle_male_010",
+    "Hairstyle_male_012"
+  ],
+  "top": [
+    "T_Shirt_009",
+    "Outerwear_029",
+    "Outerwear_036"
+  ],
+  "bottom": [
+    "Shorts_003",
+    "Pants_010",
+    "Pants_014"
+  ],
+  "footwear": [
+    "Shoe_Sneakers_009",
+    "Shoe_Slippers_002",
+    "Shoe_Slippers_005"
+  ],
+  "hat": [
+    "Hat_010",
+    "Hat_049",
+    "Hat_057"
+  ],
+  "glasses": [
+    "Glasses_004",
+    "Glasses_006"
+  ],
+  "gloves": [
+    "Gloves_006",
+    "Gloves_014"
+  ],
+  "moustache": [
+    "Moustache_001",
+    "Moustache_002"
+  ],
+  "accessory": [
+    "Headphones_002",
+    "Clown_nose_001",
+    "Pacifier_001"
+  ],
+  "costume": [
+    "Costume_10_001",
+    "Costume_6_001"
+  ],
+  "socks": [
+    "Socks_008"
+  ]
+}

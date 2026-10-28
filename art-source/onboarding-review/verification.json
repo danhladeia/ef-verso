@@ -1,0 +1,24 @@
+{
+  "teacher": {
+    "version": 1,
+    "role": "professor",
+    "name": "Danilo",
+    "school": "Danilo"
+  },
+  "afterFinish": {
+    "student": {
+      "version": 1,
+      "role": "aluno",
+      "name": "Ana",
+      "nickname": "Aninha",
+      "className": "7º B",
+      "home": "escola"
+    },
+    "player": {
+      "x": 6,
+      "y": 0,
+      "z": -22
+    }
+  },
+  "errors": []
+}

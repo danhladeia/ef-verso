@@ -1,0 +1,2178 @@
+{
+  "sourcePages": 112,
+  "sourceImageOccurrences": 930,
+  "lessons": 60,
+  "lessonsWithImages": 0,
+  "grades": [
+    {
+      "grade": 6,
+      "source": "Conteudos EDF\\Caderno_DED_Express_EF6_leve.pdf",
+      "sha256": "6ef2d95fbc69ff1ad52897709cb5ebede3dd58792bcd383aa3535a3e8c87ed2a",
+      "pages": [
+        {
+          "page": 1,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            32
+          ]
+        },
+        {
+          "page": 2,
+          "week": null,
+          "images": 11,
+          "uniqueXrefs": [
+            39,
+            44,
+            46,
+            48,
+            50,
+            52,
+            54,
+            56,
+            58,
+            64,
+            68
+          ]
+        },
+        {
+          "page": 3,
+          "week": 1,
+          "images": 19,
+          "uniqueXrefs": [
+            39,
+            50,
+            58,
+            74,
+            78,
+            80,
+            82,
+            84,
+            86,
+            88,
+            90,
+            92,
+            94,
+            96,
+            98,
+            100,
+            102,
+            104,
+            108
+          ]
+        },
+        {
+          "page": 4,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            112,
+            115,
+            119,
+            121,
+            123,
+            125,
+            127
+          ]
+        },
+        {
+          "page": 5,
+          "week": 1,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            74,
+            139,
+            142,
+            144,
+            146,
+            168
+          ]
+        },
+        {
+          "page": 6,
+          "week": 2,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            78,
+            179,
+            181,
+            193,
+            195,
+            197
+          ]
+        },
+        {
+          "page": 7,
+          "week": 3,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            80,
+            203,
+            205,
+            207,
+            209,
+            221
+          ]
+        },
+        {
+          "page": 8,
+          "week": 4,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            82,
+            229,
+            231,
+            233,
+            235,
+            251
+          ]
+        },
+        {
+          "page": 9,
+          "week": 5,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            84,
+            260,
+            262,
+            264,
+            266,
+            277
+          ]
+        },
+        {
+          "page": 10,
+          "week": 5,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            285,
+            295,
+            297,
+            299,
+            301,
+            303,
+            305
+          ]
+        },
+        {
+          "page": 11,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            309,
+            311,
+            313,
+            315,
+            317,
+            319,
+            321
+          ]
+        },
+        {
+          "page": 12,
+          "week": 6,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            86,
+            329,
+            331,
+            333,
+            335,
+            351
+          ]
+        },
+        {
+          "page": 13,
+          "week": 7,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            88,
+            359,
+            361,
+            363,
+            366,
+            375
+          ]
+        },
+        {
+          "page": 14,
+          "week": 8,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            90,
+            395,
+            397,
+            399,
+            401,
+            413
+          ]
+        },
+        {
+          "page": 15,
+          "week": 9,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            92,
+            419,
+            421,
+            423,
+            425,
+            435
+          ]
+        },
+        {
+          "page": 16,
+          "week": 10,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            94,
+            452,
+            454,
+            456,
+            459,
+            468
+          ]
+        },
+        {
+          "page": 17,
+          "week": 10,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            480,
+            489,
+            491,
+            493,
+            495,
+            497,
+            499
+          ]
+        },
+        {
+          "page": 18,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            503,
+            505,
+            507,
+            509,
+            511,
+            513,
+            515
+          ]
+        },
+        {
+          "page": 19,
+          "week": 11,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            96,
+            520,
+            522,
+            524,
+            535,
+            537
+          ]
+        },
+        {
+          "page": 20,
+          "week": 12,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            98,
+            542,
+            544,
+            547,
+            549,
+            566
+          ]
+        },
+        {
+          "page": 21,
+          "week": 13,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            100,
+            571,
+            573,
+            575,
+            578,
+            587
+          ]
+        },
+        {
+          "page": 22,
+          "week": 14,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            102,
+            592,
+            594,
+            596,
+            598,
+            616
+          ]
+        },
+        {
+          "page": 23,
+          "week": 15,
+          "images": 6,
+          "uniqueXrefs": [
+            58,
+            621,
+            632,
+            634,
+            636,
+            638
+          ]
+        },
+        {
+          "page": 24,
+          "week": 15,
+          "images": 4,
+          "uniqueXrefs": [
+            50,
+            58,
+            104,
+            658
+          ]
+        },
+        {
+          "page": 25,
+          "week": null,
+          "images": 14,
+          "uniqueXrefs": [
+            58,
+            74,
+            94,
+            96,
+            139,
+            193,
+            203,
+            231,
+            329,
+            375,
+            413,
+            544,
+            596,
+            665
+          ]
+        },
+        {
+          "page": 26,
+          "week": null,
+          "images": 7,
+          "uniqueXrefs": [
+            48,
+            58,
+            104,
+            115,
+            311,
+            505,
+            718
+          ]
+        },
+        {
+          "page": 27,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            46,
+            52,
+            56,
+            58,
+            722,
+            724,
+            726,
+            728
+          ]
+        },
+        {
+          "page": 28,
+          "week": null,
+          "images": 2,
+          "uniqueXrefs": [
+            58,
+            64
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Movimento não é só treino",
+          "sourcePage": 5,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 2,
+          "title": "Sinais do corpo",
+          "sourcePage": 6,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 3,
+          "title": "Circuito de capacidades",
+          "sourcePage": 7,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 4,
+          "title": "Coração em ação",
+          "sourcePage": 8,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 5,
+          "title": "Meu plano de movimento",
+          "sourcePage": 10,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 6,
+          "title": "Aventura urbana: origens",
+          "sourcePage": 12,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 7,
+          "title": "Equipamentos de segurança",
+          "sourcePage": 13,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 8,
+          "title": "Riscos e prevenção",
+          "sourcePage": 14,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 9,
+          "title": "Aterrissagem e rolamento",
+          "sourcePage": 15,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 10,
+          "title": "Aventura com respeito",
+          "sourcePage": 17,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 11,
+          "title": "Lutas que contam histórias",
+          "sourcePage": 19,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 12,
+          "title": "Capoeira: movimento e música",
+          "sourcePage": 20,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 13,
+          "title": "Estratégias e segurança",
+          "sourcePage": 21,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 14,
+          "title": "Lutas sem preconceito",
+          "sourcePage": 22,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 15,
+          "title": "Festival de Movimento (missão final)",
+          "sourcePage": 24,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        }
+      ]
+    },
+    {
+      "grade": 7,
+      "source": "Conteudos EDF\\Caderno_DED_Express_EF7_leve.pdf",
+      "sha256": "dde565a2437c5a998a7ef2bea98d21abc18b9c9f67d9cf24fa3fd006a361370e",
+      "pages": [
+        {
+          "page": 1,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            32
+          ]
+        },
+        {
+          "page": 2,
+          "week": null,
+          "images": 11,
+          "uniqueXrefs": [
+            39,
+            44,
+            46,
+            48,
+            50,
+            52,
+            54,
+            56,
+            58,
+            64,
+            68
+          ]
+        },
+        {
+          "page": 3,
+          "week": 1,
+          "images": 19,
+          "uniqueXrefs": [
+            39,
+            50,
+            58,
+            74,
+            78,
+            80,
+            82,
+            84,
+            86,
+            88,
+            90,
+            92,
+            94,
+            96,
+            98,
+            100,
+            102,
+            104,
+            108
+          ]
+        },
+        {
+          "page": 4,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            112,
+            115,
+            119,
+            121,
+            123,
+            125,
+            127
+          ]
+        },
+        {
+          "page": 5,
+          "week": 1,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            74,
+            139,
+            142,
+            144,
+            146,
+            166
+          ]
+        },
+        {
+          "page": 6,
+          "week": 2,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            78,
+            177,
+            179,
+            181,
+            183,
+            197
+          ]
+        },
+        {
+          "page": 7,
+          "week": 3,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            80,
+            205,
+            207,
+            219,
+            221,
+            223
+          ]
+        },
+        {
+          "page": 8,
+          "week": 4,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            82,
+            232,
+            234,
+            236,
+            238,
+            250
+          ]
+        },
+        {
+          "page": 9,
+          "week": 5,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            84,
+            256,
+            258,
+            260,
+            262,
+            274
+          ]
+        },
+        {
+          "page": 10,
+          "week": 5,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            282,
+            292,
+            294,
+            296,
+            298,
+            300,
+            302
+          ]
+        },
+        {
+          "page": 11,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            306,
+            308,
+            310,
+            312,
+            314,
+            316,
+            318
+          ]
+        },
+        {
+          "page": 12,
+          "week": 6,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            86,
+            325,
+            327,
+            329,
+            331,
+            341
+          ]
+        },
+        {
+          "page": 13,
+          "week": 7,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            88,
+            349,
+            351,
+            353,
+            355,
+            365
+          ]
+        },
+        {
+          "page": 14,
+          "week": 8,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            90,
+            373,
+            375,
+            377,
+            379,
+            396
+          ]
+        },
+        {
+          "page": 15,
+          "week": 9,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            92,
+            401,
+            403,
+            405,
+            407,
+            419
+          ]
+        },
+        {
+          "page": 16,
+          "week": 10,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            94,
+            425,
+            427,
+            429,
+            431,
+            441
+          ]
+        },
+        {
+          "page": 17,
+          "week": 10,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            460,
+            469,
+            471,
+            473,
+            475,
+            477,
+            479
+          ]
+        },
+        {
+          "page": 18,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            483,
+            485,
+            487,
+            489,
+            491,
+            493,
+            495
+          ]
+        },
+        {
+          "page": 19,
+          "week": 11,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            96,
+            502,
+            504,
+            506,
+            508,
+            524
+          ]
+        },
+        {
+          "page": 20,
+          "week": 12,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            98,
+            530,
+            532,
+            534,
+            536,
+            546
+          ]
+        },
+        {
+          "page": 21,
+          "week": 13,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            100,
+            551,
+            553,
+            555,
+            557,
+            568
+          ]
+        },
+        {
+          "page": 22,
+          "week": 14,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            102,
+            574,
+            576,
+            578,
+            580,
+            599
+          ]
+        },
+        {
+          "page": 23,
+          "week": 15,
+          "images": 6,
+          "uniqueXrefs": [
+            58,
+            604,
+            608,
+            610,
+            612,
+            614
+          ]
+        },
+        {
+          "page": 24,
+          "week": 15,
+          "images": 4,
+          "uniqueXrefs": [
+            50,
+            58,
+            632,
+            635
+          ]
+        },
+        {
+          "page": 25,
+          "week": null,
+          "images": 14,
+          "uniqueXrefs": [
+            58,
+            84,
+            86,
+            88,
+            96,
+            98,
+            219,
+            221,
+            232,
+            234,
+            377,
+            425,
+            574,
+            642
+          ]
+        },
+        {
+          "page": 26,
+          "week": null,
+          "images": 7,
+          "uniqueXrefs": [
+            48,
+            58,
+            119,
+            310,
+            485,
+            632,
+            695
+          ]
+        },
+        {
+          "page": 27,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            46,
+            52,
+            56,
+            58,
+            699,
+            701,
+            703,
+            705
+          ]
+        },
+        {
+          "page": 28,
+          "week": null,
+          "images": 2,
+          "uniqueXrefs": [
+            58,
+            64
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Movimento para a vida",
+          "sourcePage": 5,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 2,
+          "title": "Capacidades físicas e sensações",
+          "sourcePage": 6,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 3,
+          "title": "Tipos de ginástica de condicionamento",
+          "sourcePage": 7,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 4,
+          "title": "Organizar a aula de ginástica",
+          "sourcePage": 8,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 5,
+          "title": "Movimento e amizade",
+          "sourcePage": 10,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 6,
+          "title": "Espaço público é de todos",
+          "sourcePage": 12,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 7,
+          "title": "EPIs: limitadores de impacto",
+          "sourcePage": 13,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 8,
+          "title": "Executar com segurança",
+          "sourcePage": 14,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 9,
+          "title": "Recriar práticas de aventura",
+          "sourcePage": 15,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 10,
+          "title": "Plano de gestão de riscos",
+          "sourcePage": 17,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 11,
+          "title": "História da capoeira",
+          "sourcePage": 19,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 12,
+          "title": "Regras e habilidades motoras",
+          "sourcePage": 20,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 13,
+          "title": "Estratégias básicas",
+          "sourcePage": 21,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 14,
+          "title": "Problematizar preconceitos",
+          "sourcePage": 22,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 15,
+          "title": "Guia de Práticas da Comunidade (missão final)",
+          "sourcePage": 24,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        }
+      ]
+    },
+    {
+      "grade": 8,
+      "source": "Conteudos EDF\\Caderno_DED_Express_EF8_leve.pdf",
+      "sha256": "f5713819b0b225b70b76be0a184a0233a322b8350b3b03628d6f9eb041b3b3e6",
+      "pages": [
+        {
+          "page": 1,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            32
+          ]
+        },
+        {
+          "page": 2,
+          "week": null,
+          "images": 11,
+          "uniqueXrefs": [
+            39,
+            44,
+            46,
+            48,
+            50,
+            52,
+            54,
+            56,
+            58,
+            64,
+            68
+          ]
+        },
+        {
+          "page": 3,
+          "week": 1,
+          "images": 19,
+          "uniqueXrefs": [
+            39,
+            50,
+            58,
+            74,
+            78,
+            80,
+            82,
+            84,
+            86,
+            88,
+            90,
+            92,
+            94,
+            96,
+            98,
+            100,
+            102,
+            104,
+            108
+          ]
+        },
+        {
+          "page": 4,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            112,
+            115,
+            119,
+            121,
+            123,
+            125,
+            127
+          ]
+        },
+        {
+          "page": 5,
+          "week": 1,
+          "images": 6,
+          "uniqueXrefs": [
+            50,
+            58,
+            74,
+            157,
+            159,
+            161
+          ]
+        },
+        {
+          "page": 6,
+          "week": 2,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            78,
+            173,
+            175,
+            177,
+            179,
+            192
+          ]
+        },
+        {
+          "page": 7,
+          "week": 3,
+          "images": 7,
+          "uniqueXrefs": [
+            50,
+            58,
+            80,
+            201,
+            203,
+            205,
+            207
+          ]
+        },
+        {
+          "page": 8,
+          "week": 4,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            82,
+            231,
+            233,
+            235,
+            237,
+            250
+          ]
+        },
+        {
+          "page": 9,
+          "week": 5,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            84,
+            256,
+            258,
+            260,
+            262,
+            274
+          ]
+        },
+        {
+          "page": 10,
+          "week": 5,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            282,
+            292,
+            294,
+            296,
+            298,
+            300,
+            302
+          ]
+        },
+        {
+          "page": 11,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            58,
+            64,
+            306,
+            308,
+            310,
+            312,
+            314,
+            316
+          ]
+        },
+        {
+          "page": 12,
+          "week": 6,
+          "images": 7,
+          "uniqueXrefs": [
+            50,
+            58,
+            86,
+            323,
+            325,
+            327,
+            329
+          ]
+        },
+        {
+          "page": 13,
+          "week": 7,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            88,
+            346,
+            348,
+            350,
+            352,
+            364
+          ]
+        },
+        {
+          "page": 14,
+          "week": 8,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            90,
+            370,
+            372,
+            374,
+            386,
+            388
+          ]
+        },
+        {
+          "page": 15,
+          "week": 9,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            92,
+            397,
+            399,
+            401,
+            403,
+            413
+          ]
+        },
+        {
+          "page": 16,
+          "week": 10,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            94,
+            418,
+            420,
+            422,
+            424,
+            437
+          ]
+        },
+        {
+          "page": 17,
+          "week": 10,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            450,
+            460,
+            462,
+            464,
+            466,
+            468,
+            470
+          ]
+        },
+        {
+          "page": 18,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            58,
+            64,
+            474,
+            476,
+            478,
+            480,
+            482,
+            484
+          ]
+        },
+        {
+          "page": 19,
+          "week": 11,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            96,
+            491,
+            493,
+            495,
+            497,
+            510
+          ]
+        },
+        {
+          "page": 20,
+          "week": 12,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            98,
+            515,
+            517,
+            519,
+            521,
+            531
+          ]
+        },
+        {
+          "page": 21,
+          "week": 13,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            100,
+            538,
+            540,
+            542,
+            544,
+            554
+          ]
+        },
+        {
+          "page": 22,
+          "week": 14,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            102,
+            559,
+            561,
+            563,
+            565,
+            577
+          ]
+        },
+        {
+          "page": 23,
+          "week": 15,
+          "images": 5,
+          "uniqueXrefs": [
+            58,
+            582,
+            586,
+            588,
+            590
+          ]
+        },
+        {
+          "page": 24,
+          "week": 15,
+          "images": 4,
+          "uniqueXrefs": [
+            50,
+            58,
+            104,
+            609
+          ]
+        },
+        {
+          "page": 25,
+          "week": null,
+          "images": 14,
+          "uniqueXrefs": [
+            58,
+            74,
+            78,
+            80,
+            82,
+            86,
+            88,
+            90,
+            92,
+            98,
+            325,
+            515,
+            559,
+            615
+          ]
+        },
+        {
+          "page": 26,
+          "week": null,
+          "images": 7,
+          "uniqueXrefs": [
+            48,
+            58,
+            104,
+            115,
+            476,
+            620,
+            669
+          ]
+        },
+        {
+          "page": 27,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            46,
+            52,
+            56,
+            58,
+            673,
+            675,
+            677,
+            679
+          ]
+        },
+        {
+          "page": 28,
+          "week": null,
+          "images": 2,
+          "uniqueXrefs": [
+            58,
+            64
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Classificação dos esportes",
+          "sourcePage": 5,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 2,
+          "title": "Voleibol: fundamentos e regras",
+          "sourcePage": 6,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 3,
+          "title": "Tática em rede/parede",
+          "sourcePage": 7,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 4,
+          "title": "Campo e taco",
+          "sourcePage": 8,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 5,
+          "title": "Jogador, árbitro e técnico",
+          "sourcePage": 10,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 6,
+          "title": "Sistemas de jogo",
+          "sourcePage": 12,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 7,
+          "title": "Desafios táticos na invasão",
+          "sourcePage": 13,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 8,
+          "title": "Esportes de combate",
+          "sourcePage": 14,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 9,
+          "title": "Inclusão e cooperação",
+          "sourcePage": 15,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 10,
+          "title": "Meu caderno de técnico",
+          "sourcePage": 17,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 11,
+          "title": "Transformações do esporte",
+          "sourcePage": 19,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 12,
+          "title": "Doping, corrupção e violência",
+          "sourcePage": 20,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 13,
+          "title": "Apostas esportivas e saúde",
+          "sourcePage": 21,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 14,
+          "title": "Esporte na comunidade",
+          "sourcePage": 22,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 15,
+          "title": "Torneio Inclusivo da Turma (missão final)",
+          "sourcePage": 24,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        }
+      ]
+    },
+    {
+      "grade": 9,
+      "source": "Conteudos EDF\\Caderno_DED_Express_EF9_leve.pdf",
+      "sha256": "68ca47dff3c92a773ba5db39ab13e8008522cc5fc4c8dc089b8f2f09626305dd",
+      "pages": [
+        {
+          "page": 1,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            32
+          ]
+        },
+        {
+          "page": 2,
+          "week": null,
+          "images": 11,
+          "uniqueXrefs": [
+            39,
+            44,
+            46,
+            48,
+            50,
+            52,
+            54,
+            56,
+            58,
+            64,
+            68
+          ]
+        },
+        {
+          "page": 3,
+          "week": 1,
+          "images": 19,
+          "uniqueXrefs": [
+            39,
+            50,
+            58,
+            74,
+            78,
+            80,
+            82,
+            84,
+            86,
+            88,
+            90,
+            92,
+            94,
+            96,
+            98,
+            100,
+            102,
+            104,
+            108
+          ]
+        },
+        {
+          "page": 4,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            104,
+            112,
+            115,
+            119,
+            121,
+            123,
+            125
+          ]
+        },
+        {
+          "page": 5,
+          "week": 1,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            74,
+            137,
+            140,
+            142,
+            144,
+            166
+          ]
+        },
+        {
+          "page": 6,
+          "week": 2,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            78,
+            177,
+            179,
+            181,
+            184,
+            194
+          ]
+        },
+        {
+          "page": 7,
+          "week": 3,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            80,
+            202,
+            204,
+            206,
+            208,
+            225
+          ]
+        },
+        {
+          "page": 8,
+          "week": 4,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            82,
+            231,
+            233,
+            235,
+            237,
+            249
+          ]
+        },
+        {
+          "page": 9,
+          "week": 5,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            84,
+            258,
+            260,
+            262,
+            264,
+            283
+          ]
+        },
+        {
+          "page": 10,
+          "week": 5,
+          "images": 9,
+          "uniqueXrefs": [
+            48,
+            58,
+            291,
+            301,
+            303,
+            305,
+            307,
+            309,
+            311
+          ]
+        },
+        {
+          "page": 11,
+          "week": null,
+          "images": 9,
+          "uniqueXrefs": [
+            58,
+            64,
+            315,
+            317,
+            319,
+            321,
+            323,
+            325,
+            327
+          ]
+        },
+        {
+          "page": 12,
+          "week": 6,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            86,
+            90,
+            332,
+            334,
+            345,
+            347
+          ]
+        },
+        {
+          "page": 13,
+          "week": 7,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            88,
+            355,
+            357,
+            359,
+            361,
+            363
+          ]
+        },
+        {
+          "page": 14,
+          "week": 8,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            90,
+            378,
+            380,
+            382,
+            384,
+            386
+          ]
+        },
+        {
+          "page": 15,
+          "week": 9,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            92,
+            415,
+            417,
+            419,
+            421,
+            433
+          ]
+        },
+        {
+          "page": 16,
+          "week": 10,
+          "images": 7,
+          "uniqueXrefs": [
+            50,
+            58,
+            94,
+            439,
+            441,
+            443,
+            445
+          ]
+        },
+        {
+          "page": 17,
+          "week": 10,
+          "images": 8,
+          "uniqueXrefs": [
+            48,
+            58,
+            475,
+            477,
+            493,
+            495,
+            497,
+            499
+          ]
+        },
+        {
+          "page": 18,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            58,
+            64,
+            503,
+            505,
+            507,
+            509,
+            511,
+            513
+          ]
+        },
+        {
+          "page": 19,
+          "week": 11,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            96,
+            518,
+            521,
+            531,
+            534,
+            536
+          ]
+        },
+        {
+          "page": 20,
+          "week": 12,
+          "images": 6,
+          "uniqueXrefs": [
+            50,
+            58,
+            98,
+            542,
+            545,
+            556
+          ]
+        },
+        {
+          "page": 21,
+          "week": 13,
+          "images": 6,
+          "uniqueXrefs": [
+            50,
+            58,
+            100,
+            561,
+            564,
+            577
+          ]
+        },
+        {
+          "page": 22,
+          "week": 14,
+          "images": 8,
+          "uniqueXrefs": [
+            50,
+            58,
+            102,
+            583,
+            585,
+            587,
+            589,
+            599
+          ]
+        },
+        {
+          "page": 23,
+          "week": 15,
+          "images": 6,
+          "uniqueXrefs": [
+            58,
+            112,
+            605,
+            607,
+            609,
+            611
+          ]
+        },
+        {
+          "page": 24,
+          "week": 15,
+          "images": 4,
+          "uniqueXrefs": [
+            50,
+            58,
+            629,
+            632
+          ]
+        },
+        {
+          "page": 25,
+          "week": null,
+          "images": 14,
+          "uniqueXrefs": [
+            58,
+            74,
+            82,
+            84,
+            86,
+            142,
+            177,
+            181,
+            325,
+            345,
+            347,
+            511,
+            639,
+            641
+          ]
+        },
+        {
+          "page": 26,
+          "week": null,
+          "images": 7,
+          "uniqueXrefs": [
+            48,
+            58,
+            123,
+            317,
+            505,
+            629,
+            693
+          ]
+        },
+        {
+          "page": 27,
+          "week": null,
+          "images": 8,
+          "uniqueXrefs": [
+            46,
+            52,
+            56,
+            58,
+            697,
+            699,
+            701,
+            703
+          ]
+        },
+        {
+          "page": 28,
+          "week": null,
+          "images": 2,
+          "uniqueXrefs": [
+            58,
+            64
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Programas de exercícios",
+          "sourcePage": 5,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 2,
+          "title": "Conscientização corporal",
+          "sourcePage": 6,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 3,
+          "title": "Condicionamento × conscientização",
+          "sourcePage": 7,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 4,
+          "title": "Padrões de corpo e beleza",
+          "sourcePage": 8,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 5,
+          "title": "Excessos e substâncias",
+          "sourcePage": 10,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 6,
+          "title": "Aventura na natureza",
+          "sourcePage": 12,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 7,
+          "title": "Riscos e normas de segurança",
+          "sourcePage": 13,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 8,
+          "title": "Equipamentos e checagem",
+          "sourcePage": 14,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 9,
+          "title": "Preservar o patrimônio natural",
+          "sourcePage": 15,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 10,
+          "title": "Planejar uma trilha",
+          "sourcePage": 17,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 11,
+          "title": "Lutas do mundo",
+          "sourcePage": 19,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 12,
+          "title": "Cair com segurança",
+          "sourcePage": 20,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 13,
+          "title": "Estratégias técnico-táticas",
+          "sourcePage": 21,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 14,
+          "title": "Mídia, ética e inclusão",
+          "sourcePage": 22,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        },
+        {
+          "week": 15,
+          "title": "Meu Programa de Vida Ativa (missão final)",
+          "sourcePage": 24,
+          "activeImageReferences": 0,
+          "status": "not-integrated"
+        }
+      ]
+    }
+  ]
+}

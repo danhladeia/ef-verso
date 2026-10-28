@@ -1,0 +1,19 @@
+/* Estilo compartilhado pelas partidas 3x3 (basquete, futebol, vôlei): placar, aviso e controles. */
+.sports-match{position:absolute;inset:0;pointer-events:none;display:flex;flex-direction:column;align-items:center;font-family:inherit}
+.sports-match[hidden]{display:none}
+.sports-scoreboard{pointer-events:auto;margin-top:16px;background:#1d1033e6;color:#fff6df;border-radius:16px;padding:8px 22px;display:flex;gap:18px;align-items:center;font-weight:bold;font-size:18px;box-shadow:0 5px 20px #0005}
+.sports-scoreboard .sports-team:first-child{color:#8fe3b0}.sports-scoreboard .sports-team:last-child{color:#ffc189}
+.sports-scoreboard span[id$="clock"]{color:#fff6df;font-variant-numeric:tabular-nums;opacity:.9}
+.sports-banner{pointer-events:none;margin-top:10px;background:#ffffffee;color:#3a1f6d;font-weight:bold;padding:7px 16px;border-radius:12px;min-height:16px;text-align:center}
+.sports-banner:empty{background:transparent;padding:0}
+.power-meter{pointer-events:none;position:relative;height:16px;width:min(260px,70vw);border-radius:9px;background:#ece4f8cc;overflow:hidden;margin-top:10px;box-shadow:inset 0 0 0 2px #d9c8f5}
+.power-meter .power-fill{position:absolute;left:0;top:3px;bottom:3px;border-radius:6px;background:linear-gradient(90deg,#8fd16a,#f2a93b 60%,#e2574c);width:0}
+.sports-controls{pointer-events:auto;position:absolute;bottom:20px;left:0;right:0;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 14px}
+.sports-controls button{font-size:13px;padding:12px 16px;border-radius:12px;border:0;background:#6a2fb0;color:#fff;font-weight:bold;touch-action:none;user-select:none}
+.sports-controls button[id$="shoot"]{background:#e2574c}.sports-controls button[id$="pass"]{background:#2fa36b}.sports-controls button[id$="hit"]{background:#2fa36b}.sports-controls button[id$="leave"]{background:#3b3342}
+.sports-controls span{align-self:center;background:#1d1033cc;color:#fff6df;padding:10px 14px;border-radius:12px;font-size:12px;font-weight:bold}
+body.hoops-active aside,body.hoops-active #minimap,body.hoops-active .player-actions,body.hoops-active #joystick,body.hoops-active #interact,body.hoops-active footer,body.hoops-active #camera,body.hoops-active #reset,body.hoops-active #admin-flight,body.hoops-active #hoops-enter,body.hoops-active #soccer-enter,body.hoops-active #volley-enter,body.hoops-active #skate-enter,
+body.soccer-active aside,body.soccer-active #minimap,body.soccer-active .player-actions,body.soccer-active #joystick,body.soccer-active #interact,body.soccer-active footer,body.soccer-active #camera,body.soccer-active #reset,body.soccer-active #admin-flight,body.soccer-active #hoops-enter,body.soccer-active #soccer-enter,body.soccer-active #volley-enter,body.soccer-active #skate-enter,
+body.volley-active aside,body.volley-active #minimap,body.volley-active .player-actions,body.volley-active #joystick,body.volley-active #interact,body.volley-active footer,body.volley-active #camera,body.volley-active #reset,body.volley-active #admin-flight,body.volley-active #hoops-enter,body.volley-active #soccer-enter,body.volley-active #volley-enter,body.volley-active #skate-enter,
+body.skate-active aside,body.skate-active #minimap,body.skate-active .player-actions,body.skate-active #joystick,body.skate-active #interact,body.skate-active footer,body.skate-active #camera,body.skate-active #reset,body.skate-active #admin-flight,body.skate-active #hoops-enter,body.skate-active #soccer-enter,body.skate-active #volley-enter,body.skate-active #skate-enter{display:none}
+@media(max-width:700px){.sports-scoreboard{font-size:14px;padding:6px 14px;gap:10px}.sports-controls button{padding:14px 12px;font-size:12px}}

@@ -1,0 +1,18 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Revisão da coleção</title>
+<style>body{background:#eae1f3;color:#302245;font:16px system-ui;margin:30px}h1{font-size:28px}section{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;margin-bottom:24px}figure{margin:0;background:#fff;border-radius:12px;text-align:center;padding:8px}img{width:144px;height:144px;max-width:100%}figcaption{font-size:12px;min-height:32px}h2{font-size:20px}</style>
+<h1>EF Verso · coleção de roupas e acessórios</h1><p>Modelos do guarda-roupa ativo · miniaturas renderizadas dos assets 3D</p>
+<script type="module">
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {createWardrobeThumbnails} from '/src/wardrobe-thumbnails.js';
+import {PARTS,PART_LABELS,ITEM_NAMES} from '/src/student-character.js';
+const thumbs=await createWardrobeThumbnails(new GLTFLoader());
+for(const key of ['head','body','glasses','hearing','accessory','mobility']){
+ const heading=document.createElement('h2');heading.textContent=PART_LABELS[key];document.body.append(heading);
+ const section=document.createElement('section');document.body.append(section);
+ for(const id of PARTS[key].filter(id=>id!=='none')){
+  const figure=document.createElement('figure'),img=new Image(),caption=document.createElement('figcaption');
+  img.src=thumbs.render(id);caption.textContent=ITEM_NAMES[id];figure.append(img,caption);section.append(figure);
+ }
+}
+await Promise.all([...document.images].map(i=>i.decode()));window.reviewReady=true;
+</script></html>

@@ -1,0 +1,1342 @@
+{
+  "objects": [
+    {
+      "name": "body.001",
+      "type": "MESH",
+      "parent": null,
+      "dimensions": [
+        0.29868000745773315,
+        0.289789080619812,
+        0.36667323112487793
+      ],
+      "location": [
+        -3.363304615020752,
+        1.972192649191129e-07,
+        2.1452019214630127
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "body.002",
+      "type": "MESH",
+      "parent": null,
+      "dimensions": [
+        0.29868000745773315,
+        0.289789080619812,
+        0.36667323112487793
+      ],
+      "location": [
+        -2.6399476528167725,
+        1.972192649191129e-07,
+        2.1452019214630127
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "body.003",
+      "type": "MESH",
+      "parent": null,
+      "dimensions": [
+        0.29868000745773315,
+        0.289789080619812,
+        0.36667323112487793
+      ],
+      "location": [
+        -1.937100887298584,
+        1.972192649191129e-07,
+        2.1452019214630127
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Body_010",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        1.4406843185424805,
+        0.34020286798477173,
+        1.8210060596466064
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ],
+        [
+          "Subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Clown_nose_001",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.06710624694824219,
+        0.06710612028837204,
+        0.06710600852966309
+      ],
+      "location": [
+        -2.746203899383545,
+        6.312292839538713e-07,
+        -0.4250001311302185
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Costume_10_001",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        1.180685043334961,
+        0.3854895234107971,
+        1.4539649486541748
+      ],
+      "location": [
+        -6.761680603027344,
+        -1.2516021286046453e-07,
+        1.6521952152252197
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Costume_6_001",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.7434477806091309,
+        0.46880820393562317,
+        1.3463131189346313
+      ],
+      "location": [
+        -5.685276985168457,
+        -3.802654191531474e-08,
+        1.0036805868148804
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Frame",
+      "type": "MESH",
+      "parent": null,
+      "dimensions": [
+        5.92475700378418,
+        8.277743290818762e-08,
+        3.4803690910339355
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "modifiers": [],
+      "materials": [],
+      "bones": []
+    },
+    {
+      "name": "Glasses_004",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.24646949768066406,
+        0.17983148992061615,
+        0.07936811447143555
+      ],
+      "location": [
+        -4.152206897735596,
+        5.852750462054246e-08,
+        -0.43560606241226196
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Glasses_006",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.24511051177978516,
+        0.18840372562408447,
+        0.0873258113861084
+      ],
+      "location": [
+        -4.847397327423096,
+        5.648720957651676e-08,
+        -0.4204205870628357
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color",
+        "Glass"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Gloves_006",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        1.4134252071380615,
+        0.16756246984004974,
+        0.15152180194854736
+      ],
+      "location": [
+        -2.379641532897949,
+        -2.5704503059387207e-07,
+        0.8499623537063599
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Gloves_014",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        1.4454431533813477,
+        0.1773291677236557,
+        0.2133026123046875
+      ],
+      "location": [
+        -2.384059429168701,
+        -2.4959444999694824e-07,
+        1.2856332063674927
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Hairstyle_male_010",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.27164173126220703,
+        0.28292012214660645,
+        0.26010608673095703
+      ],
+      "location": [
+        -4.813767910003662,
+        -4.842877388000488e-08,
+        2.0587544441223145
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Hairstyle_male_012",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.2686734199523926,
+        0.30893388390541077,
+        0.29619646072387695
+      ],
+      "location": [
+        -4.140146732330322,
+        -4.842877388000488e-08,
+        2.0760395526885986
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Hat_010",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.4936690330505371,
+        0.4536506235599518,
+        0.30856895446777344
+      ],
+      "location": [
+        -5.575629234313965,
+        0.26904159784317017,
+        2.05645751953125
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Hat_049",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.42311716079711914,
+        0.3356017768383026,
+        0.632204532623291
+      ],
+      "location": [
+        -6.995726585388184,
+        8.195638656616211e-08,
+        2.068239688873291
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Hat_057",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.34766069054603577,
+        0.4076465666294098,
+        0.3622606098651886
+      ],
+      "location": [
+        -6.312367916107178,
+        1.4528632164001465e-07,
+        2.0966854095458984
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color",
+        "Glass"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Headphones_002",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.2728574275970459,
+        0.032934918999671936,
+        0.053545594215393066
+      ],
+      "location": [
+        -2.245083808898926,
+        6.102686711528804e-07,
+        -0.4113810062408447
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Male_emotion_angry_003",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.119651198387146,
+        0.026207365095615387,
+        0.11915254592895508
+      ],
+      "location": [
+        -1.937100887298584,
+        1.972192649191129e-07,
+        2.1452019214630127
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Male_emotion_happy_002",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.1458113193511963,
+        0.03386153280735016,
+        0.14983463287353516
+      ],
+      "location": [
+        -3.363304615020752,
+        1.972192649191129e-07,
+        2.1452019214630127
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Male_emotion_usual_001",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.13718438148498535,
+        0.030793331563472748,
+        0.13947772979736328
+      ],
+      "location": [
+        -2.6399476528167725,
+        1.972192649191129e-07,
+        2.1452019214630127
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Moustache_001",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.15202951431274414,
+        0.0425591841340065,
+        0.03227865695953369
+      ],
+      "location": [
+        -3.195356607437134,
+        -0.031969957053661346,
+        -0.40367090702056885
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Moustache_002",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.13081145286560059,
+        0.04230412840843201,
+        0.04865145683288574
+      ],
+      "location": [
+        -3.5979883670806885,
+        5.40971427653858e-08,
+        -0.402631938457489
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Outerwear_029",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        1.263653039932251,
+        0.3591870069503784,
+        0.6865353584289551
+      ],
+      "location": [
+        -4.565587997436523,
+        3.773311618715525e-08,
+        1.8773266077041626
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Outerwear_036",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        1.2426307201385498,
+        0.4150964617729187,
+        0.6344871520996094
+      ],
+      "location": [
+        -3.1414482593536377,
+        3.773311618715525e-08,
+        1.8773266077041626
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Pacifier_001",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.0926138162612915,
+        0.03821750730276108,
+        0.09133660793304443
+      ],
+      "location": [
+        -1.7496026754379272,
+        5.815878694193088e-07,
+        -0.3667095899581909
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Pants_010",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.44054079055786133,
+        0.28446194529533386,
+        0.6995458602905273
+      ],
+      "location": [
+        -4.8234148025512695,
+        -3.3527612686157227e-08,
+        1.4339606761932373
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Pants_014",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.4089498519897461,
+        0.2844620943069458,
+        0.6940077543258667
+      ],
+      "location": [
+        -4.1846113204956055,
+        -0.2721673548221588,
+        1.4360185861587524
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "WeightedNormal",
+          "WEIGHTED_NORMAL"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ],
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Shoe_Slippers_002",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.38201189041137695,
+        0.30811017751693726,
+        0.14437484741210938
+      ],
+      "location": [
+        -5.634984016418457,
+        -1.1151132639497519e-07,
+        1.0291142463684082
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Shoe_Slippers_005",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.38266563415527344,
+        0.32056906819343567,
+        0.12526512145996094
+      ],
+      "location": [
+        -6.212691307067871,
+        -1.1151132639497519e-07,
+        1.0291142463684082
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Shoe_Sneakers_009",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.3795137405395508,
+        0.32700902223587036,
+        0.19464504718780518
+      ],
+      "location": [
+        -6.844661235809326,
+        -1.1151132639497519e-07,
+        1.0291142463684082
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Shorts_003",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.38151097297668457,
+        0.28446197509765625,
+        0.22455763816833496
+      ],
+      "location": [
+        -3.600802421569824,
+        -1.1175870895385742e-08,
+        1.4342297315597534
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "Skeleton",
+      "type": "ARMATURE",
+      "parent": null,
+      "dimensions": [
+        1.4296483993530273,
+        0.261288046836853,
+        1.6583980321884155
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "modifiers": [],
+      "materials": [],
+      "bones": [
+        "Root",
+        "Hips",
+        "LeftUpLeg",
+        "LeftLeg",
+        "LeftFoot",
+        "LeftToeBase",
+        "Spine",
+        "Spine1",
+        "Neck",
+        "Head",
+        "LeftShoulder",
+        "LeftArm",
+        "LeftForeArm",
+        "LeftHand",
+        "LeftHandIndex1",
+        "LeftHandIndex2",
+        "LeftHandMiddle1",
+        "LeftHandMiddle2",
+        "LeftHandPinky1",
+        "LeftHandPinky2",
+        "LeftHandProp",
+        "LeftHandRing1",
+        "LeftHandRing2",
+        "LeftHandThumb1",
+        "LeftHandThumb2",
+        "RightShoulder",
+        "RightArm",
+        "RightForeArm",
+        "RightHand",
+        "RightHandIndex1",
+        "RightHandIndex2",
+        "RightHandMiddle1",
+        "RightHandMiddle2",
+        "RightHandPinky1",
+        "RightHandPinky2",
+        "RightHandProp",
+        "RightHandRing1",
+        "RightHandRing2",
+        "RightHandThumb1",
+        "RightHandThumb2",
+        "RightUpLeg",
+        "RightLeg",
+        "RightFoot",
+        "RightToeBase"
+      ]
+    },
+    {
+      "name": "Socks_008",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.3477332592010498,
+        0.15241731703281403,
+        0.3852863311767578
+      ],
+      "location": [
+        -3.600816249847412,
+        -2.086162567138672e-07,
+        1.5030194520950317
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ],
+        [
+          "Suavizar automaticamente",
+          "NODES"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    },
+    {
+      "name": "T_Shirt_009",
+      "type": "MESH",
+      "parent": "Skeleton",
+      "dimensions": [
+        0.6297123432159424,
+        0.326867938041687,
+        0.6134147644042969
+      ],
+      "location": [
+        -2.0282559394836426,
+        3.773311618715525e-08,
+        1.8773266077041626
+      ],
+      "hidden": false,
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Color"
+      ],
+      "bones": []
+    }
+  ],
+  "actions": [
+    {
+      "name": "A-pose",
+      "range": [
+        0.0,
+        700.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Armature|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        139.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Attack_Kick",
+      "range": [
+        1.0,
+        49.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Attack_Punch",
+      "range": [
+        1.0,
+        30.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Block_With_Hands",
+      "range": [
+        1.0,
+        85.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Climb_Ladder",
+      "range": [
+        1.0,
+        33.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Crouch_Walk_Backward",
+      "range": [
+        1.0,
+        40.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Crouch_Walk_Forward",
+      "range": [
+        1.0,
+        40.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Crouch_Walk_Left",
+      "range": [
+        1.0,
+        40.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Crouch_Walk_Right",
+      "range": [
+        1.0,
+        40.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Death_Backward",
+      "range": [
+        1.0,
+        91.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Death_Forward",
+      "range": [
+        1.0,
+        87.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Dodge_Roll",
+      "range": [
+        1.0,
+        50.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Dodge_Sidestep",
+      "range": [
+        1.0,
+        44.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Fall",
+      "range": [
+        1.0,
+        136.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Hit_Reaction_Heavy",
+      "range": [
+        0.0,
+        39.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Hit_Reaction_Light",
+      "range": [
+        1.0,
+        47.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Idle_Breathing",
+      "range": [
+        0.0,
+        284.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Idle_Look_Around",
+      "range": [
+        0.0,
+        225.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Idle_Relaxed",
+      "range": [
+        0.0,
+        84.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Jump_End",
+      "range": [
+        0.0,
+        32.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Jump_Loop",
+      "range": [
+        24.0,
+        72.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Jump_Start",
+      "range": [
+        1.0,
+        24.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "run(back)",
+      "range": [
+        1.0,
+        24.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Run_Forward",
+      "range": [
+        1.0,
+        24.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Run_Left",
+      "range": [
+        1.0,
+        24.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Run_Right",
+      "range": [
+        1.0,
+        24.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Strafe_Left",
+      "range": [
+        1.0,
+        32.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Strafe_Right",
+      "range": [
+        1.0,
+        32.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Walk_Backward",
+      "range": [
+        1.0,
+        32.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    },
+    {
+      "name": "Walk_Forward",
+      "range": [
+        1.0,
+        32.0
+      ],
+      "slots": [
+        "OBLegacy Slot"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "Textures_4.png",
+      "path": "//textures\\Textures_4.png",
+      "packed": true,
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Color",
+      "nodes": [
+        [
+          "Principled BSDF",
+          "BSDF_PRINCIPLED"
+        ],
+        [
+          "Material Output",
+          "OUTPUT_MATERIAL"
+        ],
+        [
+          "Image Texture",
+          "TEX_IMAGE"
+        ]
+      ]
+    },
+    {
+      "name": "Glass",
+      "nodes": [
+        [
+          "Principled BSDF",
+          "BSDF_PRINCIPLED"
+        ],
+        [
+          "Material Output",
+          "OUTPUT_MATERIAL"
+        ],
+        [
+          "Image Texture",
+          "TEX_IMAGE"
+        ]
+      ]
+    }
+  ]
+}

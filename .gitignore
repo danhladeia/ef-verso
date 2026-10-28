@@ -1,0 +1,8 @@
+node_modules/
+dist/
+deployment/hostinger/
+deployment/*.zip
+*.blend1
+public/api/_private/config.local.php
+.DS_Store
+Thumbs.db

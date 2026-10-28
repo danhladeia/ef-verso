@@ -1,0 +1,97 @@
+00:06.750  blend            | Read blend: "C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\assets\ithappy\creative-characters-free\Creative_Characters_Free.blend"
+C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\cidade\tools\build_creative.py:14: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Creative_'+name);m.diffuse_color=(*color,1);m.use_nodes=True;s=next(n for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED');s.inputs['Base Color'].default_value=(*color,1);s.inputs['Roughness'].default_value=.85;return m
+00:08.422  blend.writefile  | WARNING Found an ID 'OBCostume_10_001' flagged as copy/paste clipboard data while writing a regular blendfile, clearing the flag
+00:08.422  blend.writefile  | WARNING Found an ID 'OBCostume_6_001' flagged as copy/paste clipboard data while writing a regular blendfile, clearing the flag
+00:08.422  blend.writefile  | WARNING Found an ID 'OBGlasses_004' flagged as copy/paste clipboard data while writing a regular blendfile, clearing the flag
+00:08.422  blend.writefile  | WARNING Found an ID 'OBGlasses_006' flagged as copy/paste clipboard data while writing a regular blendfile, clearing the flag
+00:08.422  blend.writefile  | WARNING Found an ID 'OBMoustache_001' flagged as copy/paste clipboard data while writing a regular blendfile, clearing the flag
+00:08.422  blend.writefile  | WARNING Found an ID 'OBMoustache_002' flagged as copy/paste clipboard data while writing a regular blendfile, clearing the flag
+Reloading external rigs...
+Reloading external metarigs...
+Janela de informações: Found IDs flagged as copy/paste clipboard data while writing a regular blendfile, the flag has been cleared in these IDs
+Janela de informações: Saved as "creative-game.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+17:57:41 | INFO: Starting glTF 2.0 export
+17:57:41 | INFO: Extracting primitive: body_1.001
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | WARNING: There are more than 4 joint vertex influences.The 4 with highest weight will be used (and normalized).
+17:57:41 | INFO: Extracting primitive: body_1.002
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.005
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.006
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.007
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.008
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.009
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.010
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Cube.001
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Cylinder.016
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.137
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.045
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.117
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: body_1.206
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: body_1.215
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: Mesh.096
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.034
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.063
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: body_1.225
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: basemesh.001
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: Mesh.115
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.038
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.002
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.033
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.1929
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.043
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.170
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: body_1.199
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Cube
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.182
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.274
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.027
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: Mesh.032
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: Mesh.044
+17:57:41 | INFO: Primitives created: 2
+17:57:41 | INFO: Extracting primitive: body_1.168
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.236
+17:57:41 | INFO: Primitives created: 1
+17:57:41 | INFO: Extracting primitive: body_1.058
+17:57:42 | INFO: Primitives created: 1
+17:57:53 | INFO: Finished glTF 2.0 export in 11.814610719680786 s
+
+CREATIVE_COMPLETE 37 44 2607424
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit

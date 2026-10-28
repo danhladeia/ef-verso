@@ -1,0 +1,77 @@
+{
+  "idle": {
+    "stage": "school",
+    "baskets": 0,
+    "coins": 0,
+    "practicing": false,
+    "shotTime": 0,
+    "shooting": false,
+    "attempts": 0,
+    "localAttempts": 0,
+    "hoop": {
+      "x": 37.06749999523163,
+      "y": 3.2199999999999998,
+      "z": 0
+    },
+    "animation": "idle",
+    "animations": [
+      "wave",
+      "walk",
+      "run",
+      "push",
+      "jump",
+      "idle"
+    ],
+    "appearance": {
+      "face": "Face_01",
+      "top": "Top_01",
+      "bottom": "Pants_04",
+      "footwear": "Shoes_01",
+      "hat": "none",
+      "glasses": "none",
+      "bodyColor": "#ffcf32",
+      "shirt": "#3176bd",
+      "pants": "#28374c",
+      "shoes": "#e5e9ed",
+      "accessoryColor": "#ce5264",
+      "glassesColor": "#29313d"
+    },
+    "pose": {
+      "head_x": [
+        0.022893343738011048,
+        1.5227382961885567,
+        -0.0919090987592579
+      ],
+      "hand_l": [
+        -0.37745277509442515,
+        0.9832169979632627,
+        -0.2951123175502701
+      ],
+      "hand_r": [
+        0.43700218623608056,
+        0.9728838207669961,
+        0.17528028400110962
+      ],
+      "foot_l": [
+        -0.1046202362569428,
+        0.1937710490464896,
+        -0.2504471319143988
+      ]
+    }
+  },
+  "appearance": {
+    "face": "Face_05",
+    "top": "Top_03",
+    "bottom": "Pants_06",
+    "footwear": "Shoes_01",
+    "hat": "Hat_03",
+    "glasses": "Glasses_03",
+    "bodyColor": "#ffcf32",
+    "shirt": "#279178",
+    "pants": "#28374c",
+    "shoes": "#e5e9ed",
+    "accessoryColor": "#ce5264",
+    "glassesColor": "#29313d"
+  },
+  "errors": []
+}

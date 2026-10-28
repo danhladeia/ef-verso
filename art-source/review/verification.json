@@ -1,0 +1,129 @@
+{
+  "routes": [
+    {
+      "name": "Praça Central",
+      "blocked": false,
+      "steps": 0
+    },
+    {
+      "name": "Escola do Movimento",
+      "blocked": false,
+      "steps": 39
+    },
+    {
+      "name": "Quadra de Basquete",
+      "blocked": false,
+      "steps": 35
+    },
+    {
+      "name": "Parque das Brincadeiras",
+      "blocked": false,
+      "steps": 29
+    },
+    {
+      "name": "Ginásio Municipal",
+      "blocked": false,
+      "steps": 55
+    },
+    {
+      "name": "Centro de Ginástica",
+      "blocked": false,
+      "steps": 147
+    },
+    {
+      "name": "Praça das Danças",
+      "blocked": false,
+      "steps": 144
+    },
+    {
+      "name": "Dojô das Lutas",
+      "blocked": false,
+      "steps": 145
+    },
+    {
+      "name": "Bairro da Saúde",
+      "blocked": false,
+      "steps": 94
+    },
+    {
+      "name": "Museu do Esporte",
+      "blocked": false,
+      "steps": 81
+    },
+    {
+      "name": "Feira da Cidade",
+      "blocked": false,
+      "steps": 80
+    },
+    {
+      "name": "Campo de Futebol",
+      "blocked": false,
+      "steps": 132
+    },
+    {
+      "name": "Quadra de Vôlei",
+      "blocked": false,
+      "steps": 76
+    },
+    {
+      "name": "Centro de Ciência do Corpo",
+      "blocked": false,
+      "steps": 134
+    },
+    {
+      "name": "Galeria da Turma",
+      "blocked": false,
+      "steps": 126
+    },
+    {
+      "name": "Aventura Urbana",
+      "blocked": false,
+      "steps": 170
+    },
+    {
+      "name": "Centro de Visitantes",
+      "blocked": false,
+      "steps": 147
+    },
+    {
+      "name": "Acampamento e Orientação",
+      "blocked": false,
+      "steps": 177
+    },
+    {
+      "name": "Bairro Residencial",
+      "blocked": false,
+      "steps": 108
+    },
+    {
+      "name": "Parque de Aventura",
+      "blocked": false,
+      "steps": 225
+    }
+  ],
+  "clearRoutes": true,
+  "walkToSchool": {
+    "x": -8.155808189617973e-10,
+    "y": 0,
+    "z": -14.09305315651583
+  },
+  "jump": true,
+  "runPosition": {
+    "x": -0.0921988801723781,
+    "y": 0,
+    "z": 15.66004872444678
+  },
+  "desktopStats": {
+    "drawCalls": 283,
+    "triangles": 237090,
+    "residents": 24,
+    "failures": 0
+  },
+  "mobileStats": {
+    "drawCalls": 155,
+    "triangles": 141825,
+    "residents": 11,
+    "failures": 0
+  },
+  "errors": []
+}

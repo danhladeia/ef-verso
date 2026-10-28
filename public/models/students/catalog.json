@@ -1,0 +1,52 @@
+{
+  "masculine": {
+    "head": [
+      "masculine_head_0",
+      "masculine_head_1",
+      "masculine_head_2"
+    ],
+    "top": [
+      "masculine_top_0",
+      "masculine_top_1"
+    ],
+    "bottom": [
+      "masculine_bottom_0",
+      "masculine_bottom_1"
+    ],
+    "footwear": [
+      "masculine_footwear_0",
+      "masculine_footwear_1"
+    ],
+    "glasses": [
+      "masculine_glasses_0"
+    ],
+    "accessory": [
+      "masculine_accessory_0"
+    ]
+  },
+  "feminine": {
+    "head": [
+      "feminine_head_0",
+      "feminine_head_1",
+      "feminine_head_2"
+    ],
+    "top": [
+      "feminine_top_0",
+      "feminine_top_1"
+    ],
+    "bottom": [
+      "feminine_bottom_0",
+      "feminine_bottom_1"
+    ],
+    "footwear": [
+      "feminine_footwear_0",
+      "feminine_footwear_1"
+    ],
+    "glasses": [
+      "feminine_glasses_0"
+    ],
+    "accessory": [
+      "feminine_accessory_0"
+    ]
+  }
+}

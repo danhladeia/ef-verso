@@ -1,0 +1,97 @@
+Reloading external rigs...
+Reloading external metarigs...
+16:03:30 | INFO: Data are loaded, start creating Blender stuff
+16:03:30 | INFO: Blender create Mesh node Face
+16:03:30 | ERROR: Missing image file (index 0): C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\assets\quaternius\universal-base-characters\Base Characters\Godot - UE\T_Hair_1_Normal_png.png
+16:03:30 | INFO: Blender create Mesh node Face.001
+16:03:30 | ERROR: Missing image file (index 2): C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\assets\quaternius\universal-base-characters\Base Characters\Godot - UE\T_Eye_Normal_png.png
+16:03:30 | INFO: Blender create Mesh node Sphere.005_Retopology.004
+16:03:30 | INFO: glTF import finished in 0.30s
+C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\cidade\tools\build_custom_characters.py:9: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*color,1);m.use_nodes=True
+C:\Users\Danilo H. Ladeia\Desktop\JOGO EDF\cidade\tools\build_custom_characters.py:35: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if m and m.use_nodes:
+Janela de informações: Saved as "avatar-male.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+16:03:32 | INFO: Starting glTF 2.0 export
+16:03:32 | INFO: Extracting primitive: Face
+16:03:32 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+16:03:32 | INFO: Primitives created: 1
+16:03:32 | INFO: Extracting primitive: Face.001
+16:03:32 | INFO: Primitives created: 1
+16:03:32 | INFO: Extracting primitive: Cubo
+16:03:32 | INFO: Primitives created: 1
+16:03:32 | INFO: Extracting primitive: Cubo.001
+16:03:32 | INFO: Primitives created: 1
+16:03:32 | INFO: Extracting primitive: Sphere.005_Retopology.004
+16:03:32 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+16:03:32 | INFO: Primitives created: 4
+16:03:32 | INFO: Extracting primitive: Esfera UV
+16:03:32 | INFO: Primitives created: 1
+16:03:32 | INFO: Extracting primitive: Esfera UV.001
+16:03:32 | INFO: Primitives created: 1
+16:03:32 | INFO: Finished glTF 2.0 export in 0.48628687858581543 s
+
+16:03:32 | INFO: Data are loaded, start creating Blender stuff
+16:03:32 | INFO: Blender create Mesh node Eyebrows
+16:03:32 | INFO: Blender create Mesh node Eyes
+16:03:32 | ERROR: Missing image file (index 2): //..\..\assets\quaternius\universal-base-characters\Base Characters\Godot - UE\T_Eye_Normal_png.png
+16:03:32 | INFO: Blender create Mesh node Superhero_Female
+16:03:33 | INFO: glTF import finished in 0.28s
+Janela de informações: Saved as "avatar-female.blend"
+16:03:34 | INFO: Starting glTF 2.0 export
+16:03:34 | INFO: Extracting primitive: Eyebrows
+16:03:34 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Extracting primitive: Eyes
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Extracting primitive: Cubo.002
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Extracting primitive: Cubo.003
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Extracting primitive: Superhero_Female
+16:03:34 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+16:03:34 | INFO: Primitives created: 4
+16:03:34 | INFO: Extracting primitive: Esfera UV.002
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Extracting primitive: Esfera UV.003
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Finished glTF 2.0 export in 0.3815615177154541 s
+
+16:03:34 | INFO: Data are loaded, start creating Blender stuff
+16:03:34 | INFO: Blender create Mesh node Plane.002
+16:03:34 | INFO: glTF import finished in 0.02s
+16:03:34 | INFO: Starting glTF 2.0 export
+16:03:34 | INFO: Extracting primitive: Plane.002
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Finished glTF 2.0 export in 0.014667510986328125 s
+
+16:03:34 | INFO: Data are loaded, start creating Blender stuff
+16:03:34 | INFO: Blender create Mesh node Cylinder.002
+16:03:34 | INFO: glTF import finished in 0.01s
+16:03:34 | INFO: Starting glTF 2.0 export
+16:03:34 | INFO: Extracting primitive: Cylinder.002
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Finished glTF 2.0 export in 0.0157315731048584 s
+
+16:03:34 | INFO: Data are loaded, start creating Blender stuff
+16:03:34 | INFO: Blender create Mesh node NurbsCurve.065
+16:03:34 | INFO: glTF import finished in 0.03s
+16:03:34 | INFO: Starting glTF 2.0 export
+16:03:34 | INFO: Extracting primitive: NurbsCurve.065
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Finished glTF 2.0 export in 0.018646240234375 s
+
+16:03:34 | INFO: Data are loaded, start creating Blender stuff
+16:03:34 | INFO: Blender create Mesh node NurbsCurve.056_Retopology.001
+16:03:34 | INFO: glTF import finished in 0.02s
+16:03:34 | INFO: Starting glTF 2.0 export
+16:03:34 | INFO: Extracting primitive: NurbsCurve.056_Retopology.001
+16:03:34 | INFO: Primitives created: 1
+16:03:34 | INFO: Finished glTF 2.0 export in 0.016475439071655273 s
+
+CUSTOM_AVATARS_COMPLETE [('female.glb', 1228496), ('hair-buns.glb', 133048), ('hair-buzzed.glb', 21152), ('hair-long.glb', 117264), ('hair-simpleparted.glb', 33288), ('male.glb', 943472), ('movement.glb', 738728)]
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit
