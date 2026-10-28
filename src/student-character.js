@@ -139,7 +139,9 @@ export async function createCharacter(loader,role='student',height=role.includes
  function update(dt,{speed=0,airborne=false,holding=false,throwing=false,charge=0,riding='walk'}={}){
   const wheel=appearance.mobility!=='none';
   state=throwing?'holding-both-shoot':airborne?'jump':holding?'holding-both':speed>8?'sprint':speed>.2?'walk':'idle';
-  const next=throwing||holding?(wheel?'Wheel_Throw':'Throw'):wheel||riding==='bike'?'Sit_Chair_Idle':airborne?'Jump_Idle':riding==='skate'?'Idle_A':speed>8?'Running_A':speed>.2?'Walking_A':'Idle_A';
+  // No skate, uma postura agachada (sem clipe de empurrar o skate no pacote) pelo menos muda quando
+  // anda, em vez de ficar parado em pé "flutuando" sobre a prancha com o skate em movimento.
+  const next=throwing||holding?(wheel?'Wheel_Throw':'Throw'):wheel||riding==='bike'?'Sit_Chair_Idle':airborne?'Jump_Idle':riding==='skate'?(speed>.3?'Crouching':'Idle_A'):speed>8?'Running_A':speed>.2?'Walking_A':'Idle_A';
   play(next,throwing?.05:.18);
   // Carregando o arremesso: quanto mais força, mais o braço vai para trás (balanço de 0,28 s a 0,6 s do Throw).
   if(holding&&!throwing){current.paused=false;current.time=THROW.windup+charge*(THROW.cocked-THROW.windup);}

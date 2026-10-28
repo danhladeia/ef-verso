@@ -36,26 +36,37 @@ function fitVehicle(original,length){
  original.position.set(-center.x,-fitted.min.y,-center.z);
  original.traverse(o=>{if(o.isMesh)o.castShadow=true;});
 }
+// Sinal de trânsito simples: cada laço passa por 4 "cantos" (um por esquina real da malha viária).
+// Cantos pares e ímpares alternam aberto/fechado, como um cruzamento de verdade virando entre os dois
+// sentidos — e como é o mesmo relógio para a pista interna e a externa, dá pra ver cruzamentos
+// parados e outros liberados ao mesmo tempo, não tudo andando ou tudo parado junto.
+const LIGHT_PERIOD=12,LIGHT_STOP=6.5;
+const lightRed=(corner,time)=>(corner%2===0)===((time%LIGHT_PERIOD)<LIGHT_PERIOD/2);
+const CAR_COUNT=13,BUS_COUNT=5;
 export async function createTraffic({scene,loader}){
  const [file,busFile]=await Promise.all([loader.loadAsync('/models/vila-pack.glb'),loader.loadAsync('/models/props/onibus.glb')]);
  const group=new T.Group();group.name='Trânsito';group.userData.noCameraCollision=true;scene.add(group);
  const inner=makeRoute(-48,48),outer=makeRoute(-100,100),vehicles=[];
- for(let i=0;i<10;i++){
-  const bus=i>=8,route=bus?outer:inner;
+ const total=CAR_COUNT+BUS_COUNT;
+ for(let i=0;i<total;i++){
+  const bus=i>=CAR_COUNT,route=bus?outer:inner,slot=bus?i-CAR_COUNT:i,count=bus?BUS_COUNT:CAR_COUNT;
   const original=bus?busFile.scene.clone(true):file.scene.getObjectByName('M_'+['car_hatchback','car_sedan','car_taxi','car_stationwagon'][i%4]).clone(true);
   if(!bus)alignForward(original); // o ônibus já foi modelado de frente para -Z (ver tools/build_city_props.py).
   fitVehicle(original,bus?0:CAR_LENGTH);
   const root=new T.Group();root.add(original);group.add(root);
-  vehicles.push({root,bus,route,length:route.getLength(),distance:route.getLength()*(bus?(i-8)/2:i/8),speed:bus?7:9+i%3,wait:0,lastStop:-1});
+  vehicles.push({root,bus,route,length:route.getLength(),distance:route.getLength()*slot/count,speed:bus?7:9+i%3,wait:0,lastStop:-1});
  }
  let time=0;
  return {group,update(dt,player,paused=false){if(paused)return;time+=dt;for(const v of vehicles){
   const t=(v.distance%v.length)/v.length,p=v.route.getPointAt(t),tangent=v.route.getTangentAt(t),dx=player.x-p.x,dz=player.z-p.z;
   const pedestrian=Math.abs(dx*tangent.z-dz*tangent.x)<2.1&&dx*tangent.x+dz*tangent.z>0&&dx*tangent.x+dz*tangent.z<7;
   const leader=vehicles.some(o=>o!==v&&o.route===v.route&&(o.distance-v.distance+v.length)%v.length<(v.bus?11:6));
-  const lap=Math.floor(v.distance/v.length),stopId=lap*4+Math.floor(t*4);
+  const corner=Math.floor(t*4),distToCorner=(1-(t*4-corner))/4*v.length,nextCorner=(corner+1)%4;
+  const redLight=distToCorner<LIGHT_STOP&&lightRed(nextCorner,time);
+  const lap=Math.floor(v.distance/v.length),stopId=lap*4+corner;
   if(v.bus&&Math.abs(p.z+100+LANE)<1&&Math.abs(p.x-14)<1&&v.lastStop!==stopId){v.wait=3;v.lastStop=stopId;}
-  v.wait=Math.max(0,v.wait-dt);if(!pedestrian&&!leader&&v.wait===0)v.distance+=v.speed*dt;
+  v.wait=Math.max(0,v.wait-dt);v.stoppedAtLight=redLight&&!pedestrian&&!leader&&v.wait===0;
+  if(!pedestrian&&!leader&&!redLight&&v.wait===0)v.distance+=v.speed*dt;
   v.root.position.set(p.x,.12,p.z);v.root.rotation.y=Math.atan2(-tangent.x,-tangent.z);
- }},snapshot(){return vehicles.map(v=>({bus:v.bus,x:v.root.position.x,z:v.root.position.z,distance:v.distance,waiting:v.wait>0}));}};
+ }},snapshot(){return vehicles.map(v=>({bus:v.bus,x:v.root.position.x,z:v.root.position.z,distance:v.distance,waiting:v.wait>0,stoppedAtLight:!!v.stoppedAtLight}));}};
 }

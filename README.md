@@ -4,6 +4,20 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Céu dia/noite, mais trânsito, skate/bike com embalo e acampamento — 28/10/2026 (noite)
+
+**Céu de verdade, no horário de Brasília** (`src/sky.js`). O jogo consulta o relógio real (fuso `America/Sao_Paulo`, sem precisar saber o fuso do jogador) e muda a cor do céu/neblina, a posição e intensidade do sol, e acende a lua e um campo de estrelas à noite — tudo contínuo ao longo do dia, não só dois estados. A luz do sol (que já seguia o aluno para a sombra) agora também gira de direção. Campo de visão bem mais longe (neblina de 140–460 m, câmeras com alcance de até 650 m) para dar pra ver a cidade e a montanha de longe.
+
+**Trânsito: mais carros e ônibus, sinal de verdade.** De 10 para 18 veículos (13 carros, 5 ônibus). Cada um dos 4 cantos de cada laço da malha viária tem um sinal que alterna aberto/fechado (os pares e os ímpares se revezam, como um cruzamento de verdade) — os veículos freiam antes do sinal fechado, sem se sobrepor uns aos outros (já tinha controle de distância do carro da frente).
+
+**Skate e bicicleta com embalo de verdade.** Antes, qualquer modo de transporte andava e parava instantaneamente, na mesma velocidade de giro do andar a pé. Agora skate e bike ganham velocidade aos poucos ao empurrar e continuam deslizando/pedalando um pouco na direção em que estavam indo ao soltar a tecla (saem numa rampa até a velocidade máxima, não liga/desliga). A trilha do Parque de Aventura (mountain bike) já estava aberta para andar — confirmado por teste automatizado (mais de 27 m percorridos de bike em 1,5 s nela). No skate, a animação deixou de ficar parada em pé mesmo andando rápido (usa uma postura agachada quando em movimento, já que o pacote de animações não tem um clipe de empurrar o skate).
+
+**Câmera em 3ª pessoa: A/D vira o personagem por padrão** (como pedido) — virar de lado (strafe) continua disponível em Configurações, só não é mais o padrão.
+
+**Acampamento da Serra, no Parque de Aventura.** Clareira com três cabanas de madeira (parede, telhado, porta, chaminé), fogueira central com pedras, lenha cruzada, luz quente e bancos de tora, e uma placa própria — ponto novo contado no progresso da trilha. Mata da montanha ficou duas vezes mais densa (240 árvores, duas cores de copa), ainda afastada do corredor da trilha e da clareira do acampamento.
+
+Verificação: `node tools/verify-city-upgrade.mjs` cobre o céu, o trânsito com sinal, skate/bike (cidade e trilha) e a 3ª pessoa; `node tools/verify-city.mjs` e os demais `verify-*.mjs`/`*.test.mjs` continuam cobrindo o resto.
+
 ## Carros andando de lado: corrigido — 28/10/2026 (fim de tarde)
 
 A correção da mão da via (acima) deixou os carros bem mais visíveis — e aí apareceu um segundo bug: eles andavam de **lado**, mostrando a lateral em vez da frente. Causa: o carro recebia uma rotação fixa de 90° (`original.rotation.y=Math.PI/2`) somada à rotação da rota (que já aponta a direção certa sozinha) — a soma das duas ficava 90° errada. Reescrevi `src/traffic.js`: em vez de um ângulo fixo, a frente de cada carro é descoberta pelas próprias rodas do pacote (`wheel_front_*`/`wheel_rear_*`), então funciona para qualquer um dos 4 modelos sem precisar adivinhar. Conferido matematicamente: a direção real de cada um dos 8 carros (frente→trás, pelas rodas) bate exatamente com a direção da pista.

@@ -15,7 +15,7 @@ try{
  });assert.equal(report.roads.blockers.length,0);
  const before=await page.evaluate(()=>window.travelReview.traffic());await page.waitForTimeout(1200);
  const after=await page.evaluate(()=>window.travelReview.traffic());
- assert.equal(after.filter(v=>v.bus).length,2);assert(after.some((v,i)=>v.distance>before[i].distance));report.traffic=after.length;
+ assert.equal(after.filter(v=>v.bus).length,5);assert(after.some((v,i)=>v.distance>before[i].distance));report.traffic=after.length;
  await page.locator('#settings-open').click();await page.locator('[data-binding="forward"]').click();await page.keyboard.press('i');
  await page.locator('#settings-save').click();assert.equal(await page.evaluate(()=>window.travelReview.settings().keys.forward),'i');
  await page.locator('#camera').click();const yaw=await page.evaluate(()=>window.travelReview.camera().yaw);
@@ -34,6 +34,12 @@ try{
   await page.waitForTimeout(120);assert.equal(await page.evaluate(()=>window.travelReview.camera().avatarVisible),true);
  }
  const peak=await page.evaluate(()=>window.cityReview.player());assert(peak.y>20);report.mountainHeight=peak.y;
+ // A trilha do Parque de Aventura precisa dar para andar/pedalar de verdade, não só decoração.
+ await page.evaluate(()=>{window.travelReview.select('bike');window.cityReview.visit(19);});
+ const t0=await page.evaluate(()=>window.cityReview.player());
+ await page.keyboard.down('i');await page.waitForTimeout(1500);await page.keyboard.up('i');
+ const t1=await page.evaluate(()=>window.cityReview.player());
+ report.trailRide=Math.hypot(t1.x-t0.x,t1.z-t0.z);assert(report.trailRide>8,'Bike deve avançar bastante pela trilha em 1,5 s: '+report.trailRide);
  await page.locator('#camera').click();await page.screenshot({path:out+'/adventure.png'});
  await page.evaluate(()=>window.travelReview.avatar().parent.position.set(-48,0,0));await page.waitForTimeout(200);await page.screenshot({path:out+'/city.png'});
  await page.locator('#settings-open').click();await page.locator('#settings-dialog').screenshot({path:out+'/settings.png'});await page.locator('#settings-cancel').click();

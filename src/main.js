@@ -25,16 +25,23 @@ import {createCloudSave} from './cloud-save.js';
 import {createTravel} from './travel.js';
 import {createTraffic} from './traffic.js';
 import {createAdventure,adventureHeight,canExplore,TRAIL} from './adventure.js';
+import {createSky} from './sky.js';
 const $=s=>document.querySelector(s),scene=new T.Scene(),solids=[],keys=new Set(),touch={x:0,y:0};
-// Colours, light and fog follow Jogo_RPG_EF7 (A Vila em Movimento).
-scene.background=new T.Color('#d9cdef');scene.fog=new T.Fog('#d9cdef',55,120);
+// Céu, cor e neblina: base do visual do Jogo_RPG_EF7, agora variando com o horário real de Brasília
+// (src/sky.js controla scene.background/fog, a luz do sol e a do hemisfério a cada quadro).
+scene.background=new T.Color('#d9cdef');scene.fog=new T.Fog('#d9cdef',140,460);
 const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;$('#world').append(renderer.domElement);
 renderer.shadowMap.enabled=!matchMedia('(pointer:coarse)').matches;renderer.shadowMap.type=T.PCFSoftShadowMap;
-scene.add(new T.HemisphereLight(0xfff6e0,0x6f8a4e,1.6));const sun=new T.DirectionalLight(0xffffff,2.2);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-28,right:28,top:28,bottom:-28,near:1,far:120});sun.shadow.normalBias=.03;sun.shadow.bias=-.0005;scene.add(sun,sun.target);
+const hemi=new T.HemisphereLight(0xfff6e0,0x6f8a4e,1.6);scene.add(hemi);const sun=new T.DirectionalLight(0xffffff,2.2);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-28,right:28,top:28,bottom:-28,near:1,far:120});sun.shadow.normalBias=.03;sun.shadow.bias=-.0005;scene.add(sun,sun.target);
+const sky=createSky({scene,sun,hemisphere:hemi});
 // 'cima': 3/4 view from above that follows the student; 'third': behind the student. Mouse wheel zooms both.
-const iso=new T.PerspectiveCamera(42,innerWidth/innerHeight,.3,200),third=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,130);
+// Campo de visão mais longe: dá para ver prédios e a montanha de longe em vez de sumirem na neblina perto.
+const iso=new T.PerspectiveCamera(42,innerWidth/innerHeight,.3,650),third=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,550);
 let zoom=1,thirdDistance=6;
 let mode='iso',yaw=0,active=iso,thirdPitch=.07,ready=false,navigation,nearest=null,nearbyResident=null,route=[],running=false,verticalSpeed=0,elapsed=0,avatar,mission,customizer,crowd,skaters,ambient,hoopsMatch,soccerMatch,volleyMatch,skateMatch,onboarding,theory,travel,traffic,adventure,cloud;
+// Skate/bicicleta ganham e perdem velocidade aos poucos (em vez de andar/parar instantâneo como a
+// pé) e continuam deslizando/pedalando um pouco na última direção ao soltar as teclas (embalo).
+let rideSpeed=0;const rideDir={x:0,z:1};
 let storage;try{storage=localStorage;}catch{storage={getItem(){throw Error('Storage unavailable');},setItem(){throw Error('Storage unavailable');}};}
 const progress=createProgress(storage),wallet=createWallet(storage),visited=new Set(progress.state.visited),dialog=$('#info'),labels=[];
 const player=new T.Group();player.position.set(0,0,10);scene.add(player);
@@ -104,7 +111,7 @@ joy.onpointerdown=e=>{if(joyId!==null)return;joyId=e.pointerId;joy.setPointerCap
 function resize(){renderer.setSize(innerWidth,innerHeight);const a=innerWidth/innerHeight;iso.aspect=third.aspect=a;iso.updateProjectionMatrix();third.updateProjectionMatrix();}
 renderer.domElement.addEventListener('wheel',e=>{if(flight.enabled)return;e.preventDefault();const step=Math.sign(e.deltaY);if(mode==='third')thirdDistance=T.MathUtils.clamp(thirdDistance+step*.7,3.5,11);else zoom=T.MathUtils.clamp(zoom+step*.1,.55,1.6);},{passive:false});addEventListener('resize',resize);resize();
 function updateCamera(dt,snap=false){
- sun.position.copy(player.position).add(new T.Vector3(18,34,14));sun.target.position.copy(player.position);const focus=player.position.clone().add(new T.Vector3(0,1,0));
+ const focus=player.position.clone().add(new T.Vector3(0,1,0));
  if(mode==='iso'){if(avatar)avatar.visual.visible=true;const k=(innerWidth<700?1.25:1)*zoom,desired=focus.clone().add(new T.Vector3(Math.sin(yaw)*15*k,15*k,Math.cos(yaw)*15*k));if(snap)iso.position.copy(desired);else iso.position.lerp(desired,1-Math.exp(-8*dt));iso.lookAt(focus);return;}
  if(route.length&&!frontView){const p=route[0],angle=Math.atan2(player.position.x-p.x,player.position.z-p.z);yaw+=Math.atan2(Math.sin(angle-yaw),Math.cos(angle-yaw))*(1-Math.exp(-5*dt));}if(!frontView)player.rotation.y=yaw;
  const dir=frontView?-1:1,back=new T.Vector3(Math.sin(yaw)*dir,0,Math.cos(yaw)*dir),right=new T.Vector3(Math.cos(yaw)*dir,0,-Math.sin(yaw)*dir);
@@ -121,6 +128,7 @@ const map=document.createElement('canvas');map.id='minimap';map.width=220;map.he
 function drawMap(){const ctx=map.getContext('2d'),scale=220/510;ctx.fillStyle='#b5cb9e';ctx.fillRect(0,0,220,220);ctx.save();ctx.translate(78,110);ctx.scale(scale,scale);ctx.fillStyle='#719269';ctx.fillRect(174,-108,138,196);ctx.strokeStyle='#c7a273';ctx.lineWidth=5;ctx.beginPath();TRAIL.forEach(([x,z],i)=>i?ctx.lineTo(x,z):ctx.moveTo(x,z));ctx.stroke();ctx.strokeStyle='#4b5964';ctx.lineWidth=9;for(const a of ROAD_AXES){ctx.beginPath();ctx.moveTo(-105,a);ctx.lineTo(105,a);ctx.moveTo(a,-105);ctx.lineTo(a,105);ctx.stroke();}for(const p of places){ctx.fillStyle=visited.has(p.name)?'#2e7954':'#7741a7';ctx.beginPath();ctx.arc(p.x,p.z,4,0,Math.PI*2);ctx.fill();}ctx.fillStyle='#fbc53d';ctx.strokeStyle='#3b3342';ctx.lineWidth=2;ctx.beginPath();ctx.arc(player.position.x,player.position.z,6,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore();}
 const clock=new T.Clock();let lastMap=0;
 function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta(),.05);elapsed+=dt;
+ sky.update(dt,player.position);
  if(!canLook()&&document.pointerLockElement)document.exitPointerLock();
  travel?.update(avatar,0);traffic?.update(dt,player.position,document.hidden||onboarding?.active||settings.isOpen);adventure?.update(player.position,travel?.mode);
  crowd?.update(dt,player.position,{paused:dialog.open||customizer?.isOpen||mission?.locked||hoopsMatch?.active||soccerMatch?.active||volleyMatch?.active||skateMatch?.active||onboarding?.active||theory?.active||frontView,overview:flight.enabled});skaters?.update(dt,player.position,flight.enabled);ambient?.update(dt,player.position);
@@ -136,7 +144,18 @@ function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta()
   if(mode==='third'&&sx&&!settings.value.strafe){yaw-=sx*2.6*dt;if(sx)route=[];sx=0;}
   let dx=sx*Math.cos(yaw)+sy*Math.sin(yaw),dz=-sx*Math.sin(yaw)+sy*Math.cos(yaw);if(sx||sy)route=[];
   if(route.length){const p=route[0];dx=p.x-player.position.x;dz=p.z-player.position.z;if(Math.hypot(dx,dz)<.3){route.shift();if(!route.length)$('#status').textContent='Você chegou. Explore o marcador próximo.';}}
-  const len=Math.hypot(dx,dz);if(len>.03){const top=travel?.mode!=='walk'?travel?.speed||6:running||settings.pressed(keys,'sprint')?11:6;const speed=top*dt,step=route.length?Math.min(speed,len):speed;dx=dx/len*step;dz=dz/len*step;const next={x:player.position.x+dx,z:player.position.z+dz};navigation.resolve(next,.35,crowd?.positions()||[]);player.position.x=next.x;player.position.z=next.z;player.position.y=grounded?adventureHeight(next.x,next.z):Math.max(adventureHeight(next.x,next.z),player.position.y);if(mode!=='third'||sy<=0)player.rotation.y=Math.atan2(-dx,-dz);}
+  const len=Math.hypot(dx,dz),riding=travel?.mode!=='walk'&&!route.length;
+  if(len>.03){dx/=len;dz/=len;if(riding){rideDir.x=dx;rideDir.z=dz;}}
+  let moveX=0,moveZ=0;
+  if(riding){
+   const top=travel?.speed||6,accel=travel.mode==='bike'?42:30,drag=travel.mode==='bike'?6:4;
+   rideSpeed=len>.03?Math.min(top,rideSpeed+accel*dt):Math.max(0,rideSpeed-drag*dt);
+   if(rideSpeed>.01){const step=rideSpeed*dt;moveX=rideDir.x*step;moveZ=rideDir.z*step;}
+  }else{
+   rideSpeed=0;
+   if(len>.03){const top=running||settings.pressed(keys,'sprint')?11:6,step=route.length?Math.min(top*dt,len):top*dt;moveX=dx*step;moveZ=dz*step;}
+  }
+  if(Math.hypot(moveX,moveZ)>.0005){const next={x:player.position.x+moveX,z:player.position.z+moveZ};navigation.resolve(next,.35,crowd?.positions()||[]);player.position.x=next.x;player.position.z=next.z;player.position.y=grounded?adventureHeight(next.x,next.z):Math.max(adventureHeight(next.x,next.z),player.position.y);if(mode!=='third'||sy<=0)player.rotation.y=Math.atan2(-moveX,-moveZ);}
  }
  updateGuide(dt);
  const moveSpeed=Math.hypot(player.position.x-beforeX,player.position.z-beforeZ)/Math.max(dt,.001);shadow.position.y=adventureHeight(player.position.x,player.position.z)+.19-player.position.y;mission?.update(dt,dialog.open);avatar?.update(dt,{speed:moveSpeed,airborne:player.position.y-adventureHeight(player.position.x,player.position.z)>.1,holding:mission?.holding,throwing:mission?.throwing,charge:mission?.charge,riding:travel?.mode});travel?.update(avatar,moveSpeed);
@@ -170,4 +189,5 @@ buildCity({scene,loader:new GLTFLoader(),solids}).then(async audit=>{
  if(import.meta.env.DEV)window.questReview={wallet:()=>({coins:wallet.coins,badges:wallet.badges}),soccerScore:()=>soccerMatch.score,volleyScore:()=>volleyMatch.score};
  if(import.meta.env.DEV)window.travelReview={traffic:()=>traffic.snapshot(),mode:()=>travel.mode,select:mode=>travel.select(mode),adventure:()=>adventure.snapshot,camera:()=>({mode,yaw,pitch:thirdPitch,avatarVisible:avatar.visual.visible}),avatar:()=>avatar.visual,settings:()=>settings.value};
  if(import.meta.env.DEV)window.skateReview={terrainHeight:skateMatch._terrainHeight,active:()=>skateMatch.active,state:()=>skateMatch._ride()?.state,enter:()=>skateMatch.start(),leave:()=>skateMatch.leave()};
+ if(import.meta.env.DEV)window.skyReview={hour:()=>sky.hour,setHour:h=>sky.setHourOverride(h),background:()=>'#'+scene.background.getHexString(),sunIntensity:()=>sun.intensity,hemiIntensity:()=>hemi.intensity};
 }).catch(error=>{console.error(error);$('#status').textContent='Falha ao carregar a cidade. Recarregue a página.';window.cityReady=true;window.cityStats=()=>({failures:1});});

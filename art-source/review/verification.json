@@ -103,25 +103,25 @@
   ],
   "clearRoutes": true,
   "walkToSchool": {
-    "x": -8.155808189617973e-10,
+    "x": -8.029125344677685e-10,
     "y": 0,
-    "z": -14.09305315651583
+    "z": -14.093062184117056
   },
   "jump": true,
   "runPosition": {
-    "x": -0.0921988801723781,
+    "x": -0.11311288811090636,
     "y": 0,
-    "z": 15.66004872444678
+    "z": 15.649897547237206
   },
   "desktopStats": {
-    "drawCalls": 283,
-    "triangles": 237090,
+    "drawCalls": 299,
+    "triangles": 240312,
     "residents": 24,
     "failures": 0
   },
   "mobileStats": {
-    "drawCalls": 155,
-    "triangles": 141825,
+    "drawCalls": 177,
+    "triangles": 151690,
     "residents": 11,
     "failures": 0
   },

@@ -35,14 +35,39 @@ export function createAdventure({scene}){
   const post=new T.Mesh(new T.CylinderGeometry(.07,.09,2,8),new T.MeshStandardMaterial({color:'#805942'}));post.position.set(mark.x+2.5,base+1,mark.z);group.add(post);
  }
  // Trees are deliberately outside the trail corridor, so both walkers and bikes can pass.
- const trunkMat=new T.MeshStandardMaterial({color:'#826345'}),leafMat=new T.MeshStandardMaterial({color:'#467750'});
+ const trunkMat=new T.MeshStandardMaterial({color:'#826345'}),leafMat=new T.MeshStandardMaterial({color:'#467750'}),leafMat2=new T.MeshStandardMaterial({color:'#5a9159'});
  const distanceToTrail=(x,z)=>Math.min(...TRAIL.slice(0,-1).map(([a,b],i)=>{const [c,d]=TRAIL[i+1],t=T.MathUtils.clamp(((x-a)*(c-a)+(z-b)*(d-b))/((c-a)**2+(d-b)**2),0,1);return Math.hypot(x-a-(c-a)*t,z-b-(d-b)*t);}));
- for(let i=0;i<95;i++){
-  const x=182+(i*37%120),z=-94+(i*53%165);if(distanceToTrail(x,z)<5)continue;
-  const y=adventureHeight(x,z),h=3+i%3;
-  const trunk=new T.Mesh(new T.CylinderGeometry(.13,.22,h,6),trunkMat);trunk.position.set(x,y+h/2,z);group.add(trunk);
-  const leaves=new T.Mesh(new T.ConeGeometry(1.8,h+2,7),leafMat);leaves.position.set(x,y+h+1,z);group.add(leaves);
+ const CAMP={x:300,z:78,r:11};
+ const nearCamp=(x,z)=>Math.hypot(x-CAMP.x,z-CAMP.z)<CAMP.r;
+ // Mata mais densa (240 árvores, o dobro de antes): duas copas diferentes, afastadas da trilha e da clareira do acampamento.
+ for(let i=0;i<240;i++){
+  const x=176+(i*23.7%134),z=-106+(i*41.3%192);if(distanceToTrail(x,z)<4.5||nearCamp(x,z))continue;
+  const y=adventureHeight(x,z),h=2.6+(i%5)*.7,leaf=i%3?leafMat:leafMat2;
+  const trunk=new T.Mesh(new T.CylinderGeometry(.12,.2,h,6),trunkMat);trunk.position.set(x,y+h/2,z);trunk.castShadow=true;group.add(trunk);
+  const leaves=new T.Mesh(new T.ConeGeometry(1.5+i%3*.3,h+1.8,7),leaf);leaves.position.set(x,y+h+.9,z);leaves.castShadow=true;group.add(leaves);
  }
+ // Acampamento: clareira com cabanas de toras, fogueira e bancos — perto do Mirante, numa área mais plana.
+ const cabinWall=new T.MeshStandardMaterial({color:'#8a6239',roughness:.95}),cabinRoof=new T.MeshStandardMaterial({color:'#5c3a28',roughness:.85}),cabinDoor=new T.MeshStandardMaterial({color:'#3a2415'}),stoneMat=new T.MeshStandardMaterial({color:'#8a8a86',roughness:1}),logMat=new T.MeshStandardMaterial({color:'#6b4a30',roughness:.9});
+ function cabin(x,z,rot){
+  const y=adventureHeight(x,z);
+  const walls=new T.Mesh(new T.BoxGeometry(4.4,2.3,3.6),cabinWall);walls.position.set(x,y+1.15,z);walls.rotation.y=rot;walls.castShadow=walls.receiveShadow=true;group.add(walls);
+  const roof=new T.Mesh(new T.ConeGeometry(3.5,1.7,4),cabinRoof);roof.position.set(x,y+2.3+.85,z);roof.rotation.y=rot+Math.PI/4;roof.castShadow=true;group.add(roof);
+  const door=new T.Mesh(new T.BoxGeometry(.9,1.65,.1),cabinDoor);door.position.set(x+Math.sin(rot)*1.81,y+.82,z+Math.cos(rot)*1.81);door.rotation.y=rot;group.add(door);
+  const chimney=new T.Mesh(new T.BoxGeometry(.5,1.5,.5),stoneMat);chimney.position.set(x-Math.sin(rot)*1.4-Math.cos(rot)*1,y+2.3+1,z-Math.cos(rot)*1.4+Math.sin(rot)*1);group.add(chimney);
+ }
+ cabin(CAMP.x-6,CAMP.z-2,Math.PI*.15);
+ cabin(CAMP.x+5,CAMP.z+4,-Math.PI*.6);
+ cabin(CAMP.x-2,CAMP.z+8,Math.PI*.95);
+ // Fogueira central: pedras em círculo, lenha cruzada e uma luz quente.
+ const fireY=adventureHeight(CAMP.x,CAMP.z);
+ for(let i=0;i<10;i++){const a=i/10*Math.PI*2,sx=CAMP.x+Math.cos(a)*.9,sz=CAMP.z+Math.sin(a)*.9;const stone=new T.Mesh(new T.SphereGeometry(.18,6,5),stoneMat);stone.position.set(sx,fireY+.1,sz);stone.scale.y=.7;group.add(stone);}
+ for(const r of [0,Math.PI/2]){const log=new T.Mesh(new T.CylinderGeometry(.08,.08,1.3,6),logMat);log.position.set(CAMP.x,fireY+.15,CAMP.z);log.rotation.z=Math.PI/2;log.rotation.y=r;group.add(log);}
+ const fireLight=new T.PointLight('#ff9a4d',6,9,2);fireLight.position.set(CAMP.x,fireY+.6,CAMP.z);group.add(fireLight);
+ for(const [dx,dz] of [[-2.6,-1.6],[2.6,1.6],[0,2.8]]){const bench=new T.Mesh(new T.BoxGeometry(1.5,.4,.4),logMat);bench.position.set(CAMP.x+dx,fireY+.2,CAMP.z+dz);bench.lookAt(CAMP.x,fireY+.2,CAMP.z);group.add(bench);}
+ {const canvas=document.createElement('canvas');canvas.width=512;canvas.height=160;const c=canvas.getContext('2d');c.fillStyle='#244d40';c.fillRect(0,0,512,160);c.fillStyle='#ffe7a0';c.font='bold 34px sans-serif';c.textAlign='center';c.fillText('Acampamento da Serra',256,64);c.font='23px sans-serif';c.fillText('Cabanas, fogueira e bancos de tora',256,115);
+  const sign=new T.Mesh(new T.PlaneGeometry(4,1.25),new T.MeshBasicMaterial({map:new T.CanvasTexture(canvas),side:T.DoubleSide}));sign.position.set(CAMP.x+9,fireY+2,CAMP.z-7);group.add(sign);
+  const post=new T.Mesh(new T.CylinderGeometry(.07,.09,2,8),new T.MeshStandardMaterial({color:'#805942'}));post.position.set(CAMP.x+9,fireY+1,CAMP.z-7);group.add(post);
+  milestones.push({x:CAMP.x+9,z:CAMP.z-7,name:'Acampamento da Serra'});}
  const readout=document.createElement('div');readout.className='adventure-readout';readout.hidden=true;document.body.append(readout);
  const visited=new Set();
  return {height:adventureHeight,update(pos,mode){readout.hidden=pos.x<174||pos.x>312||pos.z< -108||pos.z>88;if(readout.hidden)return;for(const m of milestones)if(Math.hypot(pos.x-m.x,pos.z-m.z)<5)visited.add(m.name);readout.textContent=`Parque de Aventura · ${Math.round(pos.y)} m · ${mode==='bike'?'Mountain bike':'Trilha / trekking'} · ${visited.size}/${milestones.length} pontos explorados`;},get snapshot(){return {visited:[...visited],milestones};}};

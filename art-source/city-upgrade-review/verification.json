@@ -3,11 +3,12 @@
     "removed": 25,
     "blockers": []
   },
-  "traffic": 10,
+  "traffic": 18,
   "mouseLook": true,
-  "walk": 4.37820000001786,
-  "skate": 9.531600000038745,
-  "bike": 13.201199999839094,
-  "mountainHeight": 35.20409219542641,
+  "walk": 4.358400000035788,
+  "skate": 6.608875100231817,
+  "bike": 12.944618979559921,
+  "mountainHeight": 35.307714021157985,
+  "trailRide": 27.10747086020438,
   "errors": []
 }
