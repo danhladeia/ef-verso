@@ -4,7 +4,7 @@ import * as T from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createNavigation} from '../src/navigation.js';
 import {createCrowd} from '../src/crowd.js';
-import {createCharacter,PARTS,DEFAULT_APPEARANCE,normalizeAppearance,residentAppearance} from '../src/student-character.js';
+import {createCharacter,PARTS,DEFAULT_APPEARANCE,normalizeAppearance,residentAppearance,PALETTES} from '../src/student-character.js';
 // Alunos KayKit: cabeças, roupas e acessórios num só esqueleto; animações em arquivos separados, ligadas pelo nome do osso.
 globalThis.document={hidden:false};
 // O Node não decodifica imagens: remove a textura do GLB e devolve uma textura vazia aos materiais.
@@ -35,6 +35,9 @@ const crowd=await createCrowd({scene,loader,navigation});assert.equal(crowd.coun
 for(let i=0;i<1200;i++)crowd.update(1/60,{x:0,z:35});
 const snapshot=crowd.snapshot();assert(snapshot.every(r=>!r.blocked));assert(snapshot.filter(r=>r.travelled>1).length>=20);
 const adults=[...Array(24).keys()].filter(i=>residentAppearance(i).adult).length;assert(adults>=6&&adults<=10,'Mix of adults and children');
+// Cinza e roxo (as duas últimas cores) ficam só para quem escolhe no guarda-roupa: num penteado grande
+// (crespo/cacheado), uma cor lisa e fria sorteada automaticamente "apaga" o rosto do morador/bot.
+for(let i=0;i<60;i++)assert(PALETTES.hairColor.slice(0,5).includes(residentAppearance(i).look.hairColor),'Natural hair color for resident '+i);
 const frozen=crowd.snapshot();for(let i=0;i<60;i++)crowd.update(1/60,{x:0,z:35},{paused:true});assert.deepEqual(crowd.snapshot(),frozen);
 const mobile=await createCrowd({scene:new T.Scene(),loader,navigation,compact:true});assert.equal(mobile.count,11);
 console.log(JSON.stringify({residents:crowd.count,adults,moving:snapshot.filter(r=>r.travelled>1).length,mobile:mobile.count,pieces:'passed',tones:'passed',wheelchair:'passed',collision:'passed',pause:'passed'}));

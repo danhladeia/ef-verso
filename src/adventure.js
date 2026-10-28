@@ -1,4 +1,5 @@
 import * as T from 'three';
+import {SEASON_LEAF,SEASON_LEAF2} from './sky.js';
 export const ADVENTURE_BOUNDS={minX:174,maxX:312,minZ:-108,maxZ:88};
 export const canExplore=(x,z)=>Math.abs(x)<=172&&Math.abs(z)<=172||(x>=170&&x<=312&&z>=-108&&z<=88);
 export const adventureHeight=(x,z)=>{
@@ -69,6 +70,9 @@ export function createAdventure({scene}){
   const post=new T.Mesh(new T.CylinderGeometry(.07,.09,2,8),new T.MeshStandardMaterial({color:'#805942'}));post.position.set(CAMP.x+9,fireY+1,CAMP.z-7);group.add(post);
   milestones.push({x:CAMP.x+9,z:CAMP.z-7,name:'Acampamento da Serra'});}
  const readout=document.createElement('div');readout.className='adventure-readout';readout.hidden=true;document.body.append(readout);
- const visited=new Set();
- return {height:adventureHeight,update(pos,mode){readout.hidden=pos.x<174||pos.x>312||pos.z< -108||pos.z>88;if(readout.hidden)return;for(const m of milestones)if(Math.hypot(pos.x-m.x,pos.z-m.z)<5)visited.add(m.name);readout.textContent=`Parque de Aventura · ${Math.round(pos.y)} m · ${mode==='bike'?'Mountain bike':'Trilha / trekking'} · ${visited.size}/${milestones.length} pontos explorados`;},get snapshot(){return {visited:[...visited],milestones};}};
+ const visited=new Set();let lastSeason=-1;
+ return {height:adventureHeight,update(pos,mode,season){
+  if(season!==undefined&&season!==lastSeason){lastSeason=season;leafMat.color.set(SEASON_LEAF[season]);leafMat2.color.set(SEASON_LEAF2[season]);}
+  readout.hidden=pos.x<174||pos.x>312||pos.z< -108||pos.z>88;if(readout.hidden)return;for(const m of milestones)if(Math.hypot(pos.x-m.x,pos.z-m.z)<5)visited.add(m.name);readout.textContent=`Parque de Aventura · ${Math.round(pos.y)} m · ${mode==='bike'?'Mountain bike':'Trilha / trekking'} · ${visited.size}/${milestones.length} pontos explorados`;
+ },get snapshot(){return {visited:[...visited],milestones};}};
 }

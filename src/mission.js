@@ -22,7 +22,7 @@ export async function createMission({scene,loader,player,solids,hoop,progress,wa
  <div class="power-meter" id="power-meter" role="meter" aria-label="Força do arremesso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="power-zone" id="power-zone"></span><span class="power-fill" id="power-fill"></span></div>
  <p class="shot-feedback" id="shot-feedback" role="status" aria-live="polite"></p><div class="shot-buttons"><button id="shoot">Segure para arremessar</button><button id="leave-court"></button></div>`;
  document.body.append(panel);
- let practicing=false,shot=null,shotTime=0,resolved=false,throwTime=0,replayHits=0,localAttempts=0,acceptAction=null,charging=false,charge=0,moving=false,dribble=0,result=null,launch=null;
+ let practicing=false,shot=null,shotTime=0,resolved=false,throwTime=0,replayHits=0,localAttempts=0,acceptAction=null,charging=false,charge=0,moving=false,dribble=0,result=null,launch=null,landed=null;
  const last=new T.Vector3();
  const state=()=>progress.state;
  const total=()=>state().stage==='complete'?replayHits:state().baskets;
@@ -73,7 +73,7 @@ export async function createMission({scene,loader,player,solids,hoop,progress,wa
  }
  function launchBall(){
   const hand=rightHand(),start={x:hand.x,y:hand.y+.1,z:hand.z};
-  shot=throwShot(start,hoop,forward(),launch.power);result=rimCrossing(shot,hoop,RIM);launch=null;shotTime=0;resolved=false;localAttempts++;feedback('Bola no ar…');
+  shot=throwShot(start,hoop,forward(),launch.power);result=rimCrossing(shot,hoop,RIM);launch=null;shotTime=0;resolved=false;landed=null;localAttempts++;feedback('Bola no ar…');
  }
  const shootButton=$('#shoot');
  shootButton.onpointerdown=e=>{e.preventDefault();try{shootButton.setPointerCapture(e.pointerId);}catch{}beginCharge();};shootButton.onpointerup=shootButton.onpointercancel=()=>release();
@@ -102,7 +102,11 @@ export async function createMission({scene,loader,player,solids,hoop,progress,wa
    return;
   }
   if(paused||document.hidden)return;
-  shotTime+=dt;const p=shotPosition(shot,shotTime);ballRoot.position.set(p.x,Math.max(.4,p.y),p.z);ballRoot.rotation.z-=dt*5;
+  shotTime+=dt;
+  // Depois de chegar ao chão (ou ao fundo da rede, numa cesta), a bola para ali — antes, ela seguia a
+  // parábola pura mesmo com a altura travada em .4, então "deslizava" flutuando pela quadra até o fim
+  // da janela de 2,4 s em vez de parar onde caiu.
+  if(!landed){const p=shotPosition(shot,shotTime);if(p.y<=.4){landed={x:p.x,y:.4,z:p.z};ballRoot.position.set(landed.x,landed.y,landed.z);}else{ballRoot.position.set(p.x,p.y,p.z);ballRoot.rotation.z-=dt*5;}}
   if(!resolved&&shotTime>=result.time){
    resolved=true;if(state().stage==='court')dispatch({type:'shot',scored:result.scored});else if(result.scored)replayHits++;
    $('#basket-count').textContent=`${total()} / 3`;

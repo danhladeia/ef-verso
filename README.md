@@ -4,6 +4,20 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Cabeça quebrada corrigida, física do basquete, giro suave e estações do ano — 28/10/2026 (madrugada)
+
+**Cabeça "capacete cinza" dos moradores/bots corrigida** (`src/student-character.js`). Com os penteados grandes (crespo/cacheado, que cobrem quase a cabeça toda com cachos sem fio visível), duas das sete cores de cabelo do sorteio automático — cinza e roxo, pensadas para quem escolhe no guarda-roupa — deixavam o personagem parecendo careca com um capacete liso, sem rosto visível. Moradores e os bots das partidas (basquete, vôlei, futebol) agora só sorteiam as 5 cores naturais; cinza e roxo continuam disponíveis para quem quiser em "Meu personagem".
+
+**Física do arremesso de basquete corrigida** (`src/mission.js`). Depois que a bola cruzava o aro (ou errava), ela continuava seguindo a parábola pura com a altura travada no chão — ou seja, "deslizava" flutuando pela quadra feito um disco até o fim da animação, em vez de parar onde caiu. Agora a bola trava no ponto exato em que toca o chão (ou cai pela rede, numa cesta), como um arremesso de verdade.
+
+**Giro da câmera em 3ª pessoa ficou suave.** A/D viravam o personagem "ligando" na velocidade máxima na hora e travando ao soltar. Agora o giro acelera aos poucos ao segurar e desacelera aos poucos ao soltar, como no deslize do skate/bike.
+
+**Sistema de estações do ano**, pelo calendário real de Brasília (`src/sky.js`): verão, outono, inverno e primavera (no hemisfério sul — verão em torno do ano-novo, não de julho) tingem o chão, o céu/neblina e a folhagem da floresta do Parque de Aventura (`src/adventure.js`) de cores próprias — verde forte no verão, laranja no outono, tons pálidos/azulados no inverno, verde viçoso na primavera — por cima do ciclo dia/noite já existente.
+
+**Vôlei e os outros esportes revisados.** O jogo de vôlei 3x3 (`src/volley-match.js`) já existia e foi testado jogando de verdade (saque, rebatida, ponto); basquete, futebol e a pista de skate também foram conferidos em partida — todos funcionando, com as cabeças corrigidas.
+
+Verificação: `node tools/crowd.test.mjs` (cor de cabelo natural para moradores/bots), `node tools/verify-mission.mjs` (física do arremesso), `node tools/verify-city-upgrade.mjs` (giro suave e as 4 estações), e os demais `verify-*.mjs`/`*.test.mjs` continuam cobrindo o resto.
+
 ## Céu dia/noite, mais trânsito, skate/bike com embalo e acampamento — 28/10/2026 (noite)
 
 **Céu de verdade, no horário de Brasília** (`src/sky.js`). O jogo consulta o relógio real (fuso `America/Sao_Paulo`, sem precisar saber o fuso do jogador) e muda a cor do céu/neblina, a posição e intensidade do sol, e acende a lua e um campo de estrelas à noite — tudo contínuo ao longo do dia, não só dois estados. A luz do sol (que já seguia o aluno para a sombra) agora também gira de direção. Campo de visão bem mais longe (neblina de 140–460 m, câmeras com alcance de até 650 m) para dar pra ver a cidade e a montanha de longe.

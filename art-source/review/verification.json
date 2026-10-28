@@ -103,19 +103,19 @@
   ],
   "clearRoutes": true,
   "walkToSchool": {
-    "x": 0,
+    "x": -8.293597594860718e-10,
     "y": 0,
-    "z": -14.336000000000002
+    "z": -14.092418406299203
   },
   "jump": true,
   "runPosition": {
-    "x": -0.32112109821371176,
+    "x": -0.17848619038762803,
     "y": 0,
-    "z": 15.467415685296363
+    "z": 15.61529174217222
   },
   "desktopStats": {
-    "drawCalls": 285,
-    "triangles": 237462,
+    "drawCalls": 284,
+    "triangles": 236782,
     "residents": 24,
     "failures": 0
   },

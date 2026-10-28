@@ -60,9 +60,13 @@ export function readAppearance(){try{return normalizeAppearance(JSON.parse(local
 /** Aparência variada e determinística para os moradores: crianças, adultos e acessibilidade. */
 export function residentAppearance(index){
  const adult=index%3===2,pick=(list,k)=>list[(index*k)%list.length],P=PALETTES;
+ // Só as 5 primeiras cores (castanhos/preto) entram no sorteio automático: as duas últimas (cinza,
+ // roxo) ficam só para quem escolhe no guarda-roupa — num penteado grande (crespo/cacheado), que cobre
+ // quase a cabeça toda com bolhas sem padrão de fio, uma cor lisa e fria "apaga" o rosto e parece um
+ // capacete quebrado em vez de cabelo.
  return {adult,look:{tone:pick(PARTS.tone,3),head:adult&&index%2?pick(ADULT_HEADS,1):pick(STUDENT_HEADS,5),body:adult?pick([...ADULT_BODIES,...STUDENT_BODIES],3):pick(STUDENT_BODIES,7),
   glasses:index%5===0?'acc_glasses':index%11===4?'acc_sunglasses':'none',hearing:index%9===3?'acc_hearing':'none',accessory:!adult&&index%2===0?'acc_backpack':'none',mobility:index%10===6?'acc_wheelchair':'none',
-  hairColor:pick(P.hairColor.slice(0,6),5),shirt:pick(P.shirt,3),accent:pick(P.accent,5),pants:pick(P.pants,7),shoes:pick(P.shoes,3),accessoryColor:pick(P.accessoryColor,1)}};
+  hairColor:pick(P.hairColor.slice(0,5),5),shirt:pick(P.shirt,3),accent:pick(P.accent,5),pants:pick(P.pants,7),shoes:pick(P.shoes,3),accessoryColor:pick(P.accessoryColor,1)}};
 }
 // Recoloração por bloco do atlas, no fragment shader (o mesmo programa para todos os alunos).
 function recolorable(material,atlas){

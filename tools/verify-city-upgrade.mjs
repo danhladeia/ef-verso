@@ -22,6 +22,21 @@ try{
  await page.mouse.move(800,500);await page.mouse.down();await page.mouse.move(960,540,{steps:10});await page.mouse.up();
  assert.notEqual(await page.evaluate(()=>window.travelReview.camera().yaw),yaw);
  report.mouseLook=true;
+ // Giro com A/D suave: a câmera acelera aos poucos (não "liga" na velocidade máxima) e, ao soltar,
+ // continua girando um pouco antes de parar (desacelera) em vez de travar na hora.
+ {
+  const yaw0=await page.evaluate(()=>window.travelReview.camera().yaw);
+  await page.keyboard.down('d');await page.waitForTimeout(70);
+  const yaw1=await page.evaluate(()=>window.travelReview.camera().yaw);
+  await page.keyboard.up('d');
+  const yawAtRelease=await page.evaluate(()=>window.travelReview.camera().yaw);
+  await page.waitForTimeout(150);
+  const yaw2=await page.evaluate(()=>window.travelReview.camera().yaw);
+  const earlyDelta=Math.abs(yaw1-yaw0),fullRate=2.6*.07,afterRelease=Math.abs(yaw2-yawAtRelease);
+  report.smoothTurn={earlyDelta,fullRate,afterRelease};
+  assert(earlyDelta<fullRate*.85,'Giro deve acelerar aos poucos, não já na velocidade máxima: '+JSON.stringify(report.smoothTurn));
+  assert(afterRelease>.01,'Giro deve desacelerar devagar, continuando um pouco após soltar: '+JSON.stringify(report.smoothTurn));
+ }
  for(const mode of ['walk','skate','bike']){
   await page.evaluate(mode=>{window.travelReview.select(mode);const a=window.travelReview.avatar();a.parent.position.set(-48,0,0);},mode);
   const p0=await page.evaluate(()=>window.cityReview.player());await page.keyboard.down('i');await page.waitForTimeout(700);await page.keyboard.up('i');
@@ -34,6 +49,13 @@ try{
   await page.waitForTimeout(120);assert.equal(await page.evaluate(()=>window.travelReview.camera().avatarVisible),true);
  }
  const peak=await page.evaluate(()=>window.cityReview.player());assert(peak.y>20);report.mountainHeight=peak.y;
+ // Sistema de estações: cada uma tinge o chão/céu de um jeito diferente (testado forçando cada uma via
+ // o hook de DEV, sem depender da data real do dia em que o teste roda).
+ await page.evaluate(()=>window.skyReview.setHour(12));
+ report.seasons=[];
+ for(let s=0;s<4;s++){await page.evaluate(s=>window.skyReview.setSeason(s),s);await page.waitForTimeout(100);report.seasons.push(await page.evaluate(()=>({name:window.skyReview.seasonName(),ground:window.skyReview.groundColor()})));}
+ await page.evaluate(()=>window.skyReview.setSeason(null));
+ assert.equal(new Set(report.seasons.map(s=>s.ground)).size,4,'As 4 estações devem tingir o chão de cores diferentes: '+JSON.stringify(report.seasons));
  // A trilha do Parque de Aventura precisa dar para andar/pedalar de verdade, não só decoração.
  await page.evaluate(()=>{window.travelReview.select('bike');window.cityReview.visit(19);});
  const t0=await page.evaluate(()=>window.cityReview.player());

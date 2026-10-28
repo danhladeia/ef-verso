@@ -39,7 +39,7 @@ const sky=createSky({scene,sun,hemisphere:hemi});
 // Campo de visão mais longe: dá para ver prédios e a montanha de longe em vez de sumirem na neblina perto.
 const iso=new T.PerspectiveCamera(42,innerWidth/innerHeight,.3,650),third=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,550);
 let zoom=1,thirdDistance=6;
-let mode='iso',yaw=0,active=iso,thirdPitch=.07,ready=false,navigation,nearest=null,nearbyResident=null,route=[],running=false,verticalSpeed=0,elapsed=0,avatar,mission,customizer,crowd,skaters,ambient,hoopsMatch,soccerMatch,volleyMatch,skateMatch,onboarding,theory,travel,traffic,adventure,cloud,skateCenter=null;
+let mode='iso',yaw=0,active=iso,thirdPitch=.07,yawRate=0,ready=false,navigation,nearest=null,nearbyResident=null,route=[],running=false,verticalSpeed=0,elapsed=0,avatar,mission,customizer,crowd,skaters,ambient,hoopsMatch,soccerMatch,volleyMatch,skateMatch,onboarding,theory,travel,traffic,adventure,cloud,skateCenter=null;
 // Enquanto anda de skate/bicicleta e está dentro da área da pista, o relevo segue a pista de verdade
 // (rampas, bowl) em vez do chão genérico — permite rolar pelas rampas de skate/bike na exploração.
 function groundHeight(x,z,riding){
@@ -137,7 +137,7 @@ const clock=new T.Clock();let lastMap=0;
 function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta(),.05);elapsed+=dt;
  sky.update(dt,player.position);
  if(!canLook()&&document.pointerLockElement)document.exitPointerLock();
- travel?.update(avatar,0);traffic?.update(dt,player.position,document.hidden||onboarding?.active||settings.isOpen);adventure?.update(player.position,travel?.mode);
+ travel?.update(avatar,0);traffic?.update(dt,player.position,document.hidden||onboarding?.active||settings.isOpen);adventure?.update(player.position,travel?.mode,sky.season);
  crowd?.update(dt,player.position,{paused:dialog.open||customizer?.isOpen||mission?.locked||hoopsMatch?.active||soccerMatch?.active||volleyMatch?.active||skateMatch?.active||onboarding?.active||theory?.active||frontView,overview:flight.enabled});skaters?.update(dt,player.position,flight.enabled);ambient?.update(dt,player.position);
  if(hoopsMatch?.active){labels.forEach(o=>o.visible=false);hoopsMatch.update(dt);renderer.render(scene,hoopsMatch.camera);return;}
  if(soccerMatch?.active){labels.forEach(o=>o.visible=false);soccerMatch.update(dt);renderer.render(scene,soccerMatch.camera);return;}
@@ -148,7 +148,13 @@ function frame(){requestAnimationFrame(frame);const dt=Math.min(clock.getDelta()
  if(ready&&!dialog.open&&!mission?.locked&&!customizer?.isOpen&&!onboarding?.active&&!theory?.active&&!frontView&&!settings.isOpen&&!cloud.isOpen){const ground=groundHeight(player.position.x,player.position.z,travel?.mode!=='walk'),grounded=player.position.y<=ground+.02&&verticalSpeed<=0;verticalSpeed-=22*dt;player.position.y=Math.max(ground,player.position.y+verticalSpeed*dt);if(player.position.y<=ground)verticalSpeed=0;shadow.position.y=ground+.19-player.position.y;
   let sx=Number(settings.pressed(keys,'right')||keys.has('arrowright'))-Number(settings.pressed(keys,'left')||keys.has('arrowleft'))+touch.x,sy=Number(settings.pressed(keys,'back')||keys.has('arrowdown'))-Number(settings.pressed(keys,'forward')||keys.has('arrowup'))+touch.y;
   // Third person: A/D (or the joystick sideways) turn the student and the camera; W/S walk forward and back.
-  if(mode==='third'&&sx&&!settings.value.strafe){yaw-=sx*2.6*dt;if(sx)route=[];sx=0;}
+  // Giro suave: a velocidade de giro acompanha A/D aos poucos (acelera e, ao soltar, desacelera) em vez
+  // de ligar/desligar de uma vez, pra não parecer um "tique" brusco de câmera.
+  if(mode==='third'&&!settings.value.strafe){
+   const targetYawRate=sx*2.6;yawRate+=(targetYawRate-yawRate)*Math.min(1,dt*9);
+   if(Math.abs(yawRate)>.002){yaw-=yawRate*dt;route=[];}
+   sx=0;
+  }else yawRate=0;
   let dx=sx*Math.cos(yaw)+sy*Math.sin(yaw),dz=-sx*Math.sin(yaw)+sy*Math.cos(yaw);if(sx||sy)route=[];
   if(route.length){const p=route[0];dx=p.x-player.position.x;dz=p.z-player.position.z;if(Math.hypot(dx,dz)<.3){route.shift();if(!route.length)$('#status').textContent='Você chegou. Explore o marcador próximo.';}}
   const len=Math.hypot(dx,dz),riding=travel?.mode!=='walk'&&!route.length;
@@ -197,5 +203,5 @@ buildCity({scene,loader:new GLTFLoader(),solids}).then(async audit=>{
  if(import.meta.env.DEV)window.questReview={wallet:()=>({coins:wallet.coins,badges:wallet.badges}),soccerScore:()=>soccerMatch.score,volleyScore:()=>volleyMatch.score};
  if(import.meta.env.DEV)window.travelReview={traffic:()=>traffic.snapshot(),mode:()=>travel.mode,select:mode=>travel.select(mode),adventure:()=>adventure.snapshot,camera:()=>({mode,yaw,pitch:thirdPitch,avatarVisible:avatar.visual.visible}),avatar:()=>avatar.visual,settings:()=>settings.value};
  if(import.meta.env.DEV)window.skateReview={terrainHeight:skateMatch._terrainHeight,active:()=>skateMatch.active,state:()=>skateMatch._ride()?.state,enter:()=>skateMatch.start(),leave:()=>skateMatch.leave()};
- if(import.meta.env.DEV)window.skyReview={hour:()=>sky.hour,setHour:h=>sky.setHourOverride(h),background:()=>'#'+scene.background.getHexString(),sunIntensity:()=>sun.intensity,hemiIntensity:()=>hemi.intensity};
+ if(import.meta.env.DEV)window.skyReview={hour:()=>sky.hour,setHour:h=>sky.setHourOverride(h),background:()=>'#'+scene.background.getHexString(),sunIntensity:()=>sun.intensity,hemiIntensity:()=>hemi.intensity,season:()=>sky.season,seasonName:()=>sky.seasonName,setSeason:s=>sky.setSeasonOverride(s),groundColor:()=>'#'+hemi.groundColor.getHexString()};
 }).catch(error=>{console.error(error);$('#status').textContent='Falha ao carregar a cidade. Recarregue a página.';window.cityReady=true;window.cityStats=()=>({failures:1});});
