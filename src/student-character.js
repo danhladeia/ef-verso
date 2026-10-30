@@ -26,7 +26,7 @@ const linear=hex=>new T.Color('#'+hex.replace('#',''));
 const luminance=c=>.2126*c.r+.7152*c.g+.0722*c.b;
 for(const a of Object.values(ATLAS)){a.ref=a.centers.split(' ').map(h=>luminance(linear(h)));a.cat=new Array(32).fill(0);for(const [b,name] of Object.entries(a.cats))a.cat[b]=CAT[name];}
 
-const STUDENT_HEADS=['head_castanho','head_loiro','head_ruiva','head_cabelo_preto','head_crespo','head_cacheado','head_bob','head_rabo','head_trancas','head_degrade'],STUDENT_BODIES=['body_camiseta','body_camisa_bandana','body_casaco','body_hoodie','body_bomber','body_gamer','body_football','body_basketball'];
+const STUDENT_HEADS=['head_castanho','head_loiro','head_ruiva','head_cabelo_preto','head_crespo','head_cacheado','head_bob','head_rabo','head_trancas','head_degrade'],STUDENT_BODIES=['body_camiseta','body_camisa_bandana','body_casaco','body_hoodie','body_bomber','body_gamer','body_football','body_basketball','body_saia'];
 const ADULT_HEADS=['head_adulto_barba'],ADULT_BODIES=['body_adulto_colete'];
 // Cada roupa de aluno existe em duas proporções de corpo (tools/build_body_gender_variants.py desloca
 // ombro/quadril/altura sobre o MESMO esqueleto/roupa — não troca a roupa em si). O corpo adulto não
@@ -36,14 +36,15 @@ export const BODY_TYPES=['masc','fem'];
 function bodyMeshId(appearance){return STUDENT_BODIES.includes(appearance.body)?appearance.body+'_'+(appearance.bodyType||'masc'):appearance.body;}
 const TONES={tone_1:'#f7d8bd',tone_2:'#f6c09c',tone_3:'#eab08a',tone_4:'#d99b73',tone_5:'#c08060',tone_6:'#9c6448',tone_7:'#7a4a35',tone_8:'#5c3726'};
 export const TONE_SWATCHES=TONES;
-export const PARTS={tone:Object.keys(TONES),head:STUDENT_HEADS,body:STUDENT_BODIES,glasses:['none','acc_glasses','acc_sunglasses','acc_glasses_square','acc_glasses_cat','acc_glasses_sport'],hearing:['none','acc_hearing','acc_hearing_pair','acc_hearing_compact','acc_hearing_recharge','acc_hearing_cord'],accessory:['none','acc_backpack','acc_bag_sport','acc_bag_gamer','acc_bag_satchel','acc_bag_hiking'],mobility:['none','acc_wheelchair','acc_chair_active','acc_chair_sport','acc_chair_comfort','acc_chair_urban']};
-export const PART_LABELS={tone:'Tom de pele',head:'Rosto e cabelo',body:'Roupa',glasses:'Óculos',hearing:'Audição',accessory:'Mochila',mobility:'Mobilidade'};
+export const PARTS={tone:Object.keys(TONES),head:STUDENT_HEADS,body:STUDENT_BODIES,glasses:['none','acc_glasses','acc_sunglasses','acc_glasses_square','acc_glasses_cat','acc_glasses_sport'],hearing:['none','acc_hearing','acc_hearing_pair','acc_hearing_compact','acc_hearing_recharge','acc_hearing_cord'],accessory:['none','acc_backpack','acc_bag_sport','acc_bag_gamer','acc_bag_satchel','acc_bag_hiking'],mobility:['none','acc_wheelchair','acc_chair_active','acc_chair_sport','acc_chair_comfort','acc_chair_urban'],expression:['none','expr_sorriso','expr_firme']};
+export const PART_LABELS={tone:'Tom de pele',head:'Rosto e cabelo',body:'Roupa',glasses:'Óculos',hearing:'Audição',accessory:'Mochila',mobility:'Mobilidade',expression:'Expressão'};
 export const ITEM_NAMES={head_castanho:'Cabelo curto',head_loiro:'Cabelo arrepiado',head_ruiva:'Cabelo comprido',head_cabelo_preto:'Cabelo liso longo',
  body_camiseta:'Camiseta e bermuda',body_camisa_bandana:'Camisa com bandana',body_casaco:'Casaco comprido',
  acc_glasses:'Óculos de grau',acc_sunglasses:'Óculos escuros',acc_hearing:'Aparelho auditivo',acc_backpack:'Mochila escolar',acc_wheelchair:'Cadeira de rodas'};
 Object.assign(ITEM_NAMES,{
  head_crespo:'Crespo volumoso',head_cacheado:'Cacheado curto',head_bob:'Chanel com franja',head_rabo:'Rabo de cavalo',head_trancas:'Tranças duplas',head_degrade:'Degradê com topete',
- body_hoodie:'Moletom casual com bolso',body_bomber:'Jaqueta bomber com zíper',body_gamer:'Camiseta gamer PLAY',body_football:'Uniforme de futebol · 10',body_basketball:'Uniforme de basquete · 23',
+ body_hoodie:'Moletom casual com bolso',body_bomber:'Jaqueta bomber com zíper',body_gamer:'Camiseta gamer PLAY',body_football:'Uniforme de futebol · 10',body_basketball:'Uniforme de basquete · 23',body_saia:'Saia esportiva (skort)',
+ expr_sorriso:'Sorriso',expr_firme:'Determinado(a)',
  acc_glasses_square:'Armação retangular',acc_glasses_cat:'Armação gatinho',acc_glasses_sport:'Óculos esportivos',
  acc_bag_sport:'Mochila esportiva',acc_bag_gamer:'Mochila pixel gamer',acc_bag_satchel:'Bolsa carteiro',acc_bag_hiking:'Mochila de aventura',
  acc_hearing_pair:'Aparelhos bilaterais',acc_hearing_compact:'Aparelho compacto',acc_hearing_recharge:'Aparelho recarregável',acc_hearing_cord:'Aparelhos com cordão',
@@ -54,7 +55,7 @@ Object.keys(TONES).forEach((id,i)=>ITEM_NAMES[id]='Tom '+(i+1));
 export const PALETTES={hairColor:['#2a2220','#4a2f22','#7a4a2c','#b0683c','#d9b46a','#8a8f99','#6b4fb8'],shirt:['#f4f1ea','#3176bd','#d94b45','#2fa36b','#f2c14e','#7b45c2','#ff8a3d'],accent:['#f2c14e','#3176bd','#d94b45','#2fa36b','#f4f1ea','#7b45c2'],pants:['#283a5c','#3e4552','#2b2f3a','#5c4a3a','#3176bd','#7b45c2'],shoes:['#f4f1ea','#2b2f3a','#d94b45','#3176bd','#f2c14e'],accessoryColor:['#713f9c','#3176bd','#279178','#de9a35','#ce5264','#263044']};
 export const COLOR_LABELS={hairColor:'Cor do cabelo',shirt:'Cor da roupa',accent:'Cor do detalhe',pants:'Cor da bermuda ou calça',shoes:'Cor do tênis',accessoryColor:'Cor da mochila'};
 export const CATEGORY_COLORS={head:'hairColor',body:['shirt','accent','pants','shoes'],accessory:'accessoryColor'};
-export const DEFAULT_APPEARANCE={tone:'tone_3',head:'head_castanho',body:'body_camiseta',bodyType:'masc',glasses:'none',hearing:'none',accessory:'acc_backpack',mobility:'none',hairColor:'#4a2f22',shirt:'#f4f1ea',accent:'#3176bd',pants:'#283a5c',shoes:'#f4f1ea',accessoryColor:'#713f9c'};
+export const DEFAULT_APPEARANCE={tone:'tone_3',head:'head_castanho',body:'body_camiseta',bodyType:'masc',glasses:'none',hearing:'none',accessory:'acc_backpack',mobility:'none',expression:'none',hairColor:'#4a2f22',shirt:'#f4f1ea',accent:'#3176bd',pants:'#283a5c',shoes:'#f4f1ea',accessoryColor:'#713f9c'};
 const TEACHER={...DEFAULT_APPEARANCE,tone:'tone_4',head:'head_cabelo_preto',body:'body_camisa_bandana',bodyType:'fem',accessory:'none',hairColor:'#2a2220',shirt:'#7b45c2',accent:'#f2c14e',pants:'#2b2f3a',shoes:'#f4f1ea',whistle:true};
 export function optionsFor(category){return PARTS[category];}
 export function normalizeAppearance(value,free=false){
@@ -75,6 +76,7 @@ export function residentAppearance(index){
  return {adult,look:{tone:pick(PARTS.tone,3),head:adult&&index%2?pick(ADULT_HEADS,1):pick(STUDENT_HEADS,5),body:adult?pick([...ADULT_BODIES,...STUDENT_BODIES],3):pick(STUDENT_BODIES,7),
   bodyType:index%2?'fem':'masc',
   glasses:index%5===0?'acc_glasses':index%11===4?'acc_sunglasses':'none',hearing:index%9===3?'acc_hearing':'none',accessory:!adult&&index%2===0?'acc_backpack':'none',mobility:index%10===6?'acc_wheelchair':'none',
+  expression:index%4===0?'expr_sorriso':index%7===0?'expr_firme':'none',
   hairColor:pick(P.hairColor.slice(0,5),5),shirt:pick(P.shirt,3),accent:pick(P.accent,5),pants:pick(P.pants,7),shoes:pick(P.shoes,3),accessoryColor:pick(P.accessoryColor,1)}};
 }
 // Recoloração por bloco do atlas, no fragment shader (o mesmo programa para todos os alunos).

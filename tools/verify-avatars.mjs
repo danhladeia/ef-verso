@@ -15,9 +15,14 @@ try{
  await page.locator('#wardrobe-tab-head').click();await page.waitForTimeout(150);await page.locator('.wardrobe-item[data-item="head_trancas"]').click();
  await page.locator('#wardrobe-tab-body').click();await page.waitForTimeout(150);await page.locator('.wardrobe-item[data-item="body_hoodie"]').click();
  await page.locator('.avatar-swatch[data-field="shirt"][data-value="#2fa36b"]').click();await page.waitForTimeout(200);await page.screenshot({path:out+'/editor-menina-roupa.png'});
+ // Saia esportiva (roupa nova) e expressão (categoria nova, separada do cabelo).
+ await page.locator('.wardrobe-item[data-item="body_saia"]').click();await page.waitForTimeout(150);
+ await page.locator('#wardrobe-tab-expression').click();await page.waitForTimeout(150);
+ assert.deepEqual(await page.evaluate(()=>[...document.querySelectorAll('.wardrobe-item')].map(b=>b.dataset.item)),['none','expr_sorriso','expr_firme']);
+ await page.locator('.wardrobe-item[data-item="expr_sorriso"]').click();await page.waitForTimeout(200);await page.screenshot({path:out+'/editor-saia-expressao.png'});
  await page.locator('#avatar-save').click();
  report.saved=await page.evaluate(()=>window.missionReview().appearance);
- assert.deepEqual({bodyType:report.saved.bodyType,head:report.saved.head,body:report.saved.body,shirt:report.saved.shirt},{bodyType:'fem',head:'head_trancas',body:'body_hoodie',shirt:'#2fa36b'});
+ assert.deepEqual({bodyType:report.saved.bodyType,head:report.saved.head,body:report.saved.body,shirt:report.saved.shirt,expression:report.saved.expression},{bodyType:'fem',head:'head_trancas',body:'body_saia',shirt:'#2fa36b',expression:'expr_sorriso'});
  await ready(page);assert.deepEqual((await page.evaluate(()=>window.missionReview().appearance)).bodyType,'fem','Aparência (incluindo o personagem escolhido) persiste ao recarregar');
  // Voltar para menino, cancelar, e a escolha salva (menina) continua intacta.
  await page.locator('#customize').click();await page.waitForFunction(()=>!document.querySelector('#avatar-save').disabled,null,{timeout:15000});

@@ -4,6 +4,16 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Saia esportiva e expressões faciais — 30/10/2026 (noite)
+
+**Saia esportiva (skort)**, uma nova roupa na aba "Roupa" (junto com as outras 8), disponível para os dois personagens (menino/menina) — uma saia rodada por cima do calção já existente, presa ao quadril, com as mesmas cores personalizáveis das outras roupas.
+
+**Expressão facial**, uma categoria nova no guarda-roupa (separada do cabelo): Sorriso e Determinado(a), além do rosto neutro de sempre — uma peça pequena por cima do rosto, do mesmo jeito que óculos ou aparelho auditivo já são peças extras soltas. Moradores também sorteiam uma expressão ocasionalmente.
+
+**Nota técnica importante** (para quem for mexer no guarda-roupa 3D depois): essas duas peças foram construídas por um script novo, `tools/build_wardrobe_additions.py`, que abre o arquivo já pronto e só acrescenta o que falta — **não** chama `build_wardrobe_collection.py` de novo. Descobri que reconstruir o guarda-roupa inteiro do zero, com os mesmos scripts de sempre, estava gerando cabeças ligeiramente diferentes das já publicadas (confirmado comparando os vértices byte a byte) — não dá pra saber ainda por quê, mas o jeito seguro de adicionar peça nova é sempre a partir do arquivo já bom, não reconstruindo tudo.
+
+Verificação: `node tools/crowd.test.mjs` e `node tools/verify-avatars.mjs` (saia e expressão, nos dois personagens, salvando e recarregando) continuam cobrindo o guarda-roupa.
+
 ## Futebol com os comandos do basquete, e seta "é você" — 30/10/2026 (tarde)
 
 **Cabeça sumindo/"buraco" nos personagens: investigado, sem vão real na roupa.** Conferido com um script: nenhum vértice das roupas tem peso no osso da cabeça (são objetos separados na pele de esqueleto), então alargar/estreitar o peito e o quadril para o corpo de menino/menina não abre vão nenhum ali — e 200 combinações de aparência sorteadas, mais a prévia de cada roupa nos dois personagens, não mostraram nenhuma cabeça faltando. `tools/build_body_gender_variants.py` ganhou uma proteção (reduzir o ajuste perto de um osso de cabeça, se um dia existir) só por segurança. O que provavelmente aconteceu: no meio da investigação anterior, o modelo 3D ficou brevemente num estado intermediário (igual ao do aviso "futebol não funciona" de antes) enquanto eu reconstruía os arquivos — resolvido ao confirmar que o arquivo publicado é idêntico ao já testado. Se alguma cabeça sumir de novo depois disso, por favor avise em que personagem/roupa e em que tela (treino, partida, guarda-roupa) para eu reproduzir certinho.
