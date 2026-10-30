@@ -72,6 +72,19 @@ try{
  const skateY=(await page.evaluate(()=>window.cityReview.player())).y;
  report.skateBowl={walkY,skateY};
  assert(skateY<walkY-.3,'De skate, o jogador deve afundar na tigela de verdade: '+JSON.stringify(report.skateBowl));
+ // Futebol: D deve mover o jogador para a direita da tela (como no basquete), e a seta "é você" deve
+ // acompanhar o jogador 0 enquanto a partida está ativa.
+ await page.evaluate(()=>window.cityReview.visit(11));
+ await page.waitForFunction(()=>!document.querySelector('#soccer-enter')?.hidden,null,{timeout:10000});
+ await page.locator('#soccer-enter').click();
+ await page.waitForFunction(()=>!document.querySelector('#soccer-match')?.hidden,null,{timeout:10000});
+ await page.waitForTimeout(600);
+ const sp0=await page.evaluate(()=>window.questReview.soccerPlayers()[0]);
+ await page.keyboard.down('d');await page.waitForTimeout(600);await page.keyboard.up('d');
+ const sp1=await page.evaluate(()=>window.questReview.soccerPlayers()[0]);
+ report.soccerControls={dz:sp1.z-sp0.z};
+ assert(sp1.z-sp0.z<-.3,'D deve mover o jogador na direção que aparece à direita da câmera: '+JSON.stringify(report.soccerControls));
+ await page.locator('#soccer-leave').click();await page.waitForTimeout(300);
  await page.locator('#camera').click();await page.screenshot({path:out+'/adventure.png'});
  await page.evaluate(()=>window.travelReview.avatar().parent.position.set(-48,0,0));await page.waitForTimeout(200);await page.screenshot({path:out+'/city.png'});
  await page.locator('#settings-open').click();await page.locator('#settings-dialog').screenshot({path:out+'/settings.png'});await page.locator('#settings-cancel').click();

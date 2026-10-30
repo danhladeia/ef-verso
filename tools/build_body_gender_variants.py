@@ -34,13 +34,21 @@ def make_variant(src_name, suffix, cfg):
     group_name_by_index = {vg.index: vg.name for vg in dup.vertex_groups}
     scales = cfg['scale_x']
     for v in dup.data.vertices:
-        factor = 1.0
+        weights = {}
         for g in v.groups:
             name = group_name_by_index.get(g.group)
-            if name in scales:
-                factor += (scales[name] - 1.0) * g.weight
-        v.co.x *= factor
-        v.co.z *= cfg['height']
+            if name is not None:
+                weights[name] = g.weight
+        # Vértices do colarinho/pescoço ficam presos entre o grupo 'chest' e o grupo 'head' (a costura
+        # com a cabeça, que não muda de tamanho entre menino/menina) — sem isso, alargar/estreitar o
+        # peito abria um vão entre a roupa e o pescoço (um "buraco"), e a cabeça parecia cortada.
+        head_w = weights.get('head', 0.0)
+        factor_x = 1.0
+        for name, scale in scales.items():
+            if name in weights:
+                factor_x += (scale - 1.0) * weights[name] * (1.0 - head_w)
+        v.co.x *= factor_x
+        v.co.z *= 1.0 + (cfg['height'] - 1.0) * (1.0 - head_w)
     dup.data.update()
     return dup
 

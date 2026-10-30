@@ -22,6 +22,11 @@ export async function createHoopsMatch({scene,loader,progress,keys,touch,stopMov
   char.setAppearance({...DEFAULT_APPEARANCE,...diversity,shirt:TEAM_COLOR[team],accent:'#ffffff',pants:'#283a5c',shoes:'#ffffff',accessory:'none',glasses:'none',hearing:'none',mobility:'none'});
   scene.add(char.visual);char.visual.visible=false;roster.push(char);
  }
+ // Seta flutuando sobre o aluno (slot 0 do time 0): sem ela, os 6 personagens — mesma estatura, times
+ // só diferentes de cor — ficam difíceis de distinguir qual é "o seu" para movimentar. Fica no ar
+ // (não gruda nos pés) para não ficar escondida atrás de outro jogador por perto.
+ const youMarker=new T.Mesh(new T.ConeGeometry(.22,.4,4),new T.MeshBasicMaterial({color:'#fff23d'}));
+ youMarker.rotation.x=Math.PI;youMarker.rotation.y=Math.PI/4;youMarker.renderOrder=5;youMarker.visible=false;scene.add(youMarker);
  const camera=new T.PerspectiveCamera(48,innerWidth/innerHeight,.1,160);
  const panel=document.createElement('section');panel.id='hoops-match';panel.className='sports-match';panel.hidden=true;panel.setAttribute('aria-label','Partida de basquete 3x3');
  panel.innerHTML=`<div class="sports-scoreboard" id="hoops-scoreboard"><span class="sports-team" id="hoops-team0"></span><span id="hoops-clock">3:00</span><span class="sports-team" id="hoops-team1"></span></div>
@@ -55,6 +60,7 @@ export async function createHoopsMatch({scene,loader,progress,keys,touch,stopMov
    char.visual.position.set(p.x,0,p.z);char.visual.rotation.y=p.face+Math.PI;
    const holding=match.ball.holder===p.id;
    char.update(dt,{speed:Math.hypot(p.vx,p.vz),airborne:p.jump>0.02,holding:holding&&(p.charging||p.release>0),throwing:p.throwing>0,charge:p.charge});
+   if(i===0)youMarker.position.set(p.x,1.9+Math.sin(performance.now()/420)*.1,p.z);
   }
   const b=match.ball;ballRoot.position.set(b.x,b.y,b.z);if(b.holder==null)ballRoot.rotation.x+=dt*Math.hypot(b.vx,b.vz)*1.2;
   $('#hoops-clock').textContent=Math.floor(match.clock/60)+':'+String(Math.floor(match.clock%60)).padStart(2,'0');
@@ -74,10 +80,10 @@ export async function createHoopsMatch({scene,loader,progress,keys,touch,stopMov
  }
  function start(){
   if(active)return;active=true;match=createMatch({seed:(Math.random()*1e9)|0,humans:[0],duration:180,target:11});
-  stopMovement();roster.forEach(c=>c.visual.visible=true);ballRoot.visible=true;panel.hidden=false;document.body.classList.add('hoops-active');
+  stopMovement();roster.forEach(c=>c.visual.visible=true);ballRoot.visible=true;youMarker.visible=true;panel.hidden=false;document.body.classList.add('hoops-active');
   banner('Bola ao alto! Fique de frente para a cesta e segure Espaço para arremessar.',3200);endTimer=0;
  }
- function leave(){if(!active)return;active=false;roster.forEach(c=>c.visual.visible=false);ballRoot.visible=false;panel.hidden=true;document.body.classList.remove('hoops-active');clearTimeout(banner.t);}
+ function leave(){if(!active)return;active=false;roster.forEach(c=>c.visual.visible=false);ballRoot.visible=false;youMarker.visible=false;panel.hidden=true;document.body.classList.remove('hoops-active');clearTimeout(banner.t);}
  $('#hoops-leave').onclick=leave;
  const shoot=$('#hoops-shoot');shoot.onpointerdown=e=>{e.preventDefault();try{shoot.setPointerCapture(e.pointerId);}catch{}shootHeld=true;};shoot.onpointerup=shoot.onpointercancel=()=>shootHeld=false;
  const pass=$('#hoops-pass');pass.onpointerdown=e=>{e.preventDefault();passHeld=true;};pass.onpointerup=pass.onpointercancel=()=>passHeld=false;

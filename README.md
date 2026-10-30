@@ -4,6 +4,16 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Futebol com os comandos do basquete, e seta "é você" — 30/10/2026 (tarde)
+
+**Cabeça sumindo/"buraco" nos personagens: investigado, sem vão real na roupa.** Conferido com um script: nenhum vértice das roupas tem peso no osso da cabeça (são objetos separados na pele de esqueleto), então alargar/estreitar o peito e o quadril para o corpo de menino/menina não abre vão nenhum ali — e 200 combinações de aparência sorteadas, mais a prévia de cada roupa nos dois personagens, não mostraram nenhuma cabeça faltando. `tools/build_body_gender_variants.py` ganhou uma proteção (reduzir o ajuste perto de um osso de cabeça, se um dia existir) só por segurança. O que provavelmente aconteceu: no meio da investigação anterior, o modelo 3D ficou brevemente num estado intermediário (igual ao do aviso "futebol não funciona" de antes) enquanto eu reconstruía os arquivos — resolvido ao confirmar que o arquivo publicado é idêntico ao já testado. Se alguma cabeça sumir de novo depois disso, por favor avise em que personagem/roupa e em que tela (treino, partida, guarda-roupa) para eu reproduzir certinho.
+
+**Futebol: câmera e comandos iguais aos do basquete.** O campo de futebol é comprido no eixo gol-a-gol (ao contrário da quadra de basquete), e a câmera antiga grudava do lado da bola sem mostrar o campo — dava a sensação de "comandos ruins" porque D/A e W/S pareciam não corresponder ao que aparecia na tela. A câmera agora fica de lado, fixa um pouco para fora do campo e acompanha a bola ao longo do comprimento — exatamente como no basquete — e D/A giram para fora/dentro da tela do mesmo jeito que no basquete.
+
+**Seta "é você" flutuando sobre o aluno**, no basquete, futebol e vôlei — com os 6 personagens do mesmo tamanho e só a cor do time diferente, não dava para saber qual mover. Fica no ar (não gruda nos pés) para não ficar escondida atrás de outro jogador por perto.
+
+Verificação: `node tools/crowd.test.mjs`/`node tools/verify-avatars.mjs` (corpos e cabeças ok), `node tools/verify-city-upgrade.mjs` (D no futebol move para o mesmo lado que no basquete), `node tools/soccer.test.mjs` continua cobrindo a física do jogo.
+
 ## Personagem menino/menina com corpo próprio, e clique "sem resposta" no guarda-roupa corrigido — 30/10/2026
 
 **Menino e menina agora têm corpo de verdade, não só roupa/cabelo diferentes.** `tools/build_body_gender_variants.py` parte do mesmo esqueleto único dos alunos (não esculpe nada do zero) e desloca os vértices de cada roupa por grupo de osso — ombro e braço mais largos e quadril/perna mais estreitos no menino, o inverso, mais discreto, na menina, com uma leve diferença de altura — mantendo os mesmos pesos de esqueleto e materiais (as roupas, cores e animações continuam funcionando normalmente nos dois). No guarda-roupa ("Meu personagem"), um seletor **Personagem** fica separado das abas de roupa/visual, sempre visível no topo, com "Menino"/"Menina" — dá para trocar a qualquer momento, já com prévia 3D. Moradores e os times dos minijogos (basquete, vôlei, futebol) também têm essa variedade agora. A professora Lia usa o corpo feminino.
