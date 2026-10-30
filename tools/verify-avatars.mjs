@@ -7,22 +7,19 @@ try{
  await page.addInitScript(()=>localStorage.setItem('ef-verso-student-v1',JSON.stringify({version:1,name:'Teste',className:'7º A',role:'aluno',home:'praca'})));
  const ready=async p=>{await p.goto('http://localhost:5173/');await p.waitForFunction(()=>window.cityReady,null,{timeout:90000});assert.equal(await p.evaluate(()=>window.cityStats().failures),0);};
  await ready(page);await page.locator('#customize').click();await page.waitForFunction(()=>!document.querySelector('#avatar-save').disabled,null,{timeout:15000});await page.waitForTimeout(400);await page.screenshot({path:out+'/editor-menino.png'});
- // Personagem (menino/menina): muda proporção do corpo de verdade, separado das abas de roupa/visual.
+ // Personagem (menino/menina): corpo Kenney de verdade — a troca também filtra quais cabeças/roupas aparecem.
  assert.equal(await page.evaluate(()=>window.missionReview().appearance.bodyType),'masc','Padrão começa como menino');
+ assert.deepEqual(await page.evaluate(()=>[...document.querySelectorAll('.wardrobe-item')].map(b=>b.dataset.item)),['body_male-a','body_male-e','body_male-f'],'Roupa mostra só as opções de menino');
  await page.locator('.avatar-bodytype-option[data-body-type="fem"]').click();await page.waitForTimeout(200);await page.screenshot({path:out+'/editor-menina.png'});
  assert.equal(await page.locator('.avatar-bodytype-option[data-body-type="fem"]').getAttribute('aria-checked'),'true');
- // Troca de roupa, cabelo e cor continuam funcionando com o corpo de menina selecionado.
- await page.locator('#wardrobe-tab-head').click();await page.waitForTimeout(150);await page.locator('.wardrobe-item[data-item="head_trancas"]').click();
- await page.locator('#wardrobe-tab-body').click();await page.waitForTimeout(150);await page.locator('.wardrobe-item[data-item="body_hoodie"]').click();
- await page.locator('.avatar-swatch[data-field="shirt"][data-value="#2fa36b"]').click();await page.waitForTimeout(200);await page.screenshot({path:out+'/editor-menina-roupa.png'});
- // Saia esportiva (roupa nova) e expressão (categoria nova, separada do cabelo).
- await page.locator('.wardrobe-item[data-item="body_saia"]').click();await page.waitForTimeout(150);
- await page.locator('#wardrobe-tab-expression').click();await page.waitForTimeout(150);
- assert.deepEqual(await page.evaluate(()=>[...document.querySelectorAll('.wardrobe-item')].map(b=>b.dataset.item)),['none','expr_sorriso','expr_firme']);
- await page.locator('.wardrobe-item[data-item="expr_sorriso"]').click();await page.waitForTimeout(200);await page.screenshot({path:out+'/editor-saia-expressao.png'});
+ assert.deepEqual(await page.evaluate(()=>[...document.querySelectorAll('.wardrobe-item')].map(b=>b.dataset.item)),['body_female-b','body_female-c','body_female-f'],'Roupa troca para as opções de menina');
+ // Troca de cabelo, roupa (inclusive o vestido) e cor da mochila continuam funcionando.
+ await page.locator('#wardrobe-tab-head').click();await page.waitForTimeout(150);await page.locator('.wardrobe-item[data-item="head_female-c"]').click();
+ await page.locator('#wardrobe-tab-body').click();await page.waitForTimeout(150);await page.locator('.wardrobe-item[data-item="body_female-c"]').click();await page.waitForTimeout(150);await page.screenshot({path:out+'/editor-menina-vestido.png'});
+ await page.locator('#wardrobe-tab-accessory').click();await page.waitForTimeout(150);await page.locator('.avatar-swatch[data-field="accessoryColor"][data-value="#279178"]').click();await page.waitForTimeout(150);
  await page.locator('#avatar-save').click();
  report.saved=await page.evaluate(()=>window.missionReview().appearance);
- assert.deepEqual({bodyType:report.saved.bodyType,head:report.saved.head,body:report.saved.body,shirt:report.saved.shirt,expression:report.saved.expression},{bodyType:'fem',head:'head_trancas',body:'body_saia',shirt:'#2fa36b',expression:'expr_sorriso'});
+ assert.deepEqual({bodyType:report.saved.bodyType,head:report.saved.head,body:report.saved.body,accessoryColor:report.saved.accessoryColor},{bodyType:'fem',head:'head_female-c',body:'body_female-c',accessoryColor:'#279178'});
  await ready(page);assert.deepEqual((await page.evaluate(()=>window.missionReview().appearance)).bodyType,'fem','Aparência (incluindo o personagem escolhido) persiste ao recarregar');
  // Voltar para menino, cancelar, e a escolha salva (menina) continua intacta.
  await page.locator('#customize').click();await page.waitForFunction(()=>!document.querySelector('#avatar-save').disabled,null,{timeout:15000});

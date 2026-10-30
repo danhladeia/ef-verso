@@ -10,9 +10,8 @@ export async function createWardrobeThumbnails(loader){
  return {render(id){if(cache.has(id))return cache.get(id);actor.setAppearance(DEFAULT_APPEARANCE);const bounds=actor.showItem(id),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());
   const distance=Math.max(size.x,size.y,size.z,.1)/2/Math.tan(T.MathUtils.degToRad(16))*1.5;
   const back=PARTS.accessory.includes(id);
-  const profile=['head_rabo','head_trancas','head_degrade'].includes(id);
   const hearing=PARTS.hearing.includes(id);
-  camera.position.copy(center).add(new T.Vector3(back?.5:profile?-.85:hearing?.8:-.25,.12,back?1:-1).normalize().multiplyScalar(distance));camera.lookAt(center);renderer.render(scene,camera);
+  camera.position.copy(center).add(new T.Vector3(back?.5:hearing?.8:-.25,.12,back?1:-1).normalize().multiplyScalar(distance));camera.lookAt(center);renderer.render(scene,camera);
   const url=renderer.domElement.toDataURL('image/png');cache.set(id,url);return url;
  },dispose(){renderer.dispose();}};
 }

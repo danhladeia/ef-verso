@@ -1,20 +1,13 @@
 {
   "saved": {
-    "tone": "tone_3",
-    "head": "head_trancas",
-    "body": "body_saia",
+    "head": "head_female-c",
+    "body": "body_female-c",
     "bodyType": "fem",
     "glasses": "none",
     "hearing": "none",
     "accessory": "acc_backpack",
     "mobility": "none",
-    "expression": "expr_sorriso",
-    "hairColor": "#4a2f22",
-    "shirt": "#2fa36b",
-    "accent": "#3176bd",
-    "pants": "#283a5c",
-    "shoes": "#f4f1ea",
-    "accessoryColor": "#713f9c",
+    "accessoryColor": "#279178",
     "whistle": false
   },
   "errors": []

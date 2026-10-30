@@ -1,117 +1,35 @@
 {
   "headRegression": {
-    "combinations": 80,
-    "animatedChecks": 480,
-    "clothingCards": 8
+    "combinations": 36,
+    "animatedChecks": 216,
+    "clothingCards": 6
   },
-  "tone": [
-    {
-      "id": "tone_1",
-      "label": "Tom 1"
-    },
-    {
-      "id": "tone_2",
-      "label": "Tom 2"
-    },
-    {
-      "id": "tone_3",
-      "label": "Tom 3"
-    },
-    {
-      "id": "tone_4",
-      "label": "Tom 4"
-    },
-    {
-      "id": "tone_5",
-      "label": "Tom 5"
-    },
-    {
-      "id": "tone_6",
-      "label": "Tom 6"
-    },
-    {
-      "id": "tone_7",
-      "label": "Tom 7"
-    },
-    {
-      "id": "tone_8",
-      "label": "Tom 8"
-    }
-  ],
   "head": [
     {
-      "id": "head_castanho",
+      "id": "head_male-a",
+      "label": "Cabelo cacheado e óculos"
+    },
+    {
+      "id": "head_male-e",
+      "label": "Colete de trilha"
+    },
+    {
+      "id": "head_male-f",
       "label": "Cabelo curto"
-    },
-    {
-      "id": "head_loiro",
-      "label": "Cabelo arrepiado"
-    },
-    {
-      "id": "head_ruiva",
-      "label": "Cabelo comprido"
-    },
-    {
-      "id": "head_cabelo_preto",
-      "label": "Cabelo liso longo"
-    },
-    {
-      "id": "head_crespo",
-      "label": "Crespo volumoso"
-    },
-    {
-      "id": "head_cacheado",
-      "label": "Cacheado curto"
-    },
-    {
-      "id": "head_bob",
-      "label": "Chanel com franja"
-    },
-    {
-      "id": "head_rabo",
-      "label": "Rabo de cavalo"
-    },
-    {
-      "id": "head_trancas",
-      "label": "Tranças duplas"
-    },
-    {
-      "id": "head_degrade",
-      "label": "Degradê com topete"
     }
   ],
   "body": [
     {
-      "id": "body_camiseta",
-      "label": "Camiseta e bermuda"
+      "id": "body_male-a",
+      "label": "Camiseta verde e óculos"
     },
     {
-      "id": "body_camisa_bandana",
-      "label": "Camisa com bandana"
+      "id": "body_male-e",
+      "label": "Colete de aventura"
     },
     {
-      "id": "body_casaco",
-      "label": "Casaco comprido"
-    },
-    {
-      "id": "body_hoodie",
-      "label": "Moletom casual com bolso"
-    },
-    {
-      "id": "body_bomber",
-      "label": "Jaqueta bomber com zíper"
-    },
-    {
-      "id": "body_gamer",
-      "label": "Camiseta gamer PLAY"
-    },
-    {
-      "id": "body_football",
-      "label": "Uniforme de futebol · 10"
-    },
-    {
-      "id": "body_basketball",
-      "label": "Uniforme de basquete · 23"
+      "id": "body_male-f",
+      "label": "Camiseta verde-escura"
     }
   ],
   "glasses": [
@@ -122,100 +40,34 @@
     {
       "id": "acc_sunglasses",
       "label": "Óculos escuros"
-    },
-    {
-      "id": "acc_glasses_square",
-      "label": "Armação retangular"
-    },
-    {
-      "id": "acc_glasses_cat",
-      "label": "Armação gatinho"
-    },
-    {
-      "id": "acc_glasses_sport",
-      "label": "Óculos esportivos"
     }
   ],
   "hearing": [
     {
       "id": "acc_hearing",
       "label": "Aparelho auditivo"
-    },
-    {
-      "id": "acc_hearing_pair",
-      "label": "Aparelhos bilaterais"
-    },
-    {
-      "id": "acc_hearing_compact",
-      "label": "Aparelho compacto"
-    },
-    {
-      "id": "acc_hearing_recharge",
-      "label": "Aparelho recarregável"
-    },
-    {
-      "id": "acc_hearing_cord",
-      "label": "Aparelhos com cordão"
     }
   ],
   "accessory": [
     {
       "id": "acc_backpack",
       "label": "Mochila escolar"
-    },
-    {
-      "id": "acc_bag_sport",
-      "label": "Mochila esportiva"
-    },
-    {
-      "id": "acc_bag_gamer",
-      "label": "Mochila pixel gamer"
-    },
-    {
-      "id": "acc_bag_satchel",
-      "label": "Bolsa carteiro"
-    },
-    {
-      "id": "acc_bag_hiking",
-      "label": "Mochila de aventura"
     }
   ],
   "mobility": [
     {
       "id": "acc_wheelchair",
       "label": "Cadeira de rodas"
-    },
-    {
-      "id": "acc_chair_active",
-      "label": "Cadeira de rodas ativa"
-    },
-    {
-      "id": "acc_chair_sport",
-      "label": "Cadeira com aros esportivos"
-    },
-    {
-      "id": "acc_chair_comfort",
-      "label": "Cadeira com apoios acolchoados"
-    },
-    {
-      "id": "acc_chair_urban",
-      "label": "Cadeira urbana"
     }
   ],
   "saved": {
-    "tone": "tone_8",
-    "head": "head_degrade",
-    "body": "body_basketball",
+    "head": "head_male-f",
+    "body": "body_male-f",
     "bodyType": "masc",
-    "glasses": "acc_glasses_sport",
-    "hearing": "acc_hearing_cord",
-    "accessory": "acc_bag_hiking",
-    "mobility": "acc_chair_urban",
-    "hairColor": "#4a2f22",
-    "shirt": "#f4f1ea",
-    "accent": "#3176bd",
-    "pants": "#283a5c",
-    "shoes": "#f4f1ea",
+    "glasses": "acc_sunglasses",
+    "hearing": "acc_hearing",
+    "accessory": "acc_backpack",
+    "mobility": "acc_wheelchair",
     "accessoryColor": "#713f9c",
     "whistle": false
   },

@@ -5,7 +5,7 @@ const out='art-source/wardrobe-collection-review';fs.mkdirSync(out,{recursive:tr
 const browser=await chromium.launch({channel:'msedge',headless:true});
 const errors=[],report={};
 // Check the exported bindings too: a selectable garment without a skin would stay in T-pose.
-const glb=fs.readFileSync('public/models/students/wardrobe-collection.glb');
+const glb=fs.readFileSync('public/models/students/kenney-alunos.glb');
 const asset=JSON.parse(glb.subarray(20,20+glb.readUInt32LE(12)).toString());
 function meshNodes(node){return [...(node.mesh!=null?[node]:[]),...(node.children||[]).flatMap(i=>meshNodes(asset.nodes[i]))];}
 for(const node of asset.nodes.filter(n=>/^(body_|head_)/.test(n.name||''))){
@@ -46,11 +46,13 @@ try{
  });
  await page.locator('#customize').click();
  await page.waitForFunction(()=>!document.querySelector('#avatar-save').disabled);
- for(const category of ['tone','head','body','glasses','hearing','accessory','mobility']){
+ // Cabeça e roupa só mostram as opções do personagem (menino/menina) selecionado — as outras
+ // categorias (óculos, mochila…) continuam as mesmas para os dois, por isso o mínimo é menor para elas.
+ for(const category of ['head','body','glasses','hearing','accessory','mobility']){
   await page.locator('#wardrobe-tab-'+category).click();
   await page.waitForFunction(()=>[...document.querySelectorAll('#wardrobe-items img')].every(i=>i.complete&&i.naturalWidth>0));
   const items=await page.locator('.wardrobe-item').evaluateAll(els=>els.map(e=>({id:e.dataset.item,label:e.textContent})));
-  report[category]=items.filter(i=>i.id!=='none');assert(report[category].length>=5,category);
+  report[category]=items.filter(i=>i.id!=='none');assert(report[category].length>=(['head','body'].includes(category)?3:1),category);
   // Every option must be selectable and reflected in the preview/editor selection.
   for(const item of report[category]){
    await page.locator(`button[data-item="${item.id}"]`).click();
@@ -61,8 +63,8 @@ try{
  await page.locator('#avatar-save').click();
  report.saved=await page.evaluate(()=>window.missionReview().appearance);
  await page.reload();await page.waitForFunction(()=>window.cityReady,{},{timeout:90000});
- assert.equal(await page.evaluate(()=>window.missionReview().appearance.body),'body_basketball');
- assert.equal(await page.evaluate(()=>window.missionReview().appearance.head),'head_degrade');
+ assert.equal(await page.evaluate(()=>window.missionReview().appearance.body),'body_male-f');
+ assert.equal(await page.evaluate(()=>window.missionReview().appearance.head),'head_male-f');
  await page.goto('http://localhost:5173/art-source/wardrobe-collection-review.html');
  await page.waitForFunction(()=>window.reviewReady,{},{timeout:90000});
  await page.screenshot({path:`${out}/collection.png`,fullPage:true});

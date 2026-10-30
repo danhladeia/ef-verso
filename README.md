@@ -4,6 +4,16 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Personagens trocados para o Kenney Mini Characters — 30/10/2026 (madrugada)
+
+**Pacote de personagens trocado**, a pedido: o KayKit Adventurers (em uso desde 24/10) deu lugar ao **Kenney Mini Characters** (CC0, `assets/kenney/mini-characters`), já usado em outras partes da cidade e com um protótipo (`tools/build_kenney_students.py`) comparado antes e documentado no README — a comparação dizia que o Kenney tinha pouca roupa e nenhum acessório de acessibilidade, mas conferindo de novo o pacote já trazia bengala, muleta, aparelho auditivo, óculos **e** cadeira de rodas com animação própria (sentar, olhar de lado, andar para os 4 lados) — então a comparação antiga estava desatualizada.
+
+**Menino e menina com corpo e rosto de verdade**, dos 12 personagens do pacote (6 "papéis" femininos, 6 masculinos — de policial a artista marcial): os 6 com cara mais jovem (3 meninas, 3 meninos) viraram as opções de aluno; os outros 6, de aparência mais adulta, formam o grupo da professora e dos moradores adultos. Cabeça e roupa continuam escolhidas em separado, como antes, mas agora cada roupa já vem com o corte e a cor dela (inclusive um vestido esportivo e um macacão jardineira, de verdade, não uma proporção ajustada por cima da roupa de menino).
+
+**O que ficou mais simples nessa troca**: sem a cor de pele/cabelo/roupa escolhível por controle deslizante — o Kenney não usa o mesmo tipo de atlas recolorível por shader do pacote anterior, então a cor de cada roupa/cabelo agora vem fixa de fábrica (a mochila continua com cor à escolha). A categoria de expressão facial (sorriso/determinado) também saiu, já que não havia como ligá-la ao rosto novo ainda. Sem esse pacote de animações de arremesso progressivo (carregar a força olhando o braço se armar), a animação de segurar a bola agora é uma pose curta — o jogo continua funcionando igual (segurar, soltar, a bola sai da mão), só a pose em si é mais simples.
+
+Verificação: `node tools/crowd.test.mjs` e `node tools/verify-wardrobe-collection.mjs` (36 combinações de cabeça/roupa, animadas, sem nenhuma cabeça sumindo), `node tools/verify-avatars.mjs` (o filtro menino/menina também troca as opções mostradas).
+
 ## Saia esportiva e expressões faciais — 30/10/2026 (noite)
 
 **Saia esportiva (skort)**, uma nova roupa na aba "Roupa" (junto com as outras 8), disponível para os dois personagens (menino/menina) — uma saia rodada por cima do calção já existente, presa ao quadril, com as mesmas cores personalizáveis das outras roupas.

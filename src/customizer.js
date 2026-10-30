@@ -18,7 +18,13 @@ export function createCustomizer({loader,avatar,stopMovement,canOpen}){
  let draft,preview,renderer,scene,camera,frame=0,last=0,loading=null,drag=null,category='body',thumbnails,thumbnailsLoading,renderGeneration=0;
  // Personagem (menino/menina): corpo com proporções próprias (não é só roupa/cor), por isso fica
  // separado das abas de roupa/visual — uma escolha à parte, sempre visível, antes do resto.
- for(const type of BODY_TYPES){const b=document.createElement('button');b.type='button';b.className='avatar-bodytype-option';b.dataset.bodyType=type;b.textContent=ITEM_NAMES[type];b.setAttribute('role','radio');b.onclick=()=>{draft.bodyType=type;update();};$('#avatar-bodytype-options').append(b);}
+ for(const type of BODY_TYPES){const b=document.createElement('button');b.type='button';b.className='avatar-bodytype-option';b.dataset.bodyType=type;b.textContent=ITEM_NAMES[type];b.setAttribute('role','radio');b.onclick=()=>{
+  draft.bodyType=type;
+  // Cabeça/roupa são só das opções de cada personagem — ao trocar, troca também para a primeira
+  // opção válida, senão a escolha anterior (do outro personagem) ficaria selecionada sem aparecer.
+  draft.head=optionsFor('head',draft)[0];draft.body=optionsFor('body',draft)[0];
+  showCategory(category);
+ };$('#avatar-bodytype-options').append(b);}
  for(const key of Object.keys(PARTS)){const tab=document.createElement('button');tab.type='button';tab.id='wardrobe-tab-'+key;tab.dataset.category=key;tab.role='tab';tab.textContent=names[key];tab.setAttribute('aria-controls','wardrobe-panel');tab.onclick=()=>showCategory(key);tab.onkeydown=e=>{const keys=Object.keys(PARTS),i=keys.indexOf(key);let next;if(e.key==='ArrowRight')next=keys[(i+1)%keys.length];if(e.key==='ArrowLeft')next=keys[(i+keys.length-1)%keys.length];if(e.key==='Home')next=keys[0];if(e.key==='End')next=keys.at(-1);if(next){e.preventDefault();showCategory(next);$('#wardrobe-tab-'+next).focus();}};$('#wardrobe-tabs').append(tab);}
  for(const [key,colors] of Object.entries(PALETTES)){const field=document.createElement('fieldset');field.dataset.palette=key;const legend=document.createElement('legend');legend.textContent=COLOR_LABELS[key];field.append(legend);
   colors.forEach((color,i)=>{const b=document.createElement('button');b.type='button';b.className='avatar-swatch';b.dataset.field=key;b.dataset.value=color;b.style.setProperty('--swatch',color);b.setAttribute('aria-label',`${COLOR_LABELS[key]} · opção ${i+1}`);b.onclick=()=>{draft[key]=color;update();};field.append(b);});$('#avatar-palettes').append(field);
@@ -28,10 +34,10 @@ export function createCustomizer({loader,avatar,stopMovement,canOpen}){
  async function fillThumbnails(generation){try{thumbnailsLoading??=createWardrobeThumbnails(loader);thumbnails=await thumbnailsLoading;
   for(const image of $('#wardrobe-items').querySelectorAll('img')){if(generation!==renderGeneration||!dialog.open)return;image.src=thumbnails.render(image.dataset.item);image.closest('button').classList.add('loaded');await new Promise(resolve=>requestAnimationFrame(resolve));}
  }catch(error){console.error(error);$('#avatar-message').textContent='As miniaturas não carregaram. Você ainda pode experimentar as peças na prévia.';thumbnailsLoading=null;}}
- function showCategory(key){category=key;const generation=++renderGeneration;$('#wardrobe-items').replaceChildren();$('#wardrobe-items').scrollTop=0;$('#wardrobe-category').textContent=names[key];const count=optionsFor(key,draft.body).filter(id=>id!=='none').length;$('#wardrobe-count').textContent=count+(count===1?' opção':' opções');$('#wardrobe-panel').setAttribute('aria-labelledby','wardrobe-tab-'+key);
+ function showCategory(key){category=key;const generation=++renderGeneration;$('#wardrobe-items').replaceChildren();$('#wardrobe-items').scrollTop=0;$('#wardrobe-category').textContent=names[key];const count=optionsFor(key,draft).filter(id=>id!=='none').length;$('#wardrobe-count').textContent=count+(count===1?' opção':' opções');$('#wardrobe-panel').setAttribute('aria-labelledby','wardrobe-tab-'+key);
   dialog.querySelectorAll('[role="tab"]').forEach(t=>{const selected=t.dataset.category===key;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;});
   dialog.querySelectorAll('[data-palette]').forEach(f=>f.hidden=![colorFor[key]].flat().includes(f.dataset.palette));
-  for(const id of optionsFor(key,draft.body)){const card=document.createElement('button');card.type='button';card.className='wardrobe-item';card.dataset.item=id;card.setAttribute('aria-label',itemName(key,id));
+  for(const id of optionsFor(key,draft)){const card=document.createElement('button');card.type='button';card.className='wardrobe-item';card.dataset.item=id;card.setAttribute('aria-label',itemName(key,id));
    if(id==='none'){const empty=document.createElement('span');empty.className='wardrobe-none';empty.textContent='∅';card.append(empty);card.classList.add('loaded');}else{const img=document.createElement('img');img.dataset.item=id;img.alt=itemName(key,id);img.width=144;img.height=144;card.append(img);}
    const label=document.createElement('span');label.className='wardrobe-item-label';label.textContent=itemName(key,id);card.append(label);card.onclick=()=>{draft[key]=id;update();$('#avatar-message').textContent='Sua aparência será aplicada ao salvar.';};$('#wardrobe-items').append(card);
   }update();void fillThumbnails(generation);

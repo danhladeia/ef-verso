@@ -4,8 +4,9 @@ import * as T from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createNavigation} from '../src/navigation.js';
 import {createCrowd} from '../src/crowd.js';
-import {createCharacter,PARTS,DEFAULT_APPEARANCE,normalizeAppearance,residentAppearance,PALETTES} from '../src/student-character.js';
-// Alunos KayKit: cabeças, roupas e acessórios num só esqueleto; animações em arquivos separados, ligadas pelo nome do osso.
+import {createCharacter,PARTS,DEFAULT_APPEARANCE,normalizeAppearance,residentAppearance} from '../src/student-character.js';
+// Alunos Kenney Mini Characters: cabeças, roupas e acessórios num só esqueleto de 7 ossos; as 32
+// animações do pacote vêm no próprio modelo.
 globalThis.document={hidden:false};
 // O Node não decodifica imagens: remove a textura do GLB e devolve uma textura vazia aos materiais.
 function withoutImages(buffer){
@@ -17,27 +18,22 @@ function withoutImages(buffer){
 }
 const parse=path=>new GLTFLoader().parseAsync(withoutImages(fs.readFileSync('public'+path)),'');
 const files=new Map();
-const loader={loadAsync:async path=>{if(!files.has(path))files.set(path,parse(path).then(f=>{f.scene.traverse(o=>{if(o.isMesh&&/^(rogue|ranger|mage|knight|barbarian)/.test(o.material.name))o.material.map=new T.Texture();});return f;}));return files.get(path);}};
+const loader={loadAsync:async path=>{if(!files.has(path))files.set(path,parse(path).then(f=>{f.scene.traverse(o=>{if(o.isMesh&&o.material?.map)o.material.map=new T.Texture();});return f;}));return files.get(path);}};
 const catalogue=await createCharacter(loader,'catalogue');
 for(const id of Object.values(PARTS).flat().filter(n=>n!=='none')){const bounds=catalogue.showItem(id);assert(!bounds.isEmpty()&&[...bounds.min,...bounds.max].every(Number.isFinite),'Valid bounds: '+id);}
-// Cores por categoria do atlas (pele, cabelo, roupa…): só mudam uniformes do shader.
-for(const tone of PARTS.tone){catalogue.setAppearance({...DEFAULT_APPEARANCE,tone});assert.equal(catalogue.appearance.tone,tone);}
 for(const [input,state] of [[{speed:6},'walk'],[{speed:11},'sprint'],[{airborne:true},'jump'],[{holding:true,charge:.5},'holding-both'],[{throwing:true},'holding-both-shoot'],[{},'idle']]){
  catalogue.update(.2,input);assert.equal(catalogue.state,state);assert(Object.values(catalogue.poseSample).flat().every(Number.isFinite),'Finite pose '+state);
 }
 // Cadeira de rodas: a mesma lógica de estados funciona sentada.
 catalogue.setAppearance({...DEFAULT_APPEARANCE,mobility:'acc_wheelchair'});for(const input of [{speed:4},{holding:true},{throwing:true},{}]){catalogue.update(.2,input);assert(Object.values(catalogue.poseSample).flat().every(Number.isFinite));}
 assert(catalogue.handPosition.y>0,'Hands above the ground');
-const teacher=await createCharacter(loader,'teacherLia');assert.equal(teacher.appearance.head,'head_cabelo_preto');assert.equal(teacher.appearance.whistle,true);
-assert.deepEqual(normalizeAppearance({head:'head_adulto_barba',body:'body_adulto_colete'}),{...DEFAULT_APPEARANCE,whistle:false},'Adult parts are not offered to students');
+const teacher=await createCharacter(loader,'teacherLia');assert.equal(teacher.appearance.head,'head_female-e');assert.equal(teacher.appearance.whistle,true);
+assert.deepEqual(normalizeAppearance({head:'head_female-a',body:'body_female-a'}),{...DEFAULT_APPEARANCE,whistle:false},'Adult parts are not offered to students');
 const navigation=createNavigation([{x:0,z:0,w:5,d:5}],172),scene=new T.Scene();
 const crowd=await createCrowd({scene,loader,navigation});assert.equal(crowd.count,24);
 for(let i=0;i<1200;i++)crowd.update(1/60,{x:0,z:35});
 const snapshot=crowd.snapshot();assert(snapshot.every(r=>!r.blocked));assert(snapshot.filter(r=>r.travelled>1).length>=20);
 const adults=[...Array(24).keys()].filter(i=>residentAppearance(i).adult).length;assert(adults>=6&&adults<=10,'Mix of adults and children');
-// Cinza e roxo (as duas últimas cores) ficam só para quem escolhe no guarda-roupa: num penteado grande
-// (crespo/cacheado), uma cor lisa e fria sorteada automaticamente "apaga" o rosto do morador/bot.
-for(let i=0;i<60;i++)assert(PALETTES.hairColor.slice(0,5).includes(residentAppearance(i).look.hairColor),'Natural hair color for resident '+i);
 const frozen=crowd.snapshot();for(let i=0;i<60;i++)crowd.update(1/60,{x:0,z:35},{paused:true});assert.deepEqual(crowd.snapshot(),frozen);
 const mobile=await createCrowd({scene:new T.Scene(),loader,navigation,compact:true});assert.equal(mobile.count,11);
 console.log(JSON.stringify({residents:crowd.count,adults,moving:snapshot.filter(r=>r.travelled>1).length,mobile:mobile.count,pieces:'passed',tones:'passed',wheelchair:'passed',collision:'passed',pause:'passed'}));
