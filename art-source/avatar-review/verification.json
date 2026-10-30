@@ -1,12 +1,20 @@
 {
   "saved": {
-    "body": "female",
-    "hair": "long",
-    "skin": "#b8784e",
-    "hairColor": "#241810",
-    "shirt": "#279178",
-    "pants": "#28374c",
-    "shoes": "#e5e9ed"
+    "tone": "tone_3",
+    "head": "head_trancas",
+    "body": "body_hoodie",
+    "bodyType": "fem",
+    "glasses": "none",
+    "hearing": "none",
+    "accessory": "acc_backpack",
+    "mobility": "none",
+    "hairColor": "#4a2f22",
+    "shirt": "#2fa36b",
+    "accent": "#3176bd",
+    "pants": "#283a5c",
+    "shoes": "#f4f1ea",
+    "accessoryColor": "#713f9c",
+    "whistle": false
   },
   "errors": []
 }

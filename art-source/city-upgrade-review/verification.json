@@ -6,14 +6,14 @@
   "traffic": 18,
   "mouseLook": true,
   "smoothTurn": {
-    "earlyDelta": 0.10670146574386075,
+    "earlyDelta": 0.08026399625809266,
     "fullRate": 0.18200000000000002,
-    "afterRelease": 0.11293583064066282
+    "afterRelease": 0.10408405102182772
   },
-  "walk": 4.3337946337718325,
-  "skate": 6.804375300160608,
-  "bike": 12.835133960218888,
-  "mountainHeight": 35.13487922124422,
+  "walk": 4.127395397141477,
+  "skate": 6.8261759399778805,
+  "bike": 12.928343828825478,
+  "mountainHeight": 35.17314524205952,
   "seasons": [
     {
       "name": "Verão",
@@ -32,7 +32,7 @@
       "ground": "#5fab5a"
     }
   ],
-  "trailRide": 26.69209559979989,
+  "trailRide": 26.82418278002631,
   "skateBowl": {
     "walkY": 0,
     "skateY": -1.7

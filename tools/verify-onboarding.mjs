@@ -46,6 +46,15 @@ try{
  assert(Math.hypot(report.afterFinish.player.x-6,report.afterFinish.player.z+22)<.5,'Spawns at the chosen home');
  assert.equal(await page.locator('.teacher-chip').count(),0,'A student does not get the teacher chip');
  await page.screenshot({path:out+'/4-city.png'});
+ // Right after finishing onboarding, WASD must move the student immediately — no leftover dialog or
+ // state from the onboarding/character flow should be eating the keys. 's' (not 'w', which can walk
+ // straight into a nearby building from some spawn points) keeps this about the controls responding,
+ // not about the specific spawn's layout.
+ const beforeMove=await page.evaluate(()=>window.cityReview.player());
+ await page.keyboard.down('s');await page.waitForTimeout(700);await page.keyboard.up('s');
+ const afterMove=await page.evaluate(()=>window.cityReview.player());
+ report.movesAfterOnboarding=Math.hypot(afterMove.x-beforeMove.x,afterMove.z-beforeMove.z);
+ assert(report.movesAfterOnboarding>2,'WASD deve mover o aluno logo após terminar o cadastro: '+report.movesAfterOnboarding);
  // Returning students skip straight to the city.
  await page.reload();await page.waitForFunction(()=>window.cityReady,null,{timeout:90000});
  assert.equal(await page.evaluate(()=>document.querySelector('#onboarding')?.hidden??true),true,'A returning student does not see the opening screen again');

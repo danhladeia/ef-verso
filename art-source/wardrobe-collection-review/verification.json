@@ -206,6 +206,7 @@
     "tone": "tone_8",
     "head": "head_degrade",
     "body": "body_basketball",
+    "bodyType": "masc",
     "glasses": "acc_glasses_sport",
     "hearing": "acc_hearing_cord",
     "accessory": "acc_bag_hiking",

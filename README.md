@@ -4,6 +4,16 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Personagem menino/menina com corpo próprio, e clique "sem resposta" no guarda-roupa corrigido — 30/10/2026
+
+**Menino e menina agora têm corpo de verdade, não só roupa/cabelo diferentes.** `tools/build_body_gender_variants.py` parte do mesmo esqueleto único dos alunos (não esculpe nada do zero) e desloca os vértices de cada roupa por grupo de osso — ombro e braço mais largos e quadril/perna mais estreitos no menino, o inverso, mais discreto, na menina, com uma leve diferença de altura — mantendo os mesmos pesos de esqueleto e materiais (as roupas, cores e animações continuam funcionando normalmente nos dois). No guarda-roupa ("Meu personagem"), um seletor **Personagem** fica separado das abas de roupa/visual, sempre visível no topo, com "Menino"/"Menina" — dá para trocar a qualquer momento, já com prévia 3D. Moradores e os times dos minijogos (basquete, vôlei, futebol) também têm essa variedade agora. A professora Lia usa o corpo feminino.
+
+**Clique em "Abrir guarda-roupa" sem resposta visual, corrigido.** Na primeira vez que a prévia 3D do guarda-roupa é aberta no navegador (ex.: logo na criação do personagem, na abertura do jogo), carregar o modelo demora um instante — sem nenhum aviso, a caixa da prévia ficava vazia nesse meio tempo e parecia que o clique não tinha feito nada. Agora aparece "Carregando prévia…" até o modelo estar pronto.
+
+**Confirmado: os comandos (WASD) respondem normalmente logo após terminar o cadastro**, e alunos de qualquer turma podem fazer as missões — a turma só escolhe o conteúdo de teoria (6º ao 9º ano) mostrado na Escola do Movimento, não trava nenhuma missão ou minijogo.
+
+Verificação: `node tools/verify-avatars.mjs` (personagem menino/menina, inclusive salvando e recarregando), `node tools/verify-onboarding.mjs` (controles respondem logo após o cadastro) e `node tools/crowd.test.mjs`/os demais `verify-*.mjs` continuam cobrindo o resto.
+
 ## Cabeça quebrada corrigida, física do basquete, giro suave e estações do ano — 28/10/2026 (madrugada)
 
 **Cabeça "capacete cinza" dos moradores/bots corrigida** (`src/student-character.js`). Com os penteados grandes (crespo/cacheado, que cobrem quase a cabeça toda com cachos sem fio visível), duas das sete cores de cabelo do sorteio automático — cinza e roxo, pensadas para quem escolhe no guarda-roupa — deixavam o personagem parecendo careca com um capacete liso, sem rosto visível. Moradores e os bots das partidas (basquete, vôlei, futebol) agora só sorteiam as 5 cores naturais; cinza e roxo continuam disponíveis para quem quiser em "Meu personagem".
