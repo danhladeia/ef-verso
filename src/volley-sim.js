@@ -3,7 +3,7 @@
 // para a rede (o ataque é ao longo do eixo X), como pede a câmera fixa atrás de cada linha de fundo.
 // Versão arcade: uma tacada por toque (sem contar bloqueio/levantamento/ataque separados).
 export const GRAVITY=9.8;
-export const COURT={netX:23,minX:14,maxX:32,minZ:71.5,maxZ:80.5},NET_HEIGHT=2.3,BALL_R=.22,PLAYER_R=.35,REACH=1.05,SPEED=4.6,HIT_HEIGHT=2.5,STEP=1/120;
+export const COURT={netX:23,minX:14,maxX:32,minZ:71.5,maxZ:80.5},NET_HEIGHT=2.3,BALL_R=.22,PLAYER_R=.35,REACH=1.3,SPEED=4.6,HIT_HEIGHT=2.5,STEP=1/120;
 const hyp=Math.hypot,clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 function random(s){s.seed=(s.seed+0x6D2B79F5)|0;let t=s.seed;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;}
 export const sideOf=team=>team===0?-1:1; // -1: joga em x<netX; +1: joga em x>netX
@@ -88,7 +88,11 @@ function updateBall(s,h,inputs){
   emit(s,'point',{team:winner,out:!inBounds});return;
  }
  if(b.noPick>0||s.phase!=='live')return;
+ // Pular é o jeito de atacar: perto da rede, numa bola alta (no nível dela ou mais), só quem estiver
+ // no salto rebate — como um ataque/bloqueio de verdade. Mais longe da rede, ainda dá pra cavar/passar
+ // sem pular (senão o jogo vira "ninguém nunca alcança", sem ninguém pra treinar o tempo do salto).
+ const DIG_HEIGHT=1.8;
  let best=null,dist=Infinity;
- for(const p of s.players){const side=sideOf(p.team);if((b.x-COURT.netX)*side<-.3)continue;const d=hyp(p.x-b.x,p.z-b.z),top=p.jump>0?HIT_HEIGHT+.6:HIT_HEIGHT;if(d<REACH&&b.y<top&&d<dist){dist=d;best=p;}}
+ for(const p of s.players){const side=sideOf(p.team);if((b.x-COURT.netX)*side<-.3)continue;const jumping=p.jump>0;if(!jumping&&b.y>=DIG_HEIGHT)continue;const d=hyp(p.x-b.x,p.z-b.z),top=jumping?HIT_HEIGHT+.6:DIG_HEIGHT;if(d<REACH&&b.y<top&&d<dist){dist=d;best=p;}}
  if(best){b.touches++;emit(s,'touch',{id:best.id,team:best.team});hitBall(s,best,inputs[best.id]||{});}
 }

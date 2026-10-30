@@ -70,7 +70,7 @@ export async function createVolleyMatch({scene,loader,keys,touch,stopMovement,st
  function start(){
   if(active)return;active=true;match=createMatch({seed:(Math.random()*1e9)|0,humans:[0],duration:180,target:11});
   stopMovement();roster.forEach(c=>c.visual.visible=true);ballRoot.visible=true;youMarker.visible=true;panel.hidden=false;document.body.classList.add('volley-active');
-  banner('Saque! Segure Espaço para sacar e rebater. Use o movimento para mirar.',3200);endTimer=0;
+  banner('Saque! Espaço para sacar. Perto da rede, pule com Espaço na hora certa pra rebater — sem pular, a bola não volta.',3600);endTimer=0;
  }
  function leave(){if(!active)return;active=false;roster.forEach(c=>c.visual.visible=false);ballRoot.visible=false;youMarker.visible=false;panel.hidden=true;document.body.classList.remove('volley-active');clearTimeout(banner.t);}
  $('#volley-leave').onclick=leave;

@@ -7,9 +7,10 @@ export function botInputs(s,{ids=s.players.filter(p=>!p.human).map(p=>p.id)}={})
 function botInput(s,p){
  const side=sideOf(p.team),b=s.ball,mine=(b.x-COURT.netX)*side<=.4;
  if(s.ball.holder===p.id)return {hit:true}; // sacar assim que o tempo de preparo passar
- if(mine&&b.y<3&&hyp(p.x-b.x,p.z-b.z)<1.4){
-  // Vai até a bola e rebate apontando para um canto afastado do adversário mais perto.
-  const move=toward(p,b.x,b.z,.08);return {mx:move.mx,mz:move.mz,hit:hyp(p.x-b.x,p.z-b.z)<.9};
+ if(mine&&b.y<3&&hyp(p.x-b.x,p.z-b.z)<1.8){
+  // Vai até a bola e já pula assim que estiver perto o bastante — o salto dura meio segundo, tempo de
+  // sobra pra terminar de chegar enquanto está no ar (sem pular, a bola alta não é tocada).
+  const move=toward(p,b.x,b.z,.08);return {mx:move.mx,mz:move.mz,hit:hyp(p.x-b.x,p.z-b.z)<1.6};
  }
  // Posição de base: espalhados na própria quadra, meio-afastados da rede.
  const spots=[[2.6,0],[6,-2.8],[6,2.8]],home={x:COURT.netX+side*spots[p.slot%3][0],z:76+spots[p.slot%3][1]};

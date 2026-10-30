@@ -4,6 +4,12 @@ Execute `npm install` e `npm run dev` nesta pasta. Abra o endereço mostrado pel
 
 No celular, use o endereço de rede exibido pelo Vite, com computador e celular na mesma rede. O firewall do computador precisa permitir a conexão. Não é necessário instalar aplicativo no celular.
 
+## Vôlei: pular virou o jeito de rebater — 30/10/2026 (madrugada)
+
+**Pular para rebater, de verdade.** Antes, a bola era rebatida automaticamente por quem estivesse perto — pular só deixava o arremesso um pouco mais forte, sem fazer diferença real. Agora, perto da rede (bola na altura dela ou mais alta — a maioria dos ataques/levantadas), só quem estiver no salto, na hora certa, consegue tocar na bola; sem pular, ela cai e é ponto do outro time. Mais longe da rede, ainda dá pra cavar/passar uma bola baixa sem pular, para o jogo não virar "ninguém nunca alcança" (os bots também precisam de uma folga assim para jogar). Os bots foram ajustados para pular com mais antecedência, dando tempo de terminar de chegar até a bola ainda no ar.
+
+Verificação: `node tools/volley.test.mjs` (inclusive uma partida bots-vs-bots inteira, conferida em vários sorteios) continua passando.
+
 ## Personagens trocados para o Kenney Mini Characters — 30/10/2026 (madrugada)
 
 **Pacote de personagens trocado**, a pedido: o KayKit Adventurers (em uso desde 24/10) deu lugar ao **Kenney Mini Characters** (CC0, `assets/kenney/mini-characters`), já usado em outras partes da cidade e com um protótipo (`tools/build_kenney_students.py`) comparado antes e documentado no README — a comparação dizia que o Kenney tinha pouca roupa e nenhum acessório de acessibilidade, mas conferindo de novo o pacote já trazia bengala, muleta, aparelho auditivo, óculos **e** cadeira de rodas com animação própria (sentar, olhar de lado, andar para os 4 lados) — então a comparação antiga estava desatualizada.
