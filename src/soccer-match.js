@@ -80,5 +80,5 @@ export async function createSoccerMatch({scene,loader,keys,touch,stopMovement,st
  addEventListener('keydown',e=>{if(!active||e.target instanceof HTMLButtonElement)return;if(e.code==='Escape'){e.preventDefault();leave();}else if(e.code==='Space'){e.preventDefault();e.stopPropagation();shootHeld=true;}else if(e.key.toLowerCase()==='e'){e.preventDefault();passHeld=true;}},true);
  addEventListener('keyup',e=>{if(!active)return;if(e.code==='Space')shootHeld=false;if(e.key.toLowerCase()==='e')passHeld=false;},true);
  addEventListener('blur',()=>{shootHeld=passHeld=false;});
- return {start,leave,update,get active(){return active;},get camera(){return camera;},get score(){return match?.score;}};
+ return {start,leave,update,get active(){return active;},get camera(){return camera;},get score(){return match?.score;},get players(){return match?.players;},get ball(){return match?.ball;}};
 }
